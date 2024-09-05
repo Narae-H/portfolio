@@ -5,7 +5,6 @@ import { ThemeProvider as StyledProvider, ThemeContext } from 'styled-components
 const themeContext = createContext({});
 
 const ThemeProvider = ({children}) => {
-  
   const localTheme = window.localStorage.getItem('theme') || 'default';
   const [themeMode, setThemeMode] = useState(localTheme);
   const themeObject = themeMode === 'default' ? defaultTheme : tokyoNightTheme;
