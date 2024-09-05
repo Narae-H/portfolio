@@ -1,9 +1,17 @@
 import './App.css';
+import 'normalize.css';
+import Layout from './components/Layout';
+import { ThemeProvider } from './context/ThemeProvider';
+import {GlobalStyle} from './theme/GlobalStyle'
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <>
+      <ThemeProvider>
+        <GlobalStyle />
+        <Layout/>
+      </ThemeProvider>
+    </>
   );
 }
 
