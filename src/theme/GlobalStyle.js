@@ -1,12 +1,29 @@
 import { createGlobalStyle } from "styled-components";
-import  ibmFlexMono  from "./../fonts/IBMPlexMono-Regular.ttf"
-import  monoSpaceNeon  from "./../fonts/MonaspaceNeon-Regular.otf"
+import monoSpaceNeon from './../assets/fonts/MonaspaceNeon-Regular.otf';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
+  // Width/Hieght
+  --header-height     : 40px;
+  --footer-height     : 30px;
+  --activity-bar-width: 55px;
+
+    // Font size
+    --fs-large : 1.2rem;
+    --fs-medium: 1rem;
+    --fs-small : 0.8rem;
+
+    // Colour
+    --c-red  : #e81123;
+    --c-white: #ffffff;
+    --c-blue : #0078d4;
+
+
+    // Theme color
     --background-color   : ${ ({theme}) => theme.base.background };
     --inactive-text-color: ${ ({theme}) => theme.base.inactiveTextColor };
     --active-text-color  : ${ ({theme}) => theme.base.activeTextColor };
+    --border-color       : ${ ({theme}) => theme.base.border };
 
     --activitybar-background         : ${ ({theme}) => theme.activitybar.background };
     --activitybar-text-color         : ${ ({theme}) => theme.activitybar.foreground };
@@ -21,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     --editor-background: ${ ({theme}) => theme.editor.background };
     --editor-text-color: ${ ({theme}) => theme.editor.foreground };
     }
+
   @font-face {
     font-family: 'mono-space-neon';
     font-weight: 300;
