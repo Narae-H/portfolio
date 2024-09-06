@@ -2,17 +2,18 @@
 export const defaultTheme = {
   // Base colors
   base: {
-    background        : '#333333',
+    background        : '#181818',
     inactiveTextColor : '#969696',
     activeTextColor   : '#919191',
+    border            : '#37373d'
   },
   
   // Activity Bar
   activitybar: {
-    background         : '#333333',
+    background         : '#181818',
     foreground         : '#ffffff', // icon colour
     inactiveForeground : '#7b7b7b', // icon colour when it is inactive
-    activeBorder       : '#ffffff', // Active indicator border colour
+    activeBorder       : '#ffffff' // Active indicator border colour
   },
 
   // Primary-side-bar: Lists and trees
@@ -20,7 +21,7 @@ export const defaultTheme = {
     inactiveSelectionBackground: '#252526',
     inactiveSelectionForeground: '#ffffff',
     hoverForeground            : '#ffffff', // text color
-    hoverBackground            : '#37373d',
+    hoverBackground            : '#37373d'
   }, 
 
   // Editor groups & tabs
@@ -37,6 +38,7 @@ export const tokyoNightTheme = {
     background        : '#16161e',
     inactiveTextColor : '#787c99',
     activeTextColor   : '#A9B1D6',
+    border            : '#13131a'
   },
 
   // Activity Bar
@@ -44,7 +46,7 @@ export const tokyoNightTheme = {
     background         : '#16161e',
     foreground         : '#787c99', // icon colour
     inactiveForeground : '#3b3e52', // icon colour when it is inactive
-    activeBorder       : '#787c99', // Active indicator border colour
+    activeBorder       : '#787c99'  // Active indicator border colour
   },
   
   // Primary-side-bar: Lists and trees
@@ -52,7 +54,7 @@ export const tokyoNightTheme = {
     inactiveSelectionBackground: '#16161e',
     inactiveSelectionForeground: '#787c99',
     hoverForeground            : '#a9b1d6', // text color
-    hoverBackground            : '#13131a',
+    hoverBackground            : '#13131a'
   }, 
   
   // Editor groups & tabs

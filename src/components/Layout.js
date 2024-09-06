@@ -1,4 +1,4 @@
-import style from './../styles/Layout.css'
+import './../styles/Layout.css';
 
 import TopMenuBar from './TopMenuBar';
 import ActivityBar from './ActivityBar';
@@ -8,15 +8,15 @@ function Layout() {
 
   return (
     <>
-      <div id="top-menu-bar">
-        <TopMenuBar/>111It's test text.
+      <div id='top-menu-bar'>
+        <TopMenuBar/>
       </div>
-      <div id="activity-bar">
+      <div id='activity-bar'>
         <ActivityBar/>
       </div>
-      <div id="content">
+      <div id='editor-area'>
       </div>
-      <div id="status-bar">
+      <div id='status-bar'>
         <StatusBar/>
       </div>
     </>
