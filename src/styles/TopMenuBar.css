@@ -19,7 +19,7 @@
   cursor: default;
 }
 .menu-icon:hover {
-  background: var(--list-inactive-hover-background);
+  background: var(--list-hover-background);
 }
 
 .menu-main-img {
@@ -49,7 +49,7 @@
   padding: 12px;
 }
 .menu-img:hover {
-  background: var(--list-inactive-hover-background);
+  background: var(--list-hover-background);
 }
 .menu-img.close:hover {
   background: var(--c-red);

@@ -32,8 +32,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --list-inactive-selection-background: ${ ({theme}) => theme.list.inactiveSelectionBackground };
     --list-inactive-selection-text-color: ${ ({theme}) => theme.list.inactiveSelectionForeground };
-    --list-inactive-hover-text-color    : ${ ({theme}) => theme.list.hoverForeground };
-    --list-inactive-hover-background    : ${ ({theme}) => theme.list.hoverBackground };
+    --list-hover-text-color             : ${ ({theme}) => theme.list.hoverForeground };
+    --list-hover-background             : ${ ({theme}) => theme.list.hoverBackground };
     
     --editor-background: ${ ({theme}) => theme.editor.background };
     --editor-text-color: ${ ({theme}) => theme.editor.foreground };

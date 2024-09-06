@@ -1,22 +1,20 @@
 import './App.css';
 import 'normalize.css';
 
-import {GlobalStyle} from './theme/GlobalStyle'
+import { GlobalStyle } from './theme/GlobalStyle'
 import { ThemeProvider } from 'styled-components';
-import { defaultTheme, tokyoNightTheme } from "./theme/theme";
-import { useState } from 'react';
+
+import { useLocalStorage } from './hooks/localStorage';
 
 import Layout from './components/Layout';
 
 function App() {
-  // 1. Setting theme
-  const localTheme = window.localStorage.getItem('theme') || 'default';
-  const [themeMode, setThemeMode] = useState(localTheme);
-  const themeObject = themeMode === 'default' ? defaultTheme : tokyoNightTheme;
+  // 1. Selected Theme
+  const [localThemeObj] = useLocalStorage();
 
   return (
     <>
-      <ThemeProvider theme={themeObject}>
+      <ThemeProvider theme={localThemeObj}>
         <GlobalStyle />
         <Layout/>
       </ThemeProvider>
