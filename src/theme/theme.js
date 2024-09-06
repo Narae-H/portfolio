@@ -21,7 +21,7 @@ export const defaultTheme = {
     inactiveSelectionBackground: '#252526',
     inactiveSelectionForeground: '#ffffff',
     hoverForeground            : '#ffffff', // text color
-    hoverBackground            : '#37373d'
+    hoverBackground            : '#2D2E2E'
   }, 
 
   // Editor groups & tabs
@@ -54,7 +54,7 @@ export const tokyoNightTheme = {
     inactiveSelectionBackground: '#16161e',
     inactiveSelectionForeground: '#787c99',
     hoverForeground            : '#a9b1d6', // text color
-    hoverBackground            : '#13131a'
+    hoverBackground            : '#2D2E2E'
   }, 
   
   // Editor groups & tabs
