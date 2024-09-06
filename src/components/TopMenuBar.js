@@ -1,24 +1,21 @@
-
 import './../styles/TopMenuBar.css';
 
+import { topMenus } from './../components/data/topMenuBar';
+import { defaultTheme, tokyoNightTheme } from "./../theme/theme";
 
-import VscodeImg from './../assets/svg/vscode.svg';
-// import { ReactComponent as WindowMinimize} from './../assets/svg/WindowMinimize.svg';
-// import WindowRestore from './../assets/svg/WindowRestore.svg';
-// import Xmark from './../assets/svg/Xmark.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowMinimize, faWindowRestore, faXmark } from '@fortawesome/free-solid-svg-icons'
-
-function TopMenuBar (){
+function TopMenuBar(){
 
   const leftMenus  = ['File', 'Edit', 'Selection', 'View', 'Go', 'Run', 'Terminal', 'Help'];
+  const rightMenus = ['windowMinimize', 'WindowRestore', 'WindowClose'];
+
+  const iconColor = defaultTheme.base.activeTextColor;
 
   return(
     <>
       <div id='top-menu-wrapper'>
         <div className='left-menu'>
           <div className='menu-main-img'>
-            <img src={VscodeImg} alt='vscode'/>
+            {topMenus['vsCode'].icon(24, 24)}
           </div>
           {
             leftMenus.map( (item, i) => {
@@ -29,19 +26,15 @@ function TopMenuBar (){
           }
         </div>
 
-
         <div className='right-menu'>
-          <div className='menu-img'>
-            <FontAwesomeIcon icon={faWindowMinimize} />
-          </div>
-          <div className='menu-img'>
-            <FontAwesomeIcon icon={faWindowRestore} />
-          </div>
-          <div className='menu-img close'>
-            <FontAwesomeIcon icon={faXmark} />
-          </div>
+          {
+            rightMenus.map( (name, icon) => {
+              return (
+                <div className={(name =='WindowClose')? 'menu-img close':'menu-img'}>{topMenus[name].icon(16, 16, iconColor)}</div>
+              )
+            })  
+          }
         </div>
-
       </div>
     </>
   )
