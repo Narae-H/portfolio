@@ -11,7 +11,7 @@ function TopMenuBar(){
   
   // 2. Menus
   const leftMenus  = ['File', 'Edit', 'Selection', 'View', 'Go', 'Run', 'Terminal', 'Help'];
-  const rightMenus = ['windowMinimize', 'WindowRestore', 'WindowClose'];
+  const rightMenus = ['windowMinimize', 'windowRestore', 'windowClose'];
 
   return(
     <>

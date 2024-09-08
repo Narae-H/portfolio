@@ -31,7 +31,7 @@ export const topMenus = {
       </svg>
     )
   },
-  WindowRestore: {
+  windowRestore: {
     name: 'Window Restore',
     icon: (width, height, color) => (
       <svg 
@@ -45,7 +45,7 @@ export const topMenus = {
       </svg>
     )
   },
-  WindowClose: {
+  windowClose: {
     name: 'Window Close',
     icon: (width, height, color) => (
       <svg 
