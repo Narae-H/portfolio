@@ -1,6 +1,7 @@
 
 #top-menu-wrapper {
   position: fixed;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +9,7 @@
   width: 100%;
   background-color: var(--background-color);
   color: var(--active-text-color);
+  border-bottom: 1px solid var(--border-color)
 }
 
 .menu-icon {
@@ -30,7 +32,7 @@
 .menu-main-img img {
   width: 25px;
 }
-.left-menu {
+#top-menu-wrapper .left-menu {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -38,7 +40,7 @@
   align-items: center;
 }
 
-.right-menu {
+#top-menu-wrapper .right-menu {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -47,12 +49,16 @@
 .menu-img {
   display: flex;
   padding: 12px;
+  fill: var(--inactive-text-color);
 }
 .menu-img:hover {
   background: var(--list-hover-background);
 }
 .menu-img.close:hover {
   background: var(--c-red);
+}
+.menu-img.close:hover {
+  fill: var(--active-text-color);
 }
 
 

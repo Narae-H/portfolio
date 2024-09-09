@@ -1,7 +1,7 @@
 import './App.css';
 import 'normalize.css';
 
-import { GlobalStyle } from './theme/GlobalStyle'
+import { GlobalStyle } from './theme/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 
 import { useLocalStorage } from './hooks/localStorage';
