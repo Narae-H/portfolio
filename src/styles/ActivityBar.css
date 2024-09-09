@@ -1,14 +1,28 @@
 #activity-wrapper{
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: space-between;
   width: 100%;
   height: 100%;
 }
 
-.left-menu {
+#activity-wrapper .top-menu, #activity-wrapper .bottom-menu {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.na-nav-link {
+  margin: 5px 0;
+  text-align: center;
+  padding: 7px 0;
+  fill: var(--activitybar-inactive-text-color);
+}
+.na-nav-link.active {
+  border-left: 2px solid var(--activitybar-active-border); 
+}
+.na-nav-link:hover {
+  fill: var(--activitybar-text-color);
 }
 
 

@@ -8,16 +8,22 @@ function Layout() {
 
   return (
     <>
-      <div id='top-menu-bar'>
-        <TopMenuBar/>
-      </div>
-      <div id='activity-bar'>
-        <ActivityBar/>
-      </div>
-      <div id='editor-area'>
-      </div>
-      <div id='status-bar'>
-        <StatusBar/>
+      <div>
+        <div id='top-menu-bar'>
+          <TopMenuBar/>
+        </div>
+
+        <div id='middle-content'>
+          <div id='activity-bar'>
+            <ActivityBar/>
+          </div>
+          <div id='editor-area'>
+          </div>
+        </div>
+        
+        <div id='bottom-status-bar'>
+          <StatusBar/>
+        </div>
       </div>
     </>
   )

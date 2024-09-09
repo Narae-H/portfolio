@@ -17,27 +17,26 @@ export const topMenus = {
   },
   windowMinimize: {
     name: 'Window Minimize',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width}
         height={height}
-        fill={color}
+        fill='current'
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 512 512">
         
         <path 
-          fill="current"
           d="M32 416c-17.7 0-32 14.3-32 32s14.3 32 32 32l448 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 416z"/>
       </svg>
     )
   },
   windowRestore: {
     name: 'Window Restore',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width}
         height={height}
-        fill={color}
+        fill='current'
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 512 512">
         
@@ -47,11 +46,11 @@ export const topMenus = {
   },
   windowClose: {
     name: 'Window Close',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width}
         height={height}
-        fill={color}
+        fill='current'
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 384 512">
         

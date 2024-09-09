@@ -1,11 +1,11 @@
 export const activityMenus = {
   home: {
     name: 'Home',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width} 
         height={height} 
-        fill={color}
+        fill='current'
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 448 512">
       <path 
@@ -15,11 +15,11 @@ export const activityMenus = {
   },
   skills: {
     name: 'Skills',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width}
         height={height}
-        fill={color}
+        fill='current'
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 576 512">
       
@@ -30,11 +30,11 @@ export const activityMenus = {
   },
   experiences: {
     name: 'Experiences',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width} 
         height={height} 
-        fill={color}
+        fill='current'
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 640 512">
       <path 
@@ -44,11 +44,11 @@ export const activityMenus = {
   },
   github: {
     name: 'Git Hub',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width} 
         height={height} 
-        fill={color}
+        fill='current'
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 496 512">
 
@@ -59,35 +59,34 @@ export const activityMenus = {
   },
   contactMe: {
     name: 'Contact Me',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width} 
         height={height} 
-        fill={color}
+        fill='current'
         xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 448 512">
+        viewBox="0 0 512 512">
       <path 
-        d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z"/>
+        d="M464 64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm0 48v40.8c-22.4 18.3-58.2 46.7-134.6 106.5-16.8 13.2-50.2 45.1-73.4 44.7-23.2 .4-56.6-31.5-73.4-44.7C106.2 199.5 70.4 171.1 48 152.8V112h416zM48 400V214.4c22.9 18.3 55.4 43.9 104.9 82.6 21.9 17.2 60.1 55.2 103.1 55 42.7 .2 80.5-37.2 103.1-54.9 49.5-38.8 82-64.4 104.9-82.7V400H48z"/>
       </svg>
     )
   },
   settings: {
     name: 'Settings',
-    icon: (width, height, color) => (
+    icon: (width, height) => (
       <svg 
         width={width} 
         height={height} 
-        fill={color}
+        fill='current'
         viewBox="0 0 24 24" 
         xmlns="http://www.w3.org/2000/svg"
       >
 
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
         d="M19.85 8.75l4.15.83v4.84l-4.15.83 2.35 3.52-3.43 3.43-3.52-2.35-.83 4.15H9.58l-.83-4.15-3.52 2.35-3.43-3.43 2.35-3.52L0 14.42V9.58l4.15-.83L1.8 5.23 5.23 1.8l3.52 2.35L9.58 0h4.84l.83 4.15 3.52-2.35 3.43 3.43-2.35 3.52zm-1.57 5.07l4-.81v-2l-4-.81-.54-1.3 2.29-3.43-1.43-1.43-3.43 2.29-1.3-.54-.81-4h-2l-.81 4-1.3.54-3.43-2.29-1.43 1.43L6.38 8.9l-.54 1.3-4 .81v2l4 .81.54 1.3-2.29 3.43 1.43 1.43 3.43-2.29 1.3.54.81 4h2l.81-4 1.3-.54 3.43 2.29 1.43-1.43-2.29-3.43.54-1.3zm-8.186-4.672A3.43 3.43 0 0112 8.57 3.44 3.44 0 0115.43 12a3.43 3.43 0 11-5.336-2.852zm.956 4.274c.281.188.612.288.95.288A1.7 1.7 0 0013.71 12a1.71 1.71 0 10-2.66 1.422z"
       />
       </svg>
+      
     )
   }
 }

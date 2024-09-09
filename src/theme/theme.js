@@ -4,7 +4,7 @@ export const defaultTheme = {
   base: {
     background        : '#181818',
     inactiveTextColor : '#969696',
-    activeTextColor   : '#919191',
+    activeTextColor   : '#ffffff',
     border            : '#37373d'
   },
   
@@ -13,7 +13,7 @@ export const defaultTheme = {
     background         : '#181818',
     foreground         : '#ffffff', // icon colour
     inactiveForeground : '#7b7b7b', // icon colour when it is inactive
-    activeBorder       : '#ffffff' // Active indicator border colour
+    activeBorder       : '#0078d4' // Active indicator border colour
   },
 
   // Primary-side-bar: Lists and trees

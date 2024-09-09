@@ -33,7 +33,7 @@ function TopMenuBar(){
           {
             rightMenus.map( (name, icon) => {
               return (
-                <div className={(name ==='WindowClose')? 'menu-img close':'menu-img'} key={name}> {topMenus[name].icon(16, 16, iconColor)} </div>
+                <div className={(name ==='windowClose')? 'menu-img close':'menu-img'} key={name}> {topMenus[name].icon(16, 16, iconColor)} </div>
               )
             })  
           }
