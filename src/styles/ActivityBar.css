@@ -13,16 +13,20 @@
 }
 
 .na-nav-link {
-  margin: 5px 0;
   text-align: center;
-  padding: 7px 0;
-  fill: var(--activitybar-inactive-text-color);
+  padding: 12px 0;
+  color: var(--activitybar-inactive-text-color);
 }
 .na-nav-link.active {
   border-left: 2px solid var(--activitybar-active-border); 
 }
 .na-nav-link:hover {
-  fill: var(--activitybar-text-color);
+  color: var(--activitybar-text-color);
+}
+
+.activity-icon {
+  width: 1.5em;
+  height: 1.5em;
 }
 
 
