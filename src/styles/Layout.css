@@ -4,8 +4,7 @@
   flex-wrap: wrap;
   align-content: center;
   width: 100%;
-  height:
-   var(--header-height);
+  height: var(--header-height);
 }
 
 #middle-content {
@@ -38,7 +37,6 @@
   flex-wrap: wrap;
   width: 100%;
   height: var(--footer-height);
-  background-color: aqua;
 }
 
 /* Common styles */

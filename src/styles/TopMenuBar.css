@@ -1,4 +1,3 @@
-
 #top-menu-wrapper {
   position: fixed;
   z-index: 999;
@@ -49,7 +48,8 @@
 .menu-img {
   display: flex;
   padding: 12px;
-  fill: var(--inactive-text-color);
+  /* fill: var(--inactive-text-color); */
+  color: var(--inactive-text-color);
 }
 .menu-img:hover {
   background: var(--list-hover-background);
@@ -58,7 +58,8 @@
   background: var(--c-red);
 }
 .menu-img.close:hover {
-  fill: var(--active-text-color);
+  color: var(--active-text-color);
+  /* fill: var(--active-text-color); */
 }
 
 
