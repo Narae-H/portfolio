@@ -26,8 +26,9 @@ export const defaultTheme = {
 
   // Editor groups & tabs
   editor: {
-    background: '#1e1e1e',
-    foreground: '#ffffff'
+    tabBackground: '#181818',
+    background   : '#1e1e1e',
+    foreground   : '#ffffff'
   }
 }
 
@@ -59,8 +60,9 @@ export const tokyoNightTheme = {
   
   // Editor groups & tabs
   editor: {
-    background: '#1a1b26',
-    foreground: '#1a1b26'
+    tabBackground: '#16161e',
+    background   : '#1a1b26',
+    foreground   : '#c0caf5'
   }
 
 }

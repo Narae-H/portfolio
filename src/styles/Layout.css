@@ -1,3 +1,28 @@
+/* Common styles */
+h1 {
+  font-size: 2.5rem;
+}
+.icon-lg {
+  font-size: 1.5em;
+  margin: 0 4px;
+}
+.f-blue {
+  color: #1f9cf0;
+}
+.f-grey {
+  color: var(--bs-gray);
+}
+#tooltip-activity-bar.na-tooltip {
+  color: var(--activitybar-text-color);
+  background-color: var(--activitybar-background);
+  border: 1px solid var(--activitybar-inactive-text-color);
+  border-radius: 5px;
+  font-size: var(--fs-small);
+  padding: 2px 5px;
+}
+
+
+/* For the Layout.js componet */
 #top-menu-bar {
   display: flex;
   flex-direction: row;
@@ -20,6 +45,7 @@
   width: var(--activity-bar-width);
   height: calc(100vh - var(--header-height) - var(--footer-height ));
   background-color: var(--activitybar-background);
+  border-right: var(--border-color) 1px solid;
 }
 
 #editor-area {
@@ -28,7 +54,7 @@
   overflow: hidden;
   width: calc(100vw - var(--activity-bar-width));
   height: calc(100vh - var(--header-height) - var(--footer-height ));
-  background-color: antiquewhite;
+  background-color: var(--editor-background);
 }
 
 #bottom-status-bar {
@@ -38,17 +64,6 @@
   width: 100%;
   height: var(--footer-height);
 }
-
-/* Common styles */
-#tooltip-activity-bar.na-tooltip {
-  color: var(--activitybar-text-color);
-  background-color: var(--activitybar-background);
-  border: 1px solid var(--activitybar-inactive-text-color);
-  border-radius: 5px;
-  font-size: var(--fs-small);
-  padding: 2px 5px;
-}
-
 
 @media screen and (max-width : 768px) { 
   #activity-bar {
