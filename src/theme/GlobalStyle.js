@@ -41,8 +41,9 @@ export const GlobalStyle = createGlobalStyle`
     --list-hover-text-color             : ${ ({theme}) => theme.list.hoverForeground };
     --list-hover-background             : ${ ({theme}) => theme.list.hoverBackground };
     
-    --editor-background: ${ ({theme}) => theme.editor.background };
-    --editor-text-color: ${ ({theme}) => theme.editor.foreground };
+    --editor-tab-background: ${ ({theme}) => theme.editor.tabBackground };
+    --editor-background    : ${ ({theme}) => theme.editor.background };
+    --editor-text-color    : ${ ({theme}) => theme.editor.foreground };
     }
 
   @font-face {

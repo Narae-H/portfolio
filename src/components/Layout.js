@@ -3,6 +3,7 @@ import './../styles/Layout.css';
 import TopMenuBar from './TopMenuBar';
 import ActivityBar from './ActivityBar';
 import StatusBar from './StatusBar';
+import EditorArea from './EditorArea';
 
 function Layout() {
 
@@ -18,6 +19,7 @@ function Layout() {
             <ActivityBar/>
           </div>
           <div id='editor-area'>
+            <EditorArea/>
           </div>
         </div>
         
