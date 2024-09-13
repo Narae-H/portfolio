@@ -2,25 +2,19 @@ import './../styles/ActivityBar.css';
 
 import { Tooltip } from 'react-tooltip';
 import CapitalizedComponent from '../utils/common';
+import { useSelector } from 'react-redux';
 
 function ActivityBar(){
   // 1. Menus
-  const topMenus    = [ {name: 'home'       , iconName:'VscFiles'}
-                       , {name: 'skills'     , iconName:'VscCode'}
-                       , {name: 'experiences', iconName:'VscFolderLibrary'}
-                       , {name: 'github'     , iconName:'VscGithub'}
-                      ];
-
-  const bottomMenus = [ {name: 'contactMe', iconName:'VscAccount'}
-                      , {name: 'settings' , iconName:'VscSettingsGear'}
-                      ];
+  let mainMenu = useSelector( (state) => state.mainMenu );
+  let subMenu  = useSelector( (state) => state.subMenu );
 
   return(
     <>
       <div id='activity-wrapper'>
         <div className='top-menu'>
             {
-              topMenus.map( (iconObj)=>{
+              mainMenu.map( (iconObj)=>{
                 return(
                   <a 
                     href={`#menu-${iconObj.name}`} 
@@ -38,7 +32,7 @@ function ActivityBar(){
 
         <div className='bottom-menu'>
         {
-          bottomMenus.map( (iconObj)=>{
+          subMenu.map( (iconObj)=>{
             return(
               <a 
                 href={`#menu-${iconObj.name}`} 

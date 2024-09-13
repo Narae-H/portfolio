@@ -1,10 +1,15 @@
 import './../styles/TopMenuBar.css';
 
+import { useSelector } from 'react-redux';
+
 import { topMenus } from './../components/data/topMenuBar';
-import { VscChromeClose, VscChromeMinimize, VscChromeRestore } from "react-icons/vsc";
+import { VscChromeClose, VscChromeMinimize, VscChromeRestore, VscMail } from "react-icons/vsc";
 
 
 function TopMenuBar(){
+  // 1. Menus for mobile
+  let mainMenu = useSelector( (state) => state.mainMenu );
+
   return(
     <>
       <div id='top-menu-wrapper'>
@@ -12,20 +17,29 @@ function TopMenuBar(){
           <div className='menu-main-img'>
             {topMenus['vsCode'].icon(24, 24)}
           </div>
-          <p className='menu-icon'>File</p>
-          <p className='menu-icon'>Edit</p>
-          <p className='menu-icon'>Selection</p>
-          <p className='menu-icon'>View</p>
-          <p className='menu-icon'>Go</p>
-          <p className='menu-icon'>Run</p>
-          <p className='menu-icon'>Terminal</p>
-          <p className='menu-icon'>Help</p>
+          <p className='menu-icon bp-lg'>File</p>
+          <p className='menu-icon bp-lg'>Edit</p>
+          <p className='menu-icon bp-lg'>Selection</p>
+          <p className='menu-icon bp-lg'>View</p>
+          <p className='menu-icon bp-lg'>Go</p>
+          <p className='menu-icon bp-lg'>Run</p>
+          <p className='menu-icon bp-lg'>Terminal</p>
+          <p className='menu-icon bp-lg'>Help</p>
+
+          {
+            mainMenu.map( (item) => {
+              return (
+                <a href={`#menu-${item.name}`} key={item.name} className='menu-icon bp-md'>{item.name}</a>
+              )
+            })
+          }
         </div>
 
         <div className='right-menu'>
-          <div className='menu-img'> <VscChromeMinimize /> </div>
-          <div className='menu-img'> <VscChromeRestore /> </div>
-          <div className='menu-img close'> <VscChromeClose /> </div>
+          <div className='menu-img bp-lg'> <VscChromeMinimize /> </div>
+          <div className='menu-img bp-lg'> <VscChromeRestore /> </div>
+          <div className='menu-img bp-lg close'> <VscChromeClose /> </div>
+          <a href='#contactme' className='menu-img bp-md'><VscMail /></a>
         </div>
       </div>
     </>

@@ -49,3 +49,13 @@
   padding: 2px 5px;
 }
 
+
+@media screen and (max-width : 768px) { 
+  #activity-bar {
+    display: none;
+  }
+
+  #editor-area {
+    width: 100%;
+  }
+ }
