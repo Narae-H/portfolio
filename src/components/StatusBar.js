@@ -1,5 +1,4 @@
 import { VscError, VscRemote, VscWarning } from 'react-icons/vsc';
-import { FaReact } from "react-icons/fa";
 import './../styles/StatusBar.css';
 
 function StatusBar(){
@@ -12,8 +11,7 @@ function StatusBar(){
         </div>
 
         <div className='right-menu'>
-          <p className='menu-icon bg-activity'><span>UTF-8</span></p>
-          <p className='menu-icon bg-activity'><FaReact /><span>React</span></p>
+          <p className='menu-icon'><span>UTF-8</span></p>
 
         </div>
       </div>

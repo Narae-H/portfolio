@@ -7,10 +7,9 @@
   height: var(--footer-height);
   background-color: var(--background-color);
   color: var(--active-text-color);
-  /* border-top: 1px solid var(--border-color); */
 }
 
-#status-wrapper .left-menu {
+#status-wrapper .left-menu, #status-wrapper .right-menu {
   display: flex;
   flex-direction: row;
   height: 100%;

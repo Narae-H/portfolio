@@ -4,6 +4,7 @@ import {
   , VscFolderLibrary
   , VscGithub
   , VscAccount
+  , VscMail
   , VscSettingsGear
 } from "react-icons/vsc"
 
@@ -14,6 +15,7 @@ const Components = {
   , VscFolderLibrary
   , VscGithub
   , VscAccount
+  , VscMail
   , VscSettingsGear
 }
 
