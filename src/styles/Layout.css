@@ -1,28 +1,4 @@
-/* Common styles */
-h1 {
-  font-size: 2.5rem;
-}
-.icon-lg {
-  font-size: 1.5em;
-  margin: 0 4px;
-}
-.f-blue {
-  color: #1f9cf0;
-}
-.f-grey {
-  color: var(--bs-gray);
-}
-#tooltip-activity-bar.na-tooltip {
-  color: var(--activitybar-text-color);
-  background-color: var(--activitybar-background);
-  border: 1px solid var(--activitybar-inactive-text-color);
-  border-radius: 5px;
-  font-size: var(--fs-small);
-  padding: 2px 5px;
-}
 
-
-/* For the Layout.js componet */
 #top-menu-bar {
   display: flex;
   flex-direction: row;
@@ -46,6 +22,15 @@ h1 {
   height: calc(100vh - var(--header-height) - var(--footer-height ));
   background-color: var(--activitybar-background);
   border-right: var(--border-color) 1px solid;
+}
+
+#tooltip-activity-bar.na-tooltip {
+  color: var(--activitybar-text-color);
+  background-color: var(--activitybar-background);
+  border: 1px solid var(--activitybar-inactive-text-color);
+  border-radius: 5px;
+  font-size: var(--fs-small);
+  padding: 2px 5px;
 }
 
 #editor-area {

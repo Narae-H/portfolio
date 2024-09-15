@@ -2,10 +2,10 @@ import { configureStore, createSlice } from '@reduxjs/toolkit'
 
 let mainMenu = createSlice({
   name: 'mainMenu',
-  initialState: [ {name: 'home'       , iconName:'VscFiles'}
-                , {name: 'skills'     , iconName:'VscCode'}
-                , {name: 'experiences', iconName:'VscFolderLibrary'}
-                , {name: 'github'     , iconName:'VscGithub'}],
+  initialState: [ {name: 'home'       , pageName: 'Home'       , iconName:'VscFiles'}
+                , {name: 'skills'     , pageName: 'Skills'     , iconName:'VscCode'}
+                , {name: 'experiences', pageName: 'Experiences', iconName:'VscFolderLibrary'}
+                , {name: 'github'     , pageName: '', iconName:'VscGithub'}],
   reducers: {
   }             
 });

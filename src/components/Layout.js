@@ -1,11 +1,20 @@
+import './../styles/Common.css';
 import './../styles/Layout.css';
+
+import { Routes, Route } from 'react-router-dom';
 
 import TopMenuBar from './TopMenuBar';
 import ActivityBar from './ActivityBar';
 import StatusBar from './StatusBar';
-import EditorArea from './EditorArea';
+
+import Home from './pages/Home';
+
+import { useSelector } from 'react-redux';
+import CapitalizedComponent from '../utils/common';
 
 function Layout() {
+  // 1. Menus
+  let mainMenu = useSelector( (state) => state.mainMenu );
 
   return (
     <>
@@ -19,7 +28,17 @@ function Layout() {
             <ActivityBar/>
           </div>
           <div id='editor-area'>
-            <EditorArea/>
+            <Routes>
+              {
+                mainMenu.map( (item)=>{
+                  return (
+                    <Route path={`/${item.name}`} element={<CapitalizedComponent type={item.pageName} />}></Route>
+                  )
+                })
+              }
+              <Route path='*' element={<Home />}></Route>
+            </Routes>
+
           </div>
         </div>
         
