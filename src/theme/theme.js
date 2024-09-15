@@ -5,7 +5,8 @@ export const defaultTheme = {
     background        : '#181818',
     inactiveTextColor : '#969696',
     activeTextColor   : '#ffffff',
-    border            : '#37373d'
+    border            : '#37373d',
+    pointColor        : '#0078d4;'
   },
   
   // Activity Bar
@@ -39,7 +40,8 @@ export const tokyoNightTheme = {
     background        : '#16161e',
     inactiveTextColor : '#787c99',
     activeTextColor   : '#A9B1D6',
-    border            : '#13131a'
+    border            : '#13131a',
+    pointColor        : '#13131a'
   },
 
   // Activity Bar

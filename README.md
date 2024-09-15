@@ -1,7 +1,7 @@
 # Technologies
 - Editor: VScode 
 - Languages: React, Redux, HTML, CSS, SVG
-- Libraries/Plugins: Axios, React-query, Bootstrap, styled-component
+- Libraries/Plugins: Axios, React-query, Bootstrap, styled-component, react-router
 - Applied normalise.css
 
 # THEME COLOR REFERENCE URL
@@ -54,3 +54,20 @@ I initially thought I could dynamically add components from object values. Howev
 To fix this, I had to rename the object by creating `CapitalizedComponent` in `common.js` to ensure the component names are capitalized.
 
 > [!NOTE] Ref: ref: [User-Defined Components Must Be Capitalized](https://legacy.reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized)
+
+## Create a component which has children compont and access the children from the parent component like Bootstrap
+I wanted to create a complex component like Bootstrap following the example.
+`HTML
+<EditorArea>
+  <EditorArea.Header>
+    <EditorArea.Tab></EditorArea.Tab>
+  </EditorArea.Header>
+
+  <EditorArea.Body>
+    <EditorArea.Title></EditorArea.Title>
+    <EditorArea.SubTitle></EditorArea.SubTitle>
+  </EditorArea.Body>
+</EditorArea>
+`
+
+Initially, I analysised the Bootstrap Card module.

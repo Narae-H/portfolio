@@ -17,7 +17,7 @@ function ActivityBar(){
               mainMenu.map( (iconObj)=>{
                 return(
                   <a 
-                    href={`#menu-${iconObj.name}`} 
+                    href={`/${iconObj.name}`} 
                     key={`tooltip-link-${iconObj.name}`} 
                     className={(iconObj.name === 'home')? 'na-nav-link active':'na-nav-link'} 
                     data-tooltip-id='tooltip-activity-bar' 

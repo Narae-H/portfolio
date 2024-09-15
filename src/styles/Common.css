@@ -1,0 +1,93 @@
+.icon-lg {
+  font-size: 1.5em;
+  margin: 0 4px;
+}
+.icon-xl {
+  font-size: 2em;
+}
+
+
+/* Overriding components in Bootstrap */
+/* Card: vertical */
+.na-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--editor-background);
+  font-size: var(--fs-small);
+  color: var(--editor-text-color);
+  border: none;
+}
+
+.na-card-header {
+padding: 0;
+margin: 0;
+border: var(--border-color) 1px solid;
+}
+
+.na-card-header-tabs {
+margin-left: -1px;
+margin-top: -1px;
+margin-bottom: 0;
+background-color: var(--editor-tab-background);
+}
+
+/* Card: horizontal*/
+.na-card.card-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* List */
+.na-list-group-item {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  background-color: var(--editor-background);
+  color: var(--editor-text-color);
+  border: none;
+}
+.na-list-group-item:hover {
+  background-color: var(--editor-background);
+  color: var(--editor-text-color);
+}
+.na-list-group a {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  color: var(--point-color);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.na-list-group a:hover {
+  color: var(--activitybar-active-border);
+  font-weight: bold;
+}
+.list-group-des{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+/* Nav */
+.na-nav-link {
+  padding: 6px;
+}
+.na-card .na-nav-link.na-active {
+  background-color: var(--editor-background);
+  color: var(--editor-text-color);
+  padding: 6px;
+  border: none;
+  border-right: var(--border-color) 1px solid;
+  border-top: var(--activitybar-active-border) 2px solid;
+  border-radius: 0;
+}
+
+
+
+
