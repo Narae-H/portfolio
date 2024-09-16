@@ -55,11 +55,12 @@ To fix this, I had to rename the object by creating `CapitalizedComponent` in `c
 
 > [!NOTE] Ref: ref: [User-Defined Components Must Be Capitalized](https://legacy.reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized)
 
-## Create a component which has children compont and access the children from the parent component like Bootstrap
-I wanted to create a complex component like Bootstrap following the example.
+## Compound Component Pattern
+Creating a parent component which has children compont and access the children from the parent component like Bootstrap like the following the example.
 `HTML
 <EditorArea>
   <EditorArea.Header>
+    <EditorArea.Tab></EditorArea.Tab>
     <EditorArea.Tab></EditorArea.Tab>
   </EditorArea.Header>
 
@@ -70,4 +71,5 @@ I wanted to create a complex component like Bootstrap following the example.
 </EditorArea>
 `
 
-Initially, I analysised the Bootstrap Card module.
+### What is the 'Compound Component Pattern'?
+Compound components are a React pattern that provides an expressive and flexible way for a parent component to communicate with its children, while expressively separating logic and UI.

@@ -26,7 +26,6 @@ const Components = {
 }
 
 export const CapitalizedComponent = ( props ) => {
-  console.log(props)
   let Component = Components[ props.type ];
   return (<Component { ...props } />);
 }

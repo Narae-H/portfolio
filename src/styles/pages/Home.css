@@ -10,6 +10,10 @@ padding: 3rem 10rem;
   margin: 1em 0;
 }
 
+.vscode-item {
+  color: #1f9cf0;
+}
+
 
 /* -------------------- */
 /* #home-editor-area {
