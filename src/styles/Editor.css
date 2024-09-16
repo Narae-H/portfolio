@@ -67,10 +67,23 @@
   color: var(--active-text-color);
 }
 
-.na-editor-icon {
+.na-editor-tab-icon {
   font-size: 1.5em;
   margin: 0 4px;
 }
-.na-editor-title {
+.na-editor-tab-title {
   margin-right: 12px;
+}
+.na-editor-title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.na-editor-subTitle {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.na-editor-subSubTitle {
+  font-size: 1.2rem;
+  margin: 0;
 }

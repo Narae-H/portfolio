@@ -1,10 +1,11 @@
-import { Card, ListGroup, Nav } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import './../../styles/pages/Home.css';
-import { VscClose, VscVariableGroup, VscVscode } from 'react-icons/vsc';
+import {VscVariableGroup, VscVscode } from 'react-icons/vsc';
 
 import { useSelector } from 'react-redux';
 import CapitalizedComponent from '../../utils/common';
 import { Editor } from '../Editor';
+import { Card } from '../Card';
 
 function Home() {
   // 1. Menus
@@ -25,40 +26,19 @@ function Home() {
         </Editor.Header>
 
         <Editor.Body id='editor-area-body'>
-          <div className='row'>
-            <h2>Narae Hyeon</h2>
-            <Card.Title className='text-secondary'>Full Stack Java Developer</Card.Title>
-          </div>
-
-        </Editor.Body>
-      </Editor>
-      
-      <Card className='na-card'>
-        <Card.Header className='na-card-header'>
-          <Nav variant="tabs" defaultActiveKey="#first" className='na-card-header-tabs'>
-            <Nav.Item>
-              <Nav.Link href="#first" className='na-nav-link na-active'>
-                <VscVscode className='na-nav-link-icon icon-lg'/> 
-                Welcome &nbsp;
-                <VscClose className='na-nav-link-icon icon-sm text-secondary'/>
-                </Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Card.Header>
-        <Card.Body id='editor-area-body' className='na-card-body'>
-          <div className='row'>
-            <h2>Narae Hyeon</h2>
-            <Card.Title className='text-secondary'>Full Stack Java Developer</Card.Title>
+          <div className='row mb-4'>
+            <Editor.Title>Narae Hyeon</Editor.Title>
+            <Editor.SubTitle className='text-secondary'>Full Stack Java Developer</Editor.SubTitle>
           </div>
           <div className='row'>
             <div className='col-lg-6 col-md-12'>
               <div className='mt-2 mb-2'>
-                <Card.Subtitle>Contents</Card.Subtitle>
+                <Editor.SubSubTitle>Contents</Editor.SubSubTitle>
                 <ListGroup variant="flush" className='na-list-group'>
                   {
                     mainMenu.map( (item) => {
                       return(
-                        <ListGroup.Item action href={`/${item.name}`} className='na-list-group-item'>
+                        <ListGroup.Item action href={`/${item.name}`} className='na-list-group-item' key={item.name}>
                           <CapitalizedComponent type={item.iconName}/><span>{item.name}</span>
                         </ListGroup.Item>
                       )
@@ -68,7 +48,7 @@ function Home() {
               </div>
               
               <div className='mt-2 mb-2'>
-                <Card.Subtitle>Experiences</Card.Subtitle>
+                <Editor.SubSubTitle>Experiences</Editor.SubSubTitle>
                 <ListGroup variant="flush" className='na-list-group'>
                   <ListGroup.Item className='na-list-group-item'>
                     <a href='#home'>Exp1</a>
@@ -79,8 +59,8 @@ function Home() {
             </div>
             <div className='col-lg-6 col-md-12'>
               <div className='mt-2 mb-2'>
-                <Card.Subtitle>Skills</Card.Subtitle>
-                <Card className='na-card card-horizontal'>
+                <Editor.SubSubTitle>Skills</Editor.SubSubTitle>
+                {/* <Card className='na-card card-horizontal'>
                   <VscVariableGroup className='na-card-icon icon-xl'/>
                   <Card.Body className='na-card-body'>
                     <p className=''>Card Title</p>
@@ -88,14 +68,24 @@ function Home() {
                       Some quick example text to build
                     </Card.Text>
                   </Card.Body>
+                </Card> */}
+                <Card>
+                  <Card.Img>
+                  <VscVariableGroup/>
+                  </Card.Img>
+                  <Card.Body>
+                    <Card.Title>Back-end developing</Card.Title>
+                    <Card.Description>This is description</Card.Description>
+                  </Card.Body>
+
                 </Card>
               </div>
             </div>
 
           </div>
-            
-        </Card.Body>
-      </Card>
+
+        </Editor.Body>
+      </Editor>
     </>
   )
 }

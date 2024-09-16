@@ -5,7 +5,9 @@ let mainMenu = createSlice({
   initialState: [ {name: 'home'       , pageName: 'Home'       , iconName:'VscFiles'}
                 , {name: 'skills'     , pageName: 'Skills'     , iconName:'VscCode'}
                 , {name: 'experiences', pageName: 'Experiences', iconName:'VscFolderLibrary'}
-                , {name: 'github'     , pageName: '', iconName:'VscGithub'}],
+                , {name: 'github'     , pageName: '', iconName:'VscGithub'}
+                // , {name: 'LinkedIn'   , pageName: '', iconName:'LiaLinkedin'}
+                ],
   reducers: {
   }             
 });

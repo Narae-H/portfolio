@@ -1,0 +1,20 @@
+.na-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-height: 5rem;
+  padding: 2px;
+  background-color: var(--editor-background);
+  color: var(--editor-text-color);
+}
+
+.na-card-img {
+  display: flex;
+  height: 100%;
+}
+
+.na-card-body {
+  display: flex;
+  height: 100%;
+}
