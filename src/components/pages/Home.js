@@ -4,6 +4,7 @@ import { VscClose, VscVariableGroup, VscVscode } from 'react-icons/vsc';
 
 import { useSelector } from 'react-redux';
 import CapitalizedComponent from '../../utils/common';
+import { Editor } from '../Editor';
 
 function Home() {
   // 1. Menus
@@ -11,6 +12,27 @@ function Home() {
 
   return(
     <>
+      <Editor>
+        <Editor.Header>
+          <Editor.HeaderTab>
+            <Editor.HeaderTabIcon> <VscVscode className='vscode-item' /> </Editor.HeaderTabIcon>
+            <Editor.HeaderTabTitle> Welcome </Editor.HeaderTabTitle>
+          </Editor.HeaderTab>
+          <Editor.HeaderTab>
+            <Editor.HeaderTabIcon><VscVscode/> </Editor.HeaderTabIcon> 
+            <Editor.HeaderTabTitle> Test </Editor.HeaderTabTitle>
+          </Editor.HeaderTab>
+        </Editor.Header>
+
+        <Editor.Body id='editor-area-body'>
+          <div className='row'>
+            <h2>Narae Hyeon</h2>
+            <Card.Title className='text-secondary'>Full Stack Java Developer</Card.Title>
+          </div>
+
+        </Editor.Body>
+      </Editor>
+      
       <Card className='na-card'>
         <Card.Header className='na-card-header'>
           <Nav variant="tabs" defaultActiveKey="#first" className='na-card-header-tabs'>
@@ -50,7 +72,7 @@ function Home() {
                 <ListGroup variant="flush" className='na-list-group'>
                   <ListGroup.Item className='na-list-group-item'>
                     <a href='#home'>Exp1</a>
-                    <p class='list-group-des'>Here is a description section Here is a description section Here is a description section</p>
+                    <p className='list-group-des'>Here is a description section Here is a description section Here is a description section</p>
                   </ListGroup.Item>
                 </ListGroup>
               </div>  

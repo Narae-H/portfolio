@@ -32,7 +32,7 @@ function Layout() {
               {
                 mainMenu.map( (item)=>{
                   return (
-                    <Route path={`/${item.name}`} element={<CapitalizedComponent type={item.pageName} />}></Route>
+                    <Route key={item} path={`/${item.name}`} element={<CapitalizedComponent type={item.pageName} />}></Route>
                   )
                 })
               }

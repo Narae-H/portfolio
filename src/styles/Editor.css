@@ -1,0 +1,76 @@
+.na-editor {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--editor-background);
+  font-size: var(--fs-small);
+  word-wrap: break-word;
+  color: var(--editor-text-color);
+  border: none;  
+}
+
+.na-editor-header {
+  padding: 0;
+  margin: 0;
+  border: var(--border-color) var(--border-width) solid;
+  font-size: var(--fs-small);
+  color: var(--editor-text-color);
+  background-color: var(--editor-background);
+  word-wrap: break-word;
+}
+.na-editor-header:first-child {
+  border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
+}
+
+.na-editor-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--border-width));
+  margin-top: calc(-1 * var(--border-width));
+  margin-bottom: 0;
+  padding-left: 0;
+  background-color: var(--editor-tab-background);
+}
+
+/* .na-editor-tab-item {
+
+} */
+
+.na-editor-tab-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--editor-background);
+  margin-bottom: calc(-1 * var(--border-width));
+  padding: 5px;
+  color: var(--editor-text-color);
+  border-bottom: var(--border-color) var(--border-width) solid;
+  border-right: var(--border-color) var(--border-width) solid;
+  border-radius: 0;
+  text-decoration: none;
+}
+.na-editor-tab-link.active {
+  border-top: var(--activitybar-active-border) var(--border-width) solid;
+  border-bottom: 0;
+  margin-bottom: calc( -1 * var(--border-width));
+} 
+.na-editor-tab-link::after {
+  content: '\00d7';
+  color: var(--inactive-text-color);
+  font-size: 16px;
+  font-weight: lighter;
+}
+.na-editor-tab-link:hover::after {
+  color: var(--active-text-color);
+}
+
+.na-editor-icon {
+  font-size: 1.5em;
+  margin: 0 4px;
+}
+.na-editor-title {
+  margin-right: 12px;
+}

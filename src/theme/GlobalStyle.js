@@ -24,6 +24,8 @@ export const GlobalStyle = createGlobalStyle`
     --c-white: #ffffff;
     --c-blue : #0078d4;
 
+    // border
+    --border-width: 1px;
 
     // Theme color
     --background-color   : ${ ({theme}) => theme.base.background };
