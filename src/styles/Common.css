@@ -9,7 +9,7 @@
 
 /* Overriding components in Bootstrap */
 /* Card: vertical */
-.na-card {
+/* .na-card {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -31,7 +31,7 @@ margin-left: -1px;
 margin-top: -1px;
 margin-bottom: 0;
 background-color: var(--editor-tab-background);
-}
+} */
 
 /* Card: horizontal*/
 .na-card.card-horizontal {
