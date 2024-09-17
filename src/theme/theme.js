@@ -19,10 +19,10 @@ export const defaultTheme = {
 
   // Primary-side-bar: Lists and trees
   list:{
-    inactiveSelectionBackground: '#252526',
+    inactiveSelectionBackground: '#2B2B2B',
     inactiveSelectionForeground: '#ffffff',
-    hoverForeground            : '#ffffff', // text color
-    hoverBackground            : '#2D2E2E'
+    hoverBackground            : '#262626',
+    hoverForeground            : '#ffffff' // text color
   }, 
 
   // Editor groups & tabs

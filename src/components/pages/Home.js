@@ -71,7 +71,7 @@ function Home() {
                 </Card> */}
                 <Card>
                   <Card.Img>
-                  <VscVariableGroup/>
+                  <VscVariableGroup className='icon-lg'/>
                   </Card.Img>
                   <Card.Body>
                     <Card.Title>Back-end developing</Card.Title>
