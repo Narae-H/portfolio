@@ -63,7 +63,7 @@ background-color: var(--editor-tab-background);
 }
 .na-list-group a:hover {
   color: var(--activitybar-active-border);
-  font-weight: bold;
+  font-family: 'mono-space-neon';
 }
 .list-group-des{
   margin: 0;

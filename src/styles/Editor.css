@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--editor-background);
-  font-size: var(--fs-small);
+  font-size: var(--fs-medium);
   word-wrap: break-word;
   color: var(--editor-text-color);
   border: none;  
@@ -77,13 +77,13 @@
 .na-editor-title {
   margin: 0;
   font-size: 2.2rem;
-  font-weight: 600;
+  font-family: 'mono-space-neon', monospace;
 }
 .na-editor-subTitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0;
 }
 .na-editor-subSubTitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0;
 }

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import monoSpaceNeon from './../assets/fonts/MonaspaceNeon-Regular.otf';
-import monoSpaceNeonLight from './../assets/fonts/MonaspaceArgon-Light.otf';
+import monoSpaceNeonLight from './../assets/fonts/MonaspaceNeon-Light.otf';
+import monoSpaceNeonExtraLight from './../assets/fonts/MonaspaceNeon-ExtraLight.otf';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -11,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
     // Font size
     --fs-large : 20px;
-    --fs-medium: 16px;
+    --fs-medium: 14px;
     --fs-small : 12px;
     --fs-xsmall: 10px;
     // --fs-large : 1.2rem;
@@ -51,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
 
   @font-face {
     font-family: 'mono-space-neon';
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
     src: url(${monoSpaceNeon}) format('truetype');
   }
@@ -60,6 +61,12 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     font-style: normal;
     src: url(${monoSpaceNeonLight}) format('truetype');
+  }
+  @font-face {
+    font-family: 'mono-space-neon-extralight';
+    font-weight: 200;
+    font-style: normal;
+    src: url(${monoSpaceNeonExtraLight}) format('truetype');
   }
   body {
     font-family: 'mono-space-neon-light', monospace;
