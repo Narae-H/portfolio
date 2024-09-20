@@ -9,7 +9,7 @@ export const defaultTheme = {
     pointColor        : '#0078d4;'
   },
   
-  // Activity Bar
+  // Activity bar
   activitybar: {
     background         : '#181818',
     foreground         : '#ffffff', // icon colour
@@ -19,10 +19,13 @@ export const defaultTheme = {
 
   // Primary-side-bar: Lists and trees
   list:{
-    inactiveSelectionBackground: '#2B2B2B',
+    inactiveSelectionBackground: '#181818',
     inactiveSelectionForeground: '#ffffff',
     hoverBackground            : '#262626',
-    hoverForeground            : '#ffffff' // text color
+    hoverForeground            : '#ffffff', // text color
+    searchAreaBackground       : '#313131',
+    searchAreaForeground       : '#747474',
+    searchAreaActiveBorder     : '#0078d4'
   }, 
 
   // Editor groups & tabs
@@ -57,7 +60,10 @@ export const tokyoNightTheme = {
     inactiveSelectionBackground: '#16161e',
     inactiveSelectionForeground: '#787c99',
     hoverForeground            : '#a9b1d6', // text color
-    hoverBackground            : '#2D2E2E'
+    hoverBackground            : '#2D2E2E',
+    searchAreaBackground       : '#313131',
+    searchAreaForeground       : '#747474',
+    searchAreaActiveBorder     : '#0078d4'
   }, 
   
   // Editor groups & tabs

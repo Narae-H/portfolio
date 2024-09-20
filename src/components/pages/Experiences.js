@@ -1,9 +1,11 @@
 function Experiences () {
-  <>
-    <div style={{ color: '#fff'}}>
-        Experiences
-    </div>
-  </>
+  return (
+    <>
+      <div style={{ color: '#fff'}}>
+          Experiences
+      </div>
+    </>
+  )
 }
 
 export default Experiences;

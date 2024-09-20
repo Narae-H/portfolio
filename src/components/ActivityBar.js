@@ -13,21 +13,21 @@ function ActivityBar(){
     <>
       <div id='activity-wrapper'>
         <div className='top-menu'>
-            {
-              mainMenu.map( (iconObj)=>{
-                return(
-                  <a 
-                    href={`/${iconObj.name}`} 
-                    key={`tooltip-link-${iconObj.name}`} 
-                    className={(iconObj.name === 'home')? 'na-nav-link active':'na-nav-link'} 
-                    data-tooltip-id='tooltip-activity-bar' 
-                    data-tooltip-place='right'
-                    data-tooltip-content={iconObj.name}>
-                    <CapitalizedComponent type={iconObj.iconName} className='activity-icon' />
-                  </a>
-                )
-              })
-            }
+          {
+            mainMenu.map( (iconObj)=>{
+              return(
+                <a 
+                  href={`/${iconObj.name}`} 
+                  key={`tooltip-link-${iconObj.name}`} 
+                  className={(iconObj.name === 'home')? 'na-nav-link active':'na-nav-link'} 
+                  data-tooltip-id='tooltip-activity-bar' 
+                  data-tooltip-place='right'
+                  data-tooltip-content={iconObj.name}>
+                  <CapitalizedComponent type={iconObj.iconName} className='activity-icon' />
+                </a>
+              )
+            })
+          }
         </div>
 
         <div className='bottom-menu'>
@@ -48,7 +48,7 @@ function ActivityBar(){
         }
         </div>
 
-        <Tooltip id='tooltip-activity-bar' className="na-tooltip" style={{backbround: 'yellow'}}/>
+        <Tooltip id='tooltip-activity-bar' className="na-tooltip"/>
       
       </div>
     </>

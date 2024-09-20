@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 #status-wrapper {
   display: flex;
   flex-direction: row;
@@ -16,13 +20,24 @@
 }
 
 #status-wrapper .menu-icon {
-  align-items: center;
-  padding: 0 10px 0 5px;
+  height: 100%;
+  padding: 0 10px;
   font-size: var(--fs-xsmall);
   border-radius: 0;
+  gap: 0.5em;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 .menu-icon.bg-activity {
   background-color: var(--activitybar-active-border); 
+}
+.menu-icon.link {
+  cursor: pointer;
+}
+.menu-icon p {
+  margin: 0;
+  padding: 0;
 }
 .status-icon{
   margin: 0 5px;

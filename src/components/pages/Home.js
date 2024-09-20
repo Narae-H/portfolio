@@ -32,7 +32,7 @@ function Home() {
           </div>
           <div className='row'>
             <div className='col-lg-6 col-md-12'>
-              <div className='mt-2 mb-2'>
+              <div className='mt-2 mb-4'>
                 <Editor.SubSubTitle>Contents</Editor.SubSubTitle>
                 <ListGroup variant="flush" className='na-list-group'>
                   {
@@ -47,29 +47,23 @@ function Home() {
                 </ListGroup>
               </div>
               
-              <div className='mt-2 mb-2'>
+              <div className='mt-2 mb-4'>
                 <Editor.SubSubTitle>Experiences</Editor.SubSubTitle>
                 <ListGroup variant="flush" className='na-list-group'>
                   <ListGroup.Item className='na-list-group-item'>
                     <a href='#home'>Exp1</a>
                     <p className='list-group-des'>Here is a description section Here is a description section Here is a description section</p>
                   </ListGroup.Item>
+                  <ListGroup.Item className='na-list-group-item'>
+                    <a href='#home'>More...</a>
+                  </ListGroup.Item>
                 </ListGroup>
               </div>  
             </div>
             <div className='col-lg-6 col-md-12'>
-              <div className='mt-2 mb-2'>
+              <div className='mt-2 mb-4'>
                 <Editor.SubSubTitle>Skills</Editor.SubSubTitle>
-                {/* <Card className='na-card card-horizontal'>
-                  <VscVariableGroup className='na-card-icon icon-xl'/>
-                  <Card.Body className='na-card-body'>
-                    <p className=''>Card Title</p>
-                    <Card.Text>
-                      Some quick example text to build
-                    </Card.Text>
-                  </Card.Body>
-                </Card> */}
-                <Card>
+                <Card className='important'>
                   <Card.Img>
                   <VscVariableGroup className='icon-lg'/>
                   </Card.Img>
@@ -77,11 +71,18 @@ function Home() {
                     <Card.Title>Back-end developing</Card.Title>
                     <Card.Description>This is description</Card.Description>
                   </Card.Body>
-
+                </Card>
+                <Card>
+                  <Card.Img>
+                  <VscVariableGroup className='icon-lg'/>
+                  </Card.Img>
+                  <Card.Body>
+                    <Card.Title>Fornt-end developing</Card.Title>
+                    <Card.Description>This is description</Card.Description>
+                  </Card.Body>
                 </Card>
               </div>
             </div>
-
           </div>
 
         </Editor.Body>

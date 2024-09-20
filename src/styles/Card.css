@@ -4,8 +4,9 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
-  max-height: 3rem;
-  padding: 5px;
+  max-height: 5rem;
+  padding: 10px;
+  margin: 0.75rem 0;
   background-color: var(--list-inactive-selection-background);
   color: var(--list-inactive-selection-text-color);
   border-radius: 5px;
@@ -15,17 +16,7 @@
   background-color: var(--list-hover-background);
   color: var(--list-hover-text-color);
 }
-/* .na-card.important:after {
-  content: '\2605';
-  position: absolute;
-  top:0;
-  left:0;
-  display: flex;
-  border-top: 10px solid var(--point-color);
-  border-left: 10px solid var(--point-color);
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-} */
+
 .important-icon-area {
   display: none;
 }
@@ -66,4 +57,8 @@
   flex-direction: column;
   width: 90%;
   height: 100%;
+  margin-left: 6px;
+}
+.na-card-description {
+  font-size: var(--fs-small);
 }

@@ -5,6 +5,13 @@ import monoSpaceNeonExtraLight from './../assets/fonts/MonaspaceNeon-ExtraLight.
 
 export const GlobalStyle = createGlobalStyle`
   :root {
+    // Breakpoints: The values cannot be directly used in media query values in CSS, but they can be written down to display the breakpoint.
+    // --bp-sm : 576px;
+    // --bp-md : 768px;
+    // --bp-lg : 992px;
+    // --bp-xl : 1200px;
+    // --bp-xxl: 1400px;
+
     // Width/Hieght
     --header-height     : 40px;
     --footer-height     : 25px;
@@ -44,6 +51,9 @@ export const GlobalStyle = createGlobalStyle`
     --list-inactive-selection-text-color: ${ ({theme}) => theme.list.inactiveSelectionForeground };
     --list-hover-text-color             : ${ ({theme}) => theme.list.hoverForeground };
     --list-hover-background             : ${ ({theme}) => theme.list.hoverBackground };
+    --list-search-area-background       : ${ ({theme}) => theme.list.searchAreaBackground };
+    --list-search-area-foreground       : ${ ({theme}) => theme.list.searchAreaForeground };
+    --list-search-area-active-border    : ${ ({theme}) => theme.list.searchAreaActiveBorder };
     
     --editor-tab-background: ${ ({theme}) => theme.editor.tabBackground };
     --editor-background    : ${ ({theme}) => theme.editor.background };

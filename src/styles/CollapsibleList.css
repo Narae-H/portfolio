@@ -1,0 +1,83 @@
+ul, .na-collapsible-list {
+  list-style-type: none;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */
+  transform: rotate(90deg);  
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+/* .na-collapsible-list, 
+.na-collapsible-list-item {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.na-collapsible-list {
+  --depth: 1;
+}
+
+.na-collapsible-list-item {
+  padding: 0.5em 1em 0.5em calc(2em * var(--depth));
+  margin: 0 0 3px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.na-collapsible-list-item:hover,
+.na-collapsible-list li:has(.na-collapsible-list-item.active) > .na-collapsible-list-item,
+.na-collapsible-list-item.active {
+  background-color: rgb(var(--color-primary-rgb));
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  cursor: pointer;
+}
+
+.na-collapsible-list-item:has(+ .na-collapsible-list)::before {
+  content: '';
+  display: block;
+  position: absolute;
+  margin-left: -1.15em;
+  width: 0.3em;
+  height: 0.3em;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  transform: rotate(-45deg);
+  transition: transform 300ms;
+}
+
+.na-collapsible-list .na-collapsible-list {
+  overflow-y: hidden;
+  height: 0;
+}
+.na-collapsible-list .na-collapsible-list.open {
+  height: auto;
+}
+.na-collapsible-list .na-collapsible-list-item:has(+ .na-collapsible-list.open)::before {
+  transform: rotate(45deg);
+} */

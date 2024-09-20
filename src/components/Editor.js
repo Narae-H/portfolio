@@ -1,12 +1,7 @@
 import './../styles/Editor.css'
 import React from "react";
 
-
 // const EditorContext = React.createContext();
-
-// const useEditorContext = () => {
-//   const context = React.useContext(Editor)
-// }
 
 export function Editor (props) {
   return(
