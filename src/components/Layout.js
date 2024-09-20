@@ -11,6 +11,7 @@ import Home from './pages/Home';
 
 import { useSelector } from 'react-redux';
 import CapitalizedComponent from '../utils/common';
+import Skills from './pages/Skills';
 
 function Layout() {
   // 1. Menus
@@ -32,7 +33,7 @@ function Layout() {
               {
                 mainMenu.map( (item)=>{
                   return (
-                    <Route key={item} path={`/${item.name}`} element={<CapitalizedComponent type={item.pageName} />}></Route>
+                    <Route key={item} path={`/${item.name}`} element={<CapitalizedComponent type={item.pageName} />} />
                   )
                 })
               }

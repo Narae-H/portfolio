@@ -1,9 +1,10 @@
 import './../styles/Card.css';
 
 export function Card(props) {
+  console.log(props);
   return (
     <>
-      <div id={props.id} className={`na-card important ${props.className}`}>
+      <div id={props.id} className={`na-card ${props.className}`}>
         {props.children}
         <div className='important-icon-area'>
           <div className='icon'>&#9733;</div>
@@ -42,6 +43,7 @@ function Title({ children, id, className, ...props }) {
     </>
   )
 }
+
 function Description({ children, id, className, ...props }) {
   return(
     <>

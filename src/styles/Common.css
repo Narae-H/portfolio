@@ -65,6 +65,10 @@ background-color: var(--editor-tab-background);
   color: var(--activitybar-active-border);
   font-family: 'mono-space-neon';
 }
+.na-list-group a:active, .na-list-group a:focus {
+  background-color: transparent;
+  color: var(--point-color);
+}
 .list-group-des{
   margin: 0;
   padding: 0;
@@ -87,6 +91,7 @@ background-color: var(--editor-tab-background);
   border-top: var(--activitybar-active-border) 2px solid;
   border-radius: 0;
 }
+
 
 
 
