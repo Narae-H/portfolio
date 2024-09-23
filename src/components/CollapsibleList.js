@@ -3,7 +3,12 @@ import './../styles/CollapsibleList.css';
 // 현재코드: https://codepen.io/ryomario/pen/XWwRrej
 // 참고1(부트스트랩X): https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_treeview
 // 참고2(부트스트랩O): https://codepen.io/grzegorz-rogala/pen/YzjgYRa
+
+// rsuite: https://codesandbox.io/p/sandbox/affectionate-swanson-67vm2h?file=%2Findex.js%3A15%2C21
 export function CollapsibleList(props) {
+  console.log("<ul>");
+  console.log(props);
+  console.log("<ul>");
   return (
     <>
       <ul className='na-collapsible-list'>
@@ -14,11 +19,41 @@ export function CollapsibleList(props) {
 }
 
 
-function Item({ children, id, className, ...props }) {
+function Ul({ children, id, className, ...props }) {
+  console.log("<li>");
+  console.log(props);
+  console.log("<li>");
+
   return (
     <li className='na-collapsible-list-item'>
-      <a href='#' class='na-collapsible-list-link'></a>
-      { children }
+      {/* <a href='#' class='na-collapsible-list-link'></a> */}
+      {children}
+    </li>
+  )
+}
+
+function Li({ children, id, className, ...props }) {
+  console.log("<li>");
+  console.log(props);
+  console.log("<li>");
+
+  return (
+    <li className='na-collapsible-list-item'>
+      {/* <a href='#' class='na-collapsible-list-link'></a> */}
+      {children}
+    </li>
+  )
+}
+
+function Item({ children, id, className, ...props }) {
+  console.log("<li>");
+  console.log(props);
+  console.log("<li>");
+
+  return (
+    <li className='na-collapsible-list-item'>
+      {/* <a href='#' class='na-collapsible-list-link'></a> */}
+      {children}
     </li>
   )
 }
