@@ -55,6 +55,18 @@ To fix this, I had to rename the object by creating `CapitalizedComponent` in `c
 
 > [!NOTE] Ref: ref: [User-Defined Components Must Be Capitalized](https://legacy.reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized)
 
+I need this for my icons. I added icons on the side menu and the icons should be passsed to the ActivityBar component. However, the props in redux makes the tag as a lower case when they passing it.  
+<b>First attempt</b>: created common.js and chage 
+the lower case tag to upper case componet
+```HTML
+export const CapitalizedComponent = ( props ) => {
+  let Component = Components[ props.type ];
+  return (<Component { ...props } />);
+}
+```
+<b>Second attempt</b>: use `icon:Icon` destructuring to rename the icon prop to Icon (with a captital 'I'), allowing it to be used as componet when it passed via attributes.
+
+
 ## Compound Component Pattern
 Creating a parent component which has children compont and access the children from the parent component like Bootstrap like the following the example.
 `HTML

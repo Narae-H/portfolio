@@ -6,33 +6,6 @@
   font-size: 2em;
 }
 
-
-/* Overriding components in Bootstrap */
-/* Card: vertical */
-/* .na-card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  background-color: var(--editor-background);
-  font-size: var(--fs-small);
-  color: var(--editor-text-color);
-  border: none;
-}
-
-.na-card-header {
-padding: 0;
-margin: 0;
-border: var(--border-color) 1px solid;
-}
-
-.na-card-header-tabs {
-margin-left: -1px;
-margin-top: -1px;
-margin-bottom: 0;
-background-color: var(--editor-tab-background);
-} */
-
 /* Card: horizontal*/
 .na-card.card-horizontal {
   display: flex;

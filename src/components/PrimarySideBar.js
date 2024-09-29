@@ -1,45 +1,43 @@
 import { VscClearAll } from 'react-icons/vsc'
 import './../styles/PrimarySideBar.css'
 
-export function PrimarySideBar(props) {
+export const PrimarySideBar = ({ children,  id = '', className = '' }) => {
   return (
     <>
-      <div id={props.id} className={`na-primary-sidebar ${props.className}`}>
-        { props.children }
+      <div id={id} className={`na-primary-sidebar ${className}`.trim()}>
+        {children}
       </div>
     </>
   )
 }
 
-function Header({ children, id, className, ...props }) {
+
+const Header = ({ children, id = '', className = '', ...props }) => {
   return (
     <>
-      <div className='na-primary-sidebar-header'>
+      <div id={id} className={`na-primary-sidebar-header ${className}`.trim()} {...props}>
         { children }
       </div>
     </>
   )
 }
 
-function Title({ children, id, className, ...props }) {
+const Title = ({ children, id = '', className = '', title,  ...props }) => {
   return(
     <>
-      <div id={props.id} className={`na-primary-sidebar-title ${props.className}`}>
-        { children }
+      <div id={id} className={`na-primary-sidebar-title ${className}`.trim()} {...props}>
+        { title || children}
       </div>
     </>
   )
 }
 
-function SearchArea({ children, id, className, ...props }) {
+const SearchArea = ({ children, id = '', className = '', ...props }) => {
   return (
     <>
-      {/* <div className='na-primary-sidebar-search-area'>
-        { children }
-      </div> */}
-      <div className='na-primary-sidebar-search-area'>
+      <div id={id} className={`na-primary-sidebar-search-area ${className}`.trim() } {...props} >
         <input type='text' className='na-primary-sidebar-search'>
-          { children }
+          {children}
         </input>
         <div className='na-clear-button lg-icon'>
           <VscClearAll />
@@ -49,11 +47,11 @@ function SearchArea({ children, id, className, ...props }) {
   )
 }
 
-function Body({ children, id, className, ...props }) {
+const Body = ({ children, id = '', className = '', ...props }) => {
   return (
     <>
-      <div className='na-primary-sidebar-body'>
-        { children }
+      <div id={id} className={`na-primary-sidebar-body ${className}`.trim()} {...props} >
+        {children}
       </div>
     </>
   )

@@ -1,14 +1,22 @@
 import './../styles/ActivityBar.css';
 
-import { Tooltip } from 'react-tooltip';
-import CapitalizedComponent from '../utils/common';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { Tooltip } from './Tooltip';
+import { Icon } from '../assets/customIcon/Icon';
 
 function ActivityBar(){
   // 1. Menus
   let mainMenu = useSelector( (state) => state.mainMenu );
   let subMenu  = useSelector( (state) => state.subMenu );
 
+  // 2. Get the current page
+  let location  = useLocation();
+  const isActive = (itemPath) => {
+    return location.pathname === `/${itemPath}`;
+  };
+  
+  
   return(
     <>
       <div id='activity-wrapper'>
@@ -16,15 +24,11 @@ function ActivityBar(){
           {
             mainMenu.map( (iconObj)=>{
               return(
-                <a 
-                  href={`/${iconObj.name}`} 
-                  key={`tooltip-link-${iconObj.name}`} 
-                  className={(iconObj.name === 'home')? 'na-nav-link active':'na-nav-link'} 
-                  data-tooltip-id='tooltip-activity-bar' 
-                  data-tooltip-place='right'
-                  data-tooltip-content={iconObj.name}>
-                  <CapitalizedComponent type={iconObj.iconName} className='activity-icon' />
-                </a>
+                <Tooltip content={iconObj.tooltip} position="right" hasArrow={true} key={iconObj.name}>
+                  <a href={`/${iconObj.name}`} className={`na-nav-link ${isActive(iconObj.name) ? 'active' : ''}`}>
+                    <Icon name={iconObj.name} className='activity-icon'/>
+                  </a>
+                </Tooltip>
               )
             })
           }
@@ -34,22 +38,15 @@ function ActivityBar(){
         {
           subMenu.map( (iconObj)=>{
             return(
-              <a 
-                href={`#menu-${iconObj.name}`} 
-                key={`tooltip-link-${iconObj.name}`} 
-                className='na-nav-link' 
-                data-tooltip-id='tooltip-activity-bar' 
-                data-tooltip-place='right'
-                data-tooltip-content={iconObj.name}>
-                <CapitalizedComponent type={iconObj.iconName} className='activity-icon'/>
-              </a>
+              <Tooltip content={iconObj.tooltip} position="right" hasArrow={true} key={iconObj.name}>
+                <a href={`/${iconObj.name}`} className={`na-nav-link ${isActive(iconObj.name) ? 'active' : ''}`}>
+                  <Icon name={iconObj.name} className='activity-icon'/>
+                </a>
+              </Tooltip>
             )
           })
         }
         </div>
-
-        <Tooltip id='tooltip-activity-bar' className="na-tooltip"/>
-      
       </div>
     </>
   )

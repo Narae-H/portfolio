@@ -4,7 +4,7 @@ export const defaultTheme = {
   base: {
     background        : '#181818',
     inactiveTextColor : '#969696',
-    activeTextColor   : '#ffffff',
+    activeTextColor   : '#cccccc',
     border            : '#37373d',
     pointColor        : '#0078d4;'
   },
@@ -12,7 +12,7 @@ export const defaultTheme = {
   // Activity bar
   activitybar: {
     background         : '#181818',
-    foreground         : '#ffffff', // icon colour
+    foreground         : '#cccccc', // icon colour
     inactiveForeground : '#7b7b7b', // icon colour when it is inactive
     activeBorder       : '#0078d4' // Active indicator border colour
   },
@@ -20,9 +20,9 @@ export const defaultTheme = {
   // Primary-side-bar: Lists and trees
   list:{
     inactiveSelectionBackground: '#181818',
-    inactiveSelectionForeground: '#ffffff',
+    inactiveSelectionForeground: '#cccccc',
     hoverBackground            : '#262626',
-    hoverForeground            : '#ffffff', // text color
+    hoverForeground            : '#cccccc', // text color
     searchAreaBackground       : '#313131',
     searchAreaForeground       : '#747474',
     searchAreaActiveBorder     : '#0078d4'
@@ -32,7 +32,21 @@ export const defaultTheme = {
   editor: {
     tabBackground: '#181818',
     background   : '#1e1e1e',
-    foreground   : '#ffffff'
+    foreground   : '#cccccc'
+  },
+
+  // Scrollbar
+  scrollbar: {
+    trackColor: '#cccccc',
+    thumbColor: '#181818',
+    thumbHoverColor: 'rgba(248, 248, 248, 0.1)',
+  },
+
+  // Tooltip
+  tooltip: {
+    background: '#1e1e1e',
+    foreground: '#cccccc',
+    border: '#454545',
   }
 }
 
@@ -71,6 +85,19 @@ export const tokyoNightTheme = {
     tabBackground: '#16161e',
     background   : '#1a1b26',
     foreground   : '#c0caf5'
+  },
+
+  // Scrollbar
+   scrollbar: {
+    trackColor: '#37373d',
+    thumbColor: '#ffffff'
+  },
+
+  // Tooltip
+  tooltip: {
+    background: '#1e1e1e',
+    foreground: '#cccccc',
+    border: '#cccccc',
   }
 
 }

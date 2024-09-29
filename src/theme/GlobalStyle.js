@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components";
-import monoSpaceNeon from './../assets/fonts/MonaspaceNeon-Regular.otf';
-import monoSpaceNeonLight from './../assets/fonts/MonaspaceNeon-Light.otf';
-import monoSpaceNeonExtraLight from './../assets/fonts/MonaspaceNeon-ExtraLight.otf';
+import monoSpaceNeon from './../assets/fonts/MonaspaceNeon-Regular.woff';
+import monoSpaceNeonLight from './../assets/fonts/MonaspaceNeon-Light.woff';
+import monoSpaceNeonExtraLight from './../assets/fonts/MonaspaceNeon-ExtraLight.woff';
+import monoSpaceNeonBold from './../assets/fonts/MonaspaceNeon-SemiBold.woff';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -58,7 +59,15 @@ export const GlobalStyle = createGlobalStyle`
     --editor-tab-background: ${ ({theme}) => theme.editor.tabBackground };
     --editor-background    : ${ ({theme}) => theme.editor.background };
     --editor-text-color    : ${ ({theme}) => theme.editor.foreground };
-    }
+
+    --scrollbar-track-color: ${({theme}) => theme.scrollbar.trackColor};
+    --scrollbar-thumb-color: ${({theme}) => theme.scrollbar.thumbColor};
+    --scrollbar-thumb-hover-color: ${({theme}) => theme.scrollbar.thumbHoverColor};
+
+    --tooltip-background: ${({theme}) => theme.tooltip.background};
+    --tooltip-text      : ${({theme}) => theme.tooltip.foreground};
+    --tooltip-border    : ${({theme}) => theme.tooltip.border};
+  }
 
   @font-face {
     font-family: 'mono-space-neon';
@@ -74,9 +83,14 @@ export const GlobalStyle = createGlobalStyle`
   }
   @font-face {
     font-family: 'mono-space-neon-extralight';
-    font-weight: 200;
+    font-weight: 100;
     font-style: normal;
     src: url(${monoSpaceNeonExtraLight}) format('truetype');
+  }
+  @font-face {
+    font-family: 'mono-space-neon-bold';
+    font-style: normal;
+    src: url(${monoSpaceNeonBold}) format('truetype');
   }
   body {
     font-family: 'mono-space-neon-light', monospace;

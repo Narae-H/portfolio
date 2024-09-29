@@ -3,9 +3,9 @@ import './../../styles/pages/Home.css';
 import {VscVariableGroup, VscVscode } from 'react-icons/vsc';
 
 import { useSelector } from 'react-redux';
-import CapitalizedComponent from '../../utils/common';
 import { Editor } from '../Editor';
 import { Card } from '../Card';
+import { Icon } from '../../assets/customIcon/Icon';
 
 function Home() {
   // 1. Menus
@@ -39,7 +39,7 @@ function Home() {
                     mainMenu.map( (item) => {
                       return(
                         <ListGroup.Item action href={`/${item.name}`} className='na-list-group-item' key={item.name}>
-                          <CapitalizedComponent type={item.iconName}/><span>{item.name}</span>
+                          <Icon name={item.name}/> <span>{item.name}</span>
                         </ListGroup.Item>
                       )
                     })
