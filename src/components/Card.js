@@ -1,7 +1,6 @@
 import './../styles/Card.css';
 
 export function Card(props) {
-  console.log(props);
   return (
     <>
       <div id={props.id} className={`na-card ${props.className}`}>

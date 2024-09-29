@@ -3,22 +3,22 @@ import React from "react";
 
 // const EditorContext = React.createContext();
 
-export function Editor (props) {
+export const Editor = ({ children,  id = '', className = '', ...props }) => {
   return(
     <>
-      <div id={props.id} className={`na-editor ${props.className}`}>
+      <div id={id} className={`na-editor ${className}`.trim()} >
         {/* <EditorContext.Provider value={{props}}> */}
-          {props.children}
+          { children }
         {/* </EditorContext.Provider> */}
       </div>
     </>
   )
 }
 
-function Header({ children, id, className, ...props }) {
+const Header = ({ children, id, className, ...props }) => {
   return(
     <>
-      <div id={id} className={`na-editor-header ${className}`}>
+      <div id={id} className={`na-editor-header ${className}`.trim()} >
         <div className='na-editor-tabs'>
           { children }
         </div>
@@ -27,10 +27,10 @@ function Header({ children, id, className, ...props }) {
   )
 }
 
-function HeaderTab({ children, id, className, ...props }) {
+const HeaderTab = ({ children, id, className, ...props }) => {
   return(
     <>
-      <div id={id} className={`na-editor-tab-item ${className}`}>
+      <div id={id} className={`na-editor-tab-item ${className}`.trim()}>
         <a href='#link' className='na-editor-tab-link'>
           { children }
         </a>
@@ -39,58 +39,58 @@ function HeaderTab({ children, id, className, ...props }) {
   )
 }
 
-function HeaderTabIcon ({ children, id, className, ...props }) {
+const HeaderTabIcon = ({ children, id, className, ...props }) => {
   return (
-    <span id={id} className={`na-editor-tab-icon ${className}`}>
-      {children}
-    </span>
-  )
-}
-function HeaderTabTitle ({ children, id, className, ...props }) {
-  return (
-    <span id={id} className={`na-editor-tab-title ${className}`}>
+    <span id={id} className={`na-editor-tab-icon ${className}`.trim()}>
       {children}
     </span>
   )
 }
 
-function Body({ children, id, className, ...props }) {
+const HeaderTabTitle = ({ children, id, className, ...props }) => {
+  return (
+    <span id={id} className={`na-editor-tab-title ${className}`.trim()}>
+      {children}
+    </span>
+  )
+}
+
+const Body = ({ children, id, className, ...props }) => {
   return(
     <>
-      <div id={id} className={`na-editor-body ${className}`}>
+      <div id={id} className={`na-editor-body ${className}`.trim()}>
         { children }
       </div>
     </>
   )
 }
-function Title({ children, id, className, ...props }) {
+const Title = ({ children, id, className, ...props }) => {
   return(
     <>
-      <h1 id={id} className={`na-editor-title ${className}`}>
+      <h1 id={id} className={`na-editor-title ${className}`.trim()}>
         { children }
       </h1>
     </>
   )
 }
-function SubTitle({ children, id, className, ...props }) {
+const SubTitle = ({ children, id, className, ...props }) => {
   return(
     <>
-      <h2 id={id} className={`na-editor-subTitle ${className}`}>
+      <h2 id={id} className={`na-editor-subTitle ${className}`.trim()}>
         { children }
       </h2>
     </>
   )
 }
-function SubSubTitle({ children, id, className, ...props }) {
+const SubSubTitle = ({ children, id, className, ...props }) => {
   return(
     <>
-      <h3 id={id} className={`na-editor-subSubTitle ${className}`}>
+      <h3 id={id} className={`na-editor-subSubTitle ${className}`.trim()}>
         { children }
       </h3>
     </>
   )
 }
-
 
 
 Editor.Header = Header;

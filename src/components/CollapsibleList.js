@@ -14,30 +14,48 @@ export const CollapsibleList = ({ children, defaultOpenLevels = 1 }) => {
   );
 };
 
-const ListItem = ({ children, title, level = 1 }) => {
+const ListItem = ({ children, title, icon, level = 1, ...props }) => {
+  // 1. Get the current level of list
   const { defaultOpenLevels } = useContext(CollapsibleListContext);
   const [isOpen, setIsOpen] = useState(level <= defaultOpenLevels);
-  const hasChildren = React.Children.toArray(children).some(child => child.type === ListItem);
 
+  // 2. ListItem children
+  let childrenCount = 0;
+  let hasChildren   = false;
+  React.Children.toArray(children).forEach(child => {
+    if( child.type === ListItem ){
+      childrenCount += 1;
+      hasChildren = true;
+    }
+  });
+
+  //3. Toggle:open/close menu
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
     <>
       <div className={`list-item ${isOpen ? 'open' : ''}`}>
         <div className="list-item-header" onClick={toggleOpen} style={{ '--depth': level - 1 }}>
-          {hasChildren && (
+          { hasChildren && (
             <span className="toggle-icon">
               {isOpen ? <VscChevronDown /> : <VscChevronRight />}
             </span>
           )}
-          <span className="list-item-content">{title || children}</span>
+          <span className="list-item-content">
+            {icon && ( React.isValidElement(icon)? icon : <icon className='title-icon'/>)}
+            {<span className='list-title-name'> {title} </span> || children}
+          </span>
         </div>
-        {hasChildren && isOpen && (
-        <div className="list-item-children">
-          {React.Children.map(children, child => 
-            child.type === ListItem ? React.cloneElement(child, { level: level + 1 }) : null
+          { hasChildren && (
+            <div className="list-item-children" style={{ '--childrenCount': childrenCount }}>
+            {isOpen && (
+            <>
+            {React.Children.map(children, child => 
+              child.type === ListItem ? React.cloneElement(child, { level: level + 1 }) : null
+            )}
+            </>
           )}
-        </div>
+          </div>
         )}
       </div>    
     </>

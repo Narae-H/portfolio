@@ -1,8 +1,31 @@
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  outline: none;
+  border: 2px solid transparent;
+  background-color: var(--scrollbar-thumb-color);
+}
+::-webkit-scrollbar-thumb:hover, .na-primary-sidebar:hover::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  /* background: rgba(248, 248, 248, 0.1); */
+  background: var(--scrollbar-thumb-hover-color);
+}
+::-webkit-scrollbar-track {
+  box-shadow: none;
+  background-color: transparent;
+}
+
+
 .na-primary-sidebar {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 12vw;
+  width: 15vw;
+  min-width: 13vw;
   height: 100%;
   background-color: var(--list-inactive-selection-background);
   color: var(--list-inactive-selection-text-color);
@@ -35,6 +58,10 @@
   border: var(--border-width) solid var(--list-search-area-active-border);
   border-radius: 3px;
   outline: none;
+}
+
+.na-primary-sidebar-body {
+  overflow-y: scroll;
 }
 
 .na-clear-button {
