@@ -35,20 +35,32 @@
   background-color: var(--editor-tab-background);
 }
 
-/* .na-editor-tab-item {
-
-} */
+.na-editor-tab-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--editor-background);
+  padding: 0 5px;
+  border-right: var(--border-color) var(--border-width) solid;
+}
+.na-editor-tab-item.active {
+  margin-bottom: calc(-1* var(--border-width));
+  border-bottom: 0;
+}
 
 .na-editor-tab-link {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--editor-background);
-  margin-bottom: calc(-1 * var(--border-width));
+  /* margin-bottom: calc(-1 * var(--border-width)); */
+  /* margin-top: 3px; */
   padding: 5px;
+  gap: 12px;
   color: var(--editor-text-color);
-  border-bottom: var(--border-color) var(--border-width) solid;
-  border-right: var(--border-color) var(--border-width) solid;
+  /* border-bottom: var(--border-color) var(--border-width) solid; */
+  /* border-right: var(--border-color) var(--border-width) solid; */
   border-radius: 0;
   text-decoration: none;
 }
@@ -72,7 +84,7 @@
   margin: 0 4px;
 }
 .na-editor-tab-title {
-  margin-right: 12px;
+  margin: 0 12px 0 6px;
 }
 .na-editor-title {
   margin: 0;

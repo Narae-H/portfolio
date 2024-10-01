@@ -1,0 +1,42 @@
+.na-editor-blog {
+  display: flex;
+  flex-direction: column;
+}
+
+.na-editor-blog-overview {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.na-editor-blog-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 15px;
+}
+
+/* .na-editor-blog-title-text {
+  font-size: var(--fs)
+} */
+
+.na-editor-blog-title-icon {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+
+#go-to-top-button {
+  position: absolute;
+  bottom:0;
+  right: 5px;
+  display: flex;
+  width: 10px;
+  height: 10px;
+  background-color: var(--background);
+  border: 1px solid var(--inactiveTextColor);
+  border-radius: 5px;
+}

@@ -4,27 +4,28 @@ import { Editor } from '../Editor';
 import { PrimarySideBar } from '../PrimarySideBar';
 import { CollapsibleList } from '../CollapsibleList';
 import { Icon } from '../../assets/customIcon/Icon';
+import { EditorBlog } from '../EditorBlog';
+import { useState } from 'react';
 
 function Skills () {
+  
   return (
     <>
       <PrimarySideBar>
         <PrimarySideBar.Header>
-          <div className='sidebar-title-wrapper'>
-            <PrimarySideBar.Title title='Skills'/>
-          </div>
+          <PrimarySideBar.Title title='Skills'/>
           <PrimarySideBar.SearchArea></PrimarySideBar.SearchArea>
         </PrimarySideBar.Header>
-        <PrimarySideBar.Body>
 
+        <PrimarySideBar.Body>
           <CollapsibleList defaultOpenLevels={0}>
             <CollapsibleList.ListItem title='Back End Skills'>
               <CollapsibleList.ListItem title='Java' icon={<Icon name='java'/>} />
-              <CollapsibleList.ListItem title='Spring Boot' icon={<Icon name='springboot'/>}/>
+              <CollapsibleList.ListItem title='Spring Boot' icon={<Icon name='springboot'/>} />
             </CollapsibleList.ListItem>
             <CollapsibleList.ListItem title='Front End Skills'>
-              <CollapsibleList.ListItem title='HTML'icon={<Icon name='html'/>}/>
-              <CollapsibleList.ListItem title='CSS'icon={<Icon name='css'/>}/>
+              <CollapsibleList.ListItem title='HTML' icon={<Icon name='html'/>}/>
+              <CollapsibleList.ListItem title='CSS' icon={<Icon name='css'/>}/>
               <CollapsibleList.ListItem title='JavaScript' icon={<Icon name='javascript'/>}/>
               <CollapsibleList.ListItem title='React' icon={<Icon name='react'/>}/>
               <CollapsibleList.ListItem title='Redux Toolkit' icon={<Icon name='reduxtoolkit'/>}/>
@@ -47,11 +48,24 @@ function Skills () {
               <CollapsibleList.ListItem title='MS Power Platform' icon={<Icon name='mspowerplatform'/>}/>
             </CollapsibleList.ListItem>
           </CollapsibleList>
-          
         </PrimarySideBar.Body>
+
       </PrimarySideBar>
       
       <Editor>
+        <Editor.Header>
+          <Editor.HeaderTab title='Welcome' icon={<Icon name='skills' />} className='active' />
+        </Editor.Header>
+
+        <Editor.Body className='skills-editor-body'>
+          <EditorBlog.Overview>
+            <EditorBlog.OverviewTitle title='Java' icon={<Icon name='javalogo' className='skills-icon' />} />
+            <EditorBlog.OverviewContent>
+              <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere (WORA), meaning that compiled Java code can run on any Java-enabled device. Java was developed by Sun Microsystems (now Oracle Corporation).</p>
+            </EditorBlog.OverviewContent>  
+          </EditorBlog.Overview>
+          <EditorBlog.Details></EditorBlog.Details>
+        </Editor.Body>
       </Editor>
     </>
   )

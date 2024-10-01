@@ -11,7 +11,6 @@
 ::-webkit-scrollbar-thumb:hover, .na-primary-sidebar:hover::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
   border-radius: 5px;
-  /* background: rgba(248, 248, 248, 0.1); */
   background: var(--scrollbar-thumb-hover-color);
 }
 ::-webkit-scrollbar-track {
@@ -39,6 +38,14 @@
   width: 100%;
   padding: 4px 10px 10px 10px;
   font-size: var(--fs-small);
+}
+
+.sidebar-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
 }
 
 .na-primary-sidebar-search-area {

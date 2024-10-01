@@ -15,7 +15,7 @@ export const Editor = ({ children,  id = '', className = '', ...props }) => {
   )
 }
 
-const Header = ({ children, id, className, ...props }) => {
+function Header ({ children, id = '', className = '' , ...props }) {
   return(
     <>
       <div id={id} className={`na-editor-header ${className}`.trim()} >
@@ -27,35 +27,22 @@ const Header = ({ children, id, className, ...props }) => {
   )
 }
 
-const HeaderTab = ({ children, id, className, ...props }) => {
+function HeaderTab ({ children, id = '', className = '', title, icon, ...props }) {
   return(
     <>
       <div id={id} className={`na-editor-tab-item ${className}`.trim()}>
+        <span className='na-editor-tab-icon'>
+          {icon && ( React.isValidElement(icon)? icon : <span className='title-icon'/>)}
+        </span>
         <a href='#link' className='na-editor-tab-link'>
-          { children }
+          { title || children }
         </a>
       </div>
     </>
   )
 }
 
-const HeaderTabIcon = ({ children, id, className, ...props }) => {
-  return (
-    <span id={id} className={`na-editor-tab-icon ${className}`.trim()}>
-      {children}
-    </span>
-  )
-}
-
-const HeaderTabTitle = ({ children, id, className, ...props }) => {
-  return (
-    <span id={id} className={`na-editor-tab-title ${className}`.trim()}>
-      {children}
-    </span>
-  )
-}
-
-const Body = ({ children, id, className, ...props }) => {
+function Body ({ children, id = '', className = '', ...props }) {
   return(
     <>
       <div id={id} className={`na-editor-body ${className}`.trim()}>
@@ -64,7 +51,7 @@ const Body = ({ children, id, className, ...props }) => {
     </>
   )
 }
-const Title = ({ children, id, className, ...props }) => {
+function Title ({ children, id = '', className = '', ...props }) {
   return(
     <>
       <h1 id={id} className={`na-editor-title ${className}`.trim()}>
@@ -73,7 +60,7 @@ const Title = ({ children, id, className, ...props }) => {
     </>
   )
 }
-const SubTitle = ({ children, id, className, ...props }) => {
+function SubTitle ({ children, id = '', className = '', ...props }) {
   return(
     <>
       <h2 id={id} className={`na-editor-subTitle ${className}`.trim()}>
@@ -82,7 +69,7 @@ const SubTitle = ({ children, id, className, ...props }) => {
     </>
   )
 }
-const SubSubTitle = ({ children, id, className, ...props }) => {
+function SubSubTitle ({ children, id = '', className = '', ...props }) {
   return(
     <>
       <h3 id={id} className={`na-editor-subSubTitle ${className}`.trim()}>
@@ -95,8 +82,6 @@ const SubSubTitle = ({ children, id, className, ...props }) => {
 
 Editor.Header = Header;
 Editor.HeaderTab = HeaderTab;
-Editor.HeaderTabIcon = HeaderTabIcon;
-Editor.HeaderTabTitle = HeaderTabTitle;
 Editor.Body = Body;
 Editor.Title = Title;
 Editor.SubTitle = SubTitle;
