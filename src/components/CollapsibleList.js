@@ -14,7 +14,7 @@ export const CollapsibleList = ({ children, defaultOpenLevels = 1 }) => {
   );
 };
 
-const ListItem = ({ children, title, icon, level = 1, ...props }) => {
+function ListItem ({ children, title, icon: IconComponent, level = 1, ...props }) {
   // 1. Get the current level of list
   const { defaultOpenLevels } = useContext(CollapsibleListContext);
   const [isOpen, setIsOpen] = useState(level <= defaultOpenLevels);
@@ -42,7 +42,7 @@ const ListItem = ({ children, title, icon, level = 1, ...props }) => {
             </span>
           )}
           <span className="list-item-content">
-            {icon && ( React.isValidElement(icon)? icon : <icon className='title-icon'/>)}
+            {IconComponent && ( React.isValidElement(IconComponent)? IconComponent : <IconComponent />)}
             {<span className='list-title-name'> {title} </span> || children}
           </span>
         </div>

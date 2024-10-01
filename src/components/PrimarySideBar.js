@@ -12,7 +12,7 @@ export const PrimarySideBar = ({ children,  id = '', className = '' }) => {
 }
 
 
-const Header = ({ children, id = '', className = '', ...props }) => {
+function Header ({ children, id = '', className = '', ...props }) {
   return (
     <>
       <div id={id} className={`na-primary-sidebar-header ${className}`.trim()} {...props}>
@@ -22,17 +22,19 @@ const Header = ({ children, id = '', className = '', ...props }) => {
   )
 }
 
-const Title = ({ children, id = '', className = '', title,  ...props }) => {
+function Title ({ children, id = '', className = '', title,  ...props }) {
   return(
     <>
-      <div id={id} className={`na-primary-sidebar-title ${className}`.trim()} {...props}>
-        { title || children}
+      <div className={`sidebar-title-wrapper ${className}`.trim() } {...props}>
+        <div id={id} className='na-primary-sidebar-title'>
+          { title || children}
+        </div>
       </div>
     </>
   )
 }
 
-const SearchArea = ({ children, id = '', className = '', ...props }) => {
+function SearchArea ({ children, id = '', className = '', ...props }) {
   return (
     <>
       <div id={id} className={`na-primary-sidebar-search-area ${className}`.trim() } {...props} >
@@ -47,7 +49,7 @@ const SearchArea = ({ children, id = '', className = '', ...props }) => {
   )
 }
 
-const Body = ({ children, id = '', className = '', ...props }) => {
+function Body ({ children, id = '', className = '', ...props }) {
   return (
     <>
       <div id={id} className={`na-primary-sidebar-body ${className}`.trim()} {...props} >

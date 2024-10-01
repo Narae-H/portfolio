@@ -1,7 +1,8 @@
-.sidebar-title-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
+.skills-editor-body {
+  padding: 3em 6em;
+}
+
+.skills-icon {
+  width: 2.5em;
+  height: 2.5em;
 }

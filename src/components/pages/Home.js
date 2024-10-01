@@ -15,14 +15,8 @@ function Home() {
     <>
       <Editor>
         <Editor.Header>
-          <Editor.HeaderTab>
-            <Editor.HeaderTabIcon> <VscVscode className='vscode-item' /> </Editor.HeaderTabIcon>
-            <Editor.HeaderTabTitle> Welcome </Editor.HeaderTabTitle>
-          </Editor.HeaderTab>
-          <Editor.HeaderTab>
-            <Editor.HeaderTabIcon><VscVscode/> </Editor.HeaderTabIcon> 
-            <Editor.HeaderTabTitle> Test </Editor.HeaderTabTitle>
-          </Editor.HeaderTab>
+          <Editor.HeaderTab title='Welcome' icon={<Icon name='vscode'/>} className='active' />
+          <Editor.HeaderTab title='Test' icon={<Icon name='vscode'/>} />
         </Editor.Header>
 
         <Editor.Body id='editor-area-body'>
