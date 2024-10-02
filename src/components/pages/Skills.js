@@ -5,10 +5,9 @@ import { PrimarySideBar } from '../PrimarySideBar';
 import { CollapsibleList } from '../CollapsibleList';
 import { Icon } from '../../assets/customIcon/Icon';
 import { EditorBlog } from '../EditorBlog';
-import { useState } from 'react';
 
 function Skills () {
-  
+
   return (
     <>
       <PrimarySideBar>
@@ -42,7 +41,7 @@ function Skills () {
               <CollapsibleList.ListItem title='Microsoft' icon={<Icon name='microsoft'/>}/>
             </CollapsibleList.ListItem>
             <CollapsibleList.ListItem title='Others'>
-              <CollapsibleList.ListItem title='Code Version Control123456789' icon={<Icon name='codeversioncontrol'/>}/>
+              <CollapsibleList.ListItem title='Code Version Control' icon={<Icon name='codeversioncontrol'/>}/>
               <CollapsibleList.ListItem title='SEO' icon={<Icon name='seo'/>}/>
               <CollapsibleList.ListItem title='MS Office App' icon={<Icon name='msofficeapp'/>}/>
               <CollapsibleList.ListItem title='MS Power Platform' icon={<Icon name='mspowerplatform'/>}/>
@@ -64,7 +63,15 @@ function Skills () {
               <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere (WORA), meaning that compiled Java code can run on any Java-enabled device. Java was developed by Sun Microsystems (now Oracle Corporation).</p>
             </EditorBlog.OverviewContent>  
           </EditorBlog.Overview>
-          <EditorBlog.Details></EditorBlog.Details>
+          <EditorBlog.Details>
+            <EditorBlog.DetailsNav activeKey='java'>
+              <EditorBlog.DetailsNavItem title='Java' eventKey='java' >
+                Body Text
+              </EditorBlog.DetailsNavItem>
+              <EditorBlog.DetailsNavItem title='Test2' eventKey="test2"/>
+            </EditorBlog.DetailsNav>
+
+          </EditorBlog.Details>
         </Editor.Body>
       </Editor>
     </>
