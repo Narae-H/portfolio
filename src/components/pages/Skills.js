@@ -57,21 +57,40 @@ function Skills () {
         </Editor.Header>
 
         <Editor.Body className='skills-editor-body'>
-          <EditorBlog.Overview>
-            <EditorBlog.OverviewTitle title='Java' icon={<Icon name='javalogo' className='skills-icon' />} />
-            <EditorBlog.OverviewContent>
-              <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere (WORA), meaning that compiled Java code can run on any Java-enabled device. Java was developed by Sun Microsystems (now Oracle Corporation).</p>
-            </EditorBlog.OverviewContent>  
-          </EditorBlog.Overview>
-          <EditorBlog.Details>
-            <EditorBlog.DetailsNav activeKey='java'>
-              <EditorBlog.DetailsNavItem title='Java' eventKey='java' >
-                Body Text
-              </EditorBlog.DetailsNavItem>
-              <EditorBlog.DetailsNavItem title='Test2' eventKey="test2"/>
-            </EditorBlog.DetailsNav>
+          <EditorBlog>
+            <EditorBlog.Overview>
+              <EditorBlog.OverviewTitle title='Java' icon={<Icon name='javalogo' className='skills-icon' />} />
+              <EditorBlog.OverviewContent>
+                <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere (WORA), meaning that compiled Java code can run on any Java-enabled device. Java was developed by Sun Microsystems (now Oracle Corporation).</p>
+              </EditorBlog.OverviewContent>  
+            </EditorBlog.Overview>
+            <EditorBlog.Details>
+              <EditorBlog.DetailsNav activeKey='java'>
+                <EditorBlog.DetailsNavItem title='Java' eventKey='java' >
+                  <EditorBlog.DetailsBodyHeader title='Body Header'/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                </EditorBlog.DetailsNavItem>
+                <EditorBlog.DetailsNavItem title='Test2' eventKey="test2"/>
+              </EditorBlog.DetailsNav>
 
-          </EditorBlog.Details>
+            </EditorBlog.Details>
+          </EditorBlog>
         </Editor.Body>
       </Editor>
     </>
