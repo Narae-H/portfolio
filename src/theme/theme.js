@@ -6,6 +6,7 @@ export const defaultTheme = {
     inactiveTextColor : '#969696',
     activeTextColor   : '#cccccc',
     border            : '#37373d',
+    activeborder      : '#0078d4',
     pointColor        : '#0078d4;'
   },
   
@@ -58,6 +59,7 @@ export const tokyoNightTheme = {
     inactiveTextColor : '#787c99',
     activeTextColor   : '#A9B1D6',
     border            : '#13131a',
+    activeborder      : '#0078d4',
     pointColor        : '#13131a'
   },
 

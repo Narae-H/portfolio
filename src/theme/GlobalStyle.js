@@ -41,6 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     --inactive-text-color: ${ ({theme}) => theme.base.inactiveTextColor };
     --active-text-color  : ${ ({theme}) => theme.base.activeTextColor };
     --border-color       : ${ ({theme}) => theme.base.border };
+    --active-border-color: ${ ({theme}) => theme.base.activeborder };
     --point-color        : ${ ({theme}) => theme.base.pointColor };
 
     --activitybar-background         : ${ ({theme}) => theme.activitybar.background };

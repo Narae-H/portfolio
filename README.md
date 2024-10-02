@@ -28,9 +28,10 @@
 
 
 # The purpose of this project
-1) Creating a profile. 
-2) Practicing React.
-3) Exploring and applying new dependencies and libraries that I am not yet familiar with.
+1) Creating a profile.
+2) Practicing React and becoming familiar with it.
+3) Creating my own component library instead of using existing ones for practice.
+4) Exploring and applying new dependencies that I am not yet familiar with.
 
 # Memoir
 
@@ -47,25 +48,47 @@ When implementing the VS Code theme profile, the first challenge was working wit
 
 
 ## JSX element compie
-I initially thought I could dynamically add components from object values. However, the JSX compiler didn't create the expected component. This is because JSX compiles differently depending on whether the first letter of a component's name is lowercase or uppercase.
+I initially thought I could dynamically add components by passing them to a customized component. However, the JSX compiler didn't create the expected component when I passed the components as props. This is because JSX compiles differently depending on whether the first letter of a component's name is lowercase or uppercase.
 - `<component />` compiles to `React.createElement('component')` (html tag)
 - `<Component />` compiles to `React.createElement(Component)`   (Component)
 - `<obj.component />` compiles to `React.createElement(obj.component)` (html tag)
-To fix this, I had to rename the object by creating `CapitalizedComponent` in `common.js` to ensure the component names are capitalized.
 
 > [!NOTE] Ref: ref: [User-Defined Components Must Be Capitalized](https://legacy.reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized)
 
-I need this for my icons. I added icons on the side menu and the icons should be passsed to the ActivityBar component. However, the props in redux makes the tag as a lower case when they passing it.  
-<b>First attempt</b>: created common.js and chage 
-the lower case tag to upper case componet
-```HTML
+I need this for my icons. I added icons to the side menu, and these icons need to be passed to the `ActivityBar` component. However, when passing them through props in React, the tags were converted to lowercase. 
+  
+<b>First attempt</b>: I had to rename the object by creating `CapitalizedComponent` in `common.js` to ensure the component names remained capitalized. However, it was quite inconvenient, and the component name didn’t accurately reflect its purpose, as it was only meant for icons.
+
+```JavaScript
+// common.js
 export const CapitalizedComponent = ( props ) => {
   let Component = Components[ props.type ];
   return (<Component { ...props } />);
 }
 ```
-<b>Second attempt</b>: use `icon:Icon` destructuring to rename the icon prop to Icon (with a captital 'I'), allowing it to be used as componet when it passed via attributes.
 
+<b>Second attempt</b>: I created an `Icon` component that contains the icon component along with default styles like color and size. When a matching icon is found based on the passed name, it creates the component and returns it to the caller.
+
+```JavaScript
+// Icon.js
+export const Icon = ({ name, className = '',  ...props }) => {
+  const iconData = iconMap[name.toLowerCase()];
+
+  if (!iconData) {
+    console.warn(`Icon not found: ${name}`);
+    return <span>`Icon not found: ${name}`</span>;
+  }
+
+  const { component: IconComponent, style } = iconData;
+
+  const combinedStyle = {
+    ...style,
+    ...props.style,
+  };
+
+  return <IconComponent style={combinedStyle} {...props} className={`${className}`.trim()} />;
+};
+```
 
 ## Compound Component Pattern
 Creating a parent component which has children compont and access the children from the parent component like Bootstrap like the following the example.
@@ -85,3 +108,11 @@ Creating a parent component which has children compont and access the children f
 
 ### What is the 'Compound Component Pattern'?
 Compound components are a React pattern that provides an expressive and flexible way for a parent component to communicate with its children, while expressively separating logic and UI.
+
+
+## Props Type Settings
+I am not using TypeScript and wanted to prevent unexpected type errors, similar to other popular libraries, so I decided to use the `prop-types` library in my custom components.
+
+```
+npm install --save prop-types
+```
