@@ -2,15 +2,48 @@ import './../styles/EditorBlog.css';
 
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-// import { VscChevronUp } from 'react-icons/vsc';
+import { VscChevronUp } from 'react-icons/vsc';
 
 const EditorBlogContext = createContext();
 
 export const EditorBlog = ({ children, id = '', className = '', ...props }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 992);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    const scrollOptions = {
+      top: 0,
+      behavior: 'smooth'
+    };
+
+    if( isMobile ) {
+      const editorBody = document.querySelector('.na-editor-body');
+      editorBody?.scrollTo( scrollOptions );
+    } else {
+      const navBody = document.querySelector('.na-editor-blog-details-nav-body');
+      navBody?.scrollTo( scrollOptions );
+    }
+  };
+
   return (
-    <div id={id} className={`na-editor-blog ${className}`.trim()} {...props}>
-      { children }
-    </div>  
+    <>
+      <div id='go-to-top-button' onClick={ handleClick }>
+        <VscChevronUp />
+      </div>
+      <div id={id} className={`na-editor-blog ${className}`.trim()} {...props}>
+        { children }
+      </div>  
+    </>
   )
 }
 EditorBlog.propTypes = {
@@ -24,9 +57,11 @@ EditorBlog.propTypes = {
  */
 function Overview ({ children, id = '', className = '', ...props }) {
   return (
-    <div id={id} className={`na-editor-blog-overview ${className}`.trim()} {...props}>
-      { children }
-    </div>
+    <>
+      <div id={id} className={`na-editor-blog-overview ${className}`.trim()} {...props}>
+        { children }
+      </div>
+    </>
   )
 }
 Overview.propTypes = {
@@ -79,10 +114,6 @@ function Details ({ children, id = '', className = '', ...props }) {
       <div id={id} className={`na-editor-blog-details ${className}`.trim()} {...props}>
         { children }
       </div>
-      <div id='go-to-top-button'>
-        {/* <a id='scroll-top-top' role='button' href='#' title='#' aria-label='Go to top'><VscChevronUp /></a> */}
-      </div>
-
     </>
   )
 }
@@ -123,7 +154,7 @@ Details.propTypes = {
   activeKey: PropTypes.string
 };
 
-function DetailsNavItem ({ children, id = '', className = '', title, eventKey, icon, ...props }) {
+function DetailsNavItem ({ children, id = '', className = '', title = 'Title', eventKey, icon, ...props }) {
   const { activeKey, setActiveKey  } = useContext(EditorBlogContext);
   const isActive = (eventKey === activeKey);
   
@@ -136,7 +167,7 @@ function DetailsNavItem ({ children, id = '', className = '', title, eventKey, i
     <>
       <div 
         id={id} 
-        className={`na-editor-blog-details-nav-item ${isActive && 'active'} ${className}`.trim()}
+        className={`na-editor-blog-details-nav-item ${isActive? 'active':''} ${className}`.trim()}
         {...props}
         onClick={ handleClick }
       >
@@ -144,9 +175,15 @@ function DetailsNavItem ({ children, id = '', className = '', title, eventKey, i
           {icon && ( React.isValidElement(icon)? icon : <span className='title-icon'/>)}
         </span>
         <a href='#link' className='na-editor-blog-details-nav-link'>
-          { title || children }
+          { title }
         </a>
       </div>
+      { isActive && (
+        <div className='na-editor-blog-details-nav-body'>
+          { children }
+        </div>
+      )
+      }
     </>
   )
 }
@@ -173,14 +210,14 @@ DetailsBody.propTypes = {
   className: PropTypes.string
 };
 
-function DetailsBodyH1 ({ children, id = '', className = '', title = '', ...props }) {
+function DetailsBodyHeader ({ children, id = '', className = '', title = '', ...props }) {
   return(
-    <div id={id} className={`na-editor-blog-body-h1 ${className}`.trim()} {...props}>
-      <h1> {title} </h1>
+    <div id={id} className={`na-editor-blog-body-header ${className}`.trim()} {...props}>
+      <h2> {title} </h2>
     </div>
   )
 }
-DetailsBodyH1.propTypes = {
+DetailsBodyHeader.propTypes = {
   children: PropTypes.node,
   id: PropTypes.string,
   className: PropTypes.string,
@@ -209,7 +246,7 @@ EditorBlog.Details            = Details;
 EditorBlog.DetailsNav         = DetailsNav;
 EditorBlog.DetailsNavItem     = DetailsNavItem;
 EditorBlog.DetailsBody        = DetailsBody;
-EditorBlog.DetailsBodyH1      = DetailsBodyH1;
+EditorBlog.DetailsBodyHeader  = DetailsBodyHeader;
 EditorBlog.DetailsBodyContent = DetailsBodyContent;
 
 
