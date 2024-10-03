@@ -5,16 +5,15 @@ import { useSelector } from 'react-redux';
 import { topMenus } from './../components/data/topMenuBar';
 import { VscChromeClose, VscChromeMinimize, VscChromeRestore, VscMail } from "react-icons/vsc";
 import { Dropdown } from './Dropdown';
+import axios from 'axios';
+import { useQuery } from 'react-query';
 
 function TopMenuBar(){
   // 1. Menus for mobile
   const mainMenu = useSelector( (state) => state.mainMenu );
 
-  const skills = useSelector((state) => state.skills.items);
-
-  console.log(skills);
-
-
+  const {data: skillsMenu, isLoading, isError} = useQuery('skillsMenu', ()=> axios.get('data/skills/skills.json') );
+  console.log(skillsMenu);
 
   return(
     <>
