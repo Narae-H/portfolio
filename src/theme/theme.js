@@ -48,6 +48,13 @@ export const defaultTheme = {
     background: '#1e1e1e',
     foreground: '#cccccc',
     border: '#454545',
+  },
+
+  // Dropdown
+  dropdown: {
+    background: '#181818',
+    foreground: '#cccccc',
+    hover: '#0078d4',
   }
 }
 
@@ -100,6 +107,13 @@ export const tokyoNightTheme = {
     background: '#1e1e1e',
     foreground: '#cccccc',
     border: '#cccccc',
+  },
+
+  // Dropdown
+  dropdown: {
+    background: '#181818',
+    foreground: '#cccccc',
+    hover: '#0078d4',
   }
 
 }

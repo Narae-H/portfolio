@@ -85,6 +85,23 @@ function Skills () {
                   Body Text<br/>
                   Body Text<br/>
                   Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
+                  Body Text<br/>
                 </EditorBlog.DetailsNavItem>
                 <EditorBlog.DetailsNavItem title='Test2' eventKey="test2"/>
               </EditorBlog.DetailsNav>

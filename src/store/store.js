@@ -1,5 +1,7 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
+import skillsReducer from './skillsSlice';
+
 let mainMenu = createSlice({
   name: 'mainMenu',
   initialState: [ {name: 'home'       , tooltip: 'Home'       }
@@ -22,6 +24,7 @@ let subMenu = createSlice({
 export default configureStore({
   reducer: { 
     mainMenu: mainMenu.reducer,
-    subMenu : subMenu.reducer  
+    subMenu : subMenu.reducer,
+    skills: skillsReducer  
   }
 }) 
