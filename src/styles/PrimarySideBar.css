@@ -24,7 +24,7 @@
   flex-direction: column;
   position: relative;
   width: 15vw;
-  min-width: 13vw;
+  min-width: 230px;
   height: 100%;
   background-color: var(--list-inactive-selection-background);
   color: var(--list-inactive-selection-text-color);
@@ -83,4 +83,10 @@
 .na-clear-button:hover {
   color: var(--active-text-color);
   cursor: pointer;
+}
+
+@media screen and (max-width : 992px) { 
+  .na-primary-sidebar {
+    display: none;
+  }
 }

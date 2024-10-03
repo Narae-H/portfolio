@@ -7,9 +7,10 @@ import monoSpaceNeonBold from './../assets/fonts/MonaspaceNeon-SemiBold.woff';
 export const GlobalStyle = createGlobalStyle`
   :root {
     // Breakpoints: The values cannot be directly used in media query values in CSS, but they can be written down to display the breakpoint.
+    // For this website, I only use the 992px 
     // --bp-sm : 576px;
     // --bp-md : 768px;
-    // --bp-lg : 992px;
+    // --bp-lg : 992px; 
     // --bp-xl : 1200px;
     // --bp-xxl: 1400px;
 
@@ -68,6 +69,10 @@ export const GlobalStyle = createGlobalStyle`
     --tooltip-background: ${({theme}) => theme.tooltip.background};
     --tooltip-text      : ${({theme}) => theme.tooltip.foreground};
     --tooltip-border    : ${({theme}) => theme.tooltip.border};
+
+    --dropdown-background: ${({theme}) => theme.dropdown.background};
+    --dropdown-text      : ${({theme}) => theme.dropdown.foreground};
+    --dropdown-hover     : ${({theme}) => theme.dropdown.hover};
   }
 
   @font-face {

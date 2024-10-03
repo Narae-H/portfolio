@@ -32,6 +32,7 @@
 2) Practicing React and becoming familiar with it.
 3) Creating my own component library instead of using existing ones for practice.
 4) Exploring and applying new dependencies that I am not yet familiar with.
+5) Implementing responsible web.
 
 # Memoir
 

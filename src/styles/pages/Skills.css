@@ -10,11 +10,11 @@
   height: 2.5em;
 }
 
-@media screen and (max-width : 768px) { 
+@media screen and (max-width : 992px) { 
   .skills-editor-body {
     width: 100%;
     height: fit-content;
-    padding: 1em;
+    padding: 2em;
     overflow-y: scroll;
   }
 }

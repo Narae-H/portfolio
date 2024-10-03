@@ -7,7 +7,7 @@ import { VscChevronUp } from 'react-icons/vsc';
 const EditorBlogContext = createContext();
 
 export const EditorBlog = ({ children, id = '', className = '', ...props }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
 
   useEffect(() => {
     const handleResize = () => {

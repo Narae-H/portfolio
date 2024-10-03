@@ -4,11 +4,17 @@ import { useSelector } from 'react-redux';
 
 import { topMenus } from './../components/data/topMenuBar';
 import { VscChromeClose, VscChromeMinimize, VscChromeRestore, VscMail } from "react-icons/vsc";
-
+import { Dropdown } from './Dropdown';
 
 function TopMenuBar(){
   // 1. Menus for mobile
-  let mainMenu = useSelector( (state) => state.mainMenu );
+  const mainMenu = useSelector( (state) => state.mainMenu );
+
+  const skills = useSelector((state) => state.skills.items);
+
+  console.log(skills);
+
+
 
   return(
     <>
@@ -26,13 +32,22 @@ function TopMenuBar(){
           <p className='menu-icon bp-lg'>Terminal</p>
           <p className='menu-icon bp-lg'>Help</p>
 
-          {
+          {/* {
             mainMenu.map( (item) => {
               return (
                 <a href={`#menu-${item.name}`} key={item.name} className='menu-icon bp-md'>{item.name}</a>
               )
             })
-          }
+          } */}
+          <Dropdown title='Skills' className='bp-md'>
+            <Dropdown.Item>File</Dropdown.Item>
+            <Dropdown.Item>ABC</Dropdown.Item>
+            <Dropdown.Item>Run</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item>File</Dropdown.Item>
+            <Dropdown.Item>ABC</Dropdown.Item>
+            <Dropdown.Item>Run</Dropdown.Item>
+          </Dropdown>
         </div>
 
         <div className='right-menu'>
