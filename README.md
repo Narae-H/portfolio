@@ -1,7 +1,7 @@
 # Technologies
 - Editor: VScode 
-- Languages: React, Redux, HTML, CSS, SVG
-- Libraries/Plugins: Axios, React-query, Bootstrap, styled-component, react-router
+- Languages: React, Redux, HTML, CSS
+- Libraries/Plugins: Axios, React-query, Bootstrap, styled-component, React-router
 - Applied normalise.css
 
 # THEME COLOR REFERENCE URL

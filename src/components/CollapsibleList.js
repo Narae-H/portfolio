@@ -43,20 +43,18 @@ function ListItem ({ children, title, icon: IconComponent, level = 1, ...props }
           )}
           <span className="list-item-content">
             {IconComponent && ( React.isValidElement(IconComponent)? IconComponent : <IconComponent />)}
-            {<span className='list-title-name'> {title} </span> || children}
+            {<span className='list-title-name'> {title} </span> }
           </span>
         </div>
           { hasChildren && (
             <div className="list-item-children" style={{ '--childrenCount': childrenCount }}>
-            {isOpen && (
-            <>
-            {React.Children.map(children, child => 
-              child.type === ListItem ? React.cloneElement(child, { level: level + 1 }) : null
-            )}
-            </>
+              {isOpen ? 
+                React.Children.map(children, child => 
+                  child.type === ListItem ? React.cloneElement(child, { level: level + 1 }) : null
+                )
+              : null}
+            </div>
           )}
-          </div>
-        )}
       </div>    
     </>
   )
