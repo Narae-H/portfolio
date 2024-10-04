@@ -12,8 +12,11 @@ function TopMenuBar(){
   // 1. Menus for mobile
   const mainMenu = useSelector( (state) => state.mainMenu );
 
-  const {data: skillsMenu, isLoading, isError} = useQuery('skillsMenu', ()=> axios.get('data/skills/skills.json') );
-  console.log(skillsMenu);
+  const {data: skillsMenu, isError, isSuccess} = useQuery('skillsMenu'
+                                                  , ()=> axios.get('data/skills/skills.json')
+                                                  , {refetchOnWindowFocus: false} );
+  // console.log( isSuccess && skillsMenu.data.skills);
+
 
   return(
     <>
@@ -39,6 +42,31 @@ function TopMenuBar(){
             })
           } */}
           <Dropdown title='Skills' className='bp-md'>
+          { isSuccess && skillsMenu.data.skills.map(( skill, index ) => {
+            return (
+              <Dropdown.Item key={index} title={skill.category} eventKey={skill.category}>
+                { skill.items.map((item, index2) => {
+                  return(
+                    <Dropdown.Item key={index2} title={item} eventKey={item}/>
+                  )
+                }) }
+              </Dropdown.Item>
+            )
+            // return (
+            //   <>
+            //     { skill.items.map(( item, index2 ) => {
+            //       console.log(item);
+            //       return(
+            //         <Dropdown.Item key={index2}>{ item }</Dropdown.Item>
+            //       )
+            //       }) 
+            //     }
+            //   </>
+            // )
+            })
+          }
+          </Dropdown>
+{/*           <Dropdown title='Skills' className='bp-md'>
             <Dropdown.Item>File</Dropdown.Item>
             <Dropdown.Item>ABC</Dropdown.Item>
             <Dropdown.Item>Run</Dropdown.Item>
@@ -46,7 +74,7 @@ function TopMenuBar(){
             <Dropdown.Item>File</Dropdown.Item>
             <Dropdown.Item>ABC</Dropdown.Item>
             <Dropdown.Item>Run</Dropdown.Item>
-          </Dropdown>
+          </Dropdown> */}
         </div>
 
         <div className='right-menu'>
