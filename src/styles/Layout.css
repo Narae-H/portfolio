@@ -41,7 +41,7 @@
   height: var(--footer-height);
 }
 
-@media screen and (max-width : 992px) { 
+@media screen and (max-width : 768px) { 
   #activity-bar {
     display: none;
   }

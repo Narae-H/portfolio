@@ -7,12 +7,11 @@ import monoSpaceNeonBold from './../assets/fonts/MonaspaceNeon-SemiBold.woff';
 export const GlobalStyle = createGlobalStyle`
   :root {
     // Breakpoints: The values cannot be directly used in media query values in CSS, but they can be written down to display the breakpoint.
-    // For this website, I only use the 992px 
+    // For this website, I only use the 768px 
     // --bp-sm : 576px;
     // --bp-md : 768px;
     // --bp-lg : 992px; 
     // --bp-xl : 1200px;
-    // --bp-xxl: 1400px;
 
     // Width/Hieght
     --header-height     : 40px;

@@ -1,6 +1,7 @@
-import { ListGroup } from 'react-bootstrap';
 import './../../styles/pages/Home.css';
-import {VscVariableGroup, VscVscode } from 'react-icons/vsc';
+
+import { ListGroup } from 'react-bootstrap';
+import { VscVariableGroup } from 'react-icons/vsc';
 
 import { useSelector } from 'react-redux';
 import { Editor } from '../Editor';

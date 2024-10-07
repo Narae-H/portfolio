@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   height: var(--overview-height);
+  overflow-y: scroll;
 }
 
 .na-editor-blog-title-wrapper {
@@ -25,6 +26,11 @@
   flex-wrap: wrap;
   align-content: center;
   gap: 15px;
+}
+
+.na-editor-blog-description-wrapper {
+  display: flex;
+  overflow-y: scroll;
 }
 
 .na-editor-blog-title-icon {
@@ -124,7 +130,7 @@
   color: inherit;
 }
 
-@media screen and (max-width : 992px) { 
+@media screen and (max-width : 768px) { 
   .na-editor-blog {
     height: 100vh;
   }
