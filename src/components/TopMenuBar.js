@@ -44,10 +44,10 @@ function TopMenuBar(){
           <Dropdown title='Skills' className='bp-md'>
           { isSuccess && skillsMenu.data.skills.map(( skill, index ) => {
             return (
-              <Dropdown.Item key={index} title={skill.category} eventKey={skill.category}>
+              <Dropdown.Item key={index} index={index} title={skill.category} eventKey={skill.category}>
                 { skill.items.map((item, index2) => {
                   return(
-                    <Dropdown.Item key={index2} title={item} eventKey={item}/>
+                    <Dropdown.Item key={index2} index={index2} title={item} eventKey={item}/>
                   )
                 }) }
               </Dropdown.Item>

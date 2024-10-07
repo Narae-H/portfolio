@@ -30,12 +30,12 @@ function ListItem ({ children, title, icon: IconComponent, level = 1, ...props }
   });
 
   //3. Toggle:open/close menu
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const handleToggleOpen = () => setIsOpen(!isOpen);
 
   return (
     <>
       <div className={`list-item ${isOpen ? 'open' : ''}`}>
-        <div className="list-item-header" onClick={toggleOpen} style={{ '--depth': level - 1 }}>
+        <div className="list-item-header" onClick={handleToggleOpen} style={{ '--depth': level - 1 }}>
           { hasChildren && (
             <span className="toggle-icon">
               {isOpen ? <VscChevronDown /> : <VscChevronRight />}
