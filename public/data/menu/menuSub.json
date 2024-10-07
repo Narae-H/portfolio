@@ -1,0 +1,13 @@
+{
+  "_comment" : "menuName: used for a link, tooltip: used for a tooltip",
+  "menus": [
+    {
+      "menuName": "contactMe",
+      "tooltip" : "Contact Me"
+    },
+    {
+      "menuName": "settings",
+      "tooltip" : "Settings"
+    }
+  ]
+}

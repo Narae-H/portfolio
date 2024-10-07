@@ -8,7 +8,6 @@ function StatusBar(){
       <div id='status-wrapper'>
         <div className='left-menu'>
           <p className='menu-icon bg-activity'><VscRemote className='status-icon'/> <span>Narae&apos;s Profile</span></p>
-          {/* <p className='menu-icon'><VscError className='status-icon'/><span>0</span> &nbsp; <VscWarning className='status-icon'/><span>0</span></p> */}
           <a href='https://github.com/Narae-H?tab=repositories' target='_blank' rel='noopener noreferrer'><p className='menu-icon link'><ImGithub /><span>GitHub</span></p></a>
           <a href='https://www.linkedin.com/in/narae-hyeon'target='_blank' rel='noopener noreferrer'><p className='menu-icon link'><ImLinkedin /><span>LinkedIn</span></p></a>
         </div>

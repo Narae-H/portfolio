@@ -9,21 +9,22 @@
 }
 
 #editor-area-body {
-  padding: 5rem 20rem; 
+  width: 70%;
+  margin: auto;
+  padding: 3em 0;
 }
 
-@media screen and (max-width : 1200px) {
-  #editor-area-body {
-    padding: 5rem 8rem;
-  }
-}
 @media screen and (max-width : 992px) {
   #editor-area-body {
-    padding: 4rem 6rem;
+    width: 100%;
+    padding: 5rem 8rem;
+    overflow-y: scroll;
   }
 }
+
 @media screen and (max-width : 768px) { 
   #editor-area-body {
     padding: 3rem 3rem;
+    overflow-y: scroll;
   }
  }
