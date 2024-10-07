@@ -117,3 +117,89 @@ I am not using TypeScript and wanted to prevent unexpected type errors, similar 
 ```
 npm install --save prop-types
 ```
+
+## React Philosophy: Lift state up
+ In React, it's often beneficial to <b>`lift state up`</b> to a common ancestor when multiple components need to share state or when you need to coordinate between components.   
+
+In `CollapsibleList.js`, `EditorBlog.js`, and `Dropdown.js`, I need to share state or functions among children, so I lift up props to the nearest common ancestor of components tha need it.
+
+1) CollapsibleList.js
+```JavaScript
+const CollapsibleListContext = createContext();
+
+export const CollapsibleList = ({ children, defaultOpenLevels = 1 }) => {
+  return (
+    <CollapsibleListContext.Provider value={{ defaultOpenLevels }}>
+      <div className="collapsible-list">
+        {children}
+      </div>
+    </CollapsibleListContext.Provider>
+  );
+};
+
+function ListItem ({ children, title, icon: IconComponent, level = 1, ...props }) {
+  // 1. Get the current level of list
+  const { defaultOpenLevels } = useContext(CollapsibleListContext);
+  const [isOpen, setIsOpen] = useState(level <= defaultOpenLevels);
+
+  /* ... */
+  return(
+    <>
+    </>
+  )
+}
+```
+
+2) EditorBlog.js
+```JavaScript
+const EditorBlogContext = createContext();
+
+function DetailsNav ({ children, id = '', className = '', activeKey: initialActiveKey, ...props }) {
+  const contextValue = useMemo(() => ({
+    activeKey,
+    setActiveKey
+  }), [activeKey]);
+  
+  return (
+    <EditorBlogContext.Provider value={ contextValue }>
+      <div id={id} className={`na-editor-blog-details-nav-wrapper ${className}`.trim()} {...props}>
+        <div className='na-editor-blog-details-navs'>
+          { children }
+        </div>
+      </div>
+    </EditorBlogContext.Provider>
+  )
+}
+
+function DetailsNavItem ({ children, id = '', className = '', title = 'Title', eventKey, icon, ...props }) {
+  const { activeKey, setActiveKey  } = useContext(EditorBlogContext);
+  const isActive = (eventKey === activeKey);
+
+  return (
+    <>
+    </>
+  )
+}
+```
+
+3) Dropdown.js
+```JavaScript
+const DropDownContext = createContext();
+export function Dropdown ({ children, className = '', title='', ...props }) {
+  const [ activeKey, setActiveKey ] = useState(null);
+  const contextValue = useMemo(() => ({
+    activeKey,
+    setActiveKey
+  }), [activeKey]);
+  
+  return (
+    <DropDownContext.Provider value= { contextValue }>
+      <div className='na-dropdown-sub-menu-container'>
+        { children }
+      </div>
+    </DropDownContext.Provider> 
+  )
+}
+
+
+```

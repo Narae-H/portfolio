@@ -1,5 +1,7 @@
 .na-dropdown-wrapper {
   --dropdown-main-menu-padding: 8px;
+  --dropdown-item-menu-padding: 6px;
+  --dropdown-item-line-height : 32px;
 
   position:relative;
   display: flex;
@@ -45,8 +47,10 @@
 .na-dropdown-sub-menu {
   display: flex;
   flex-direction: row;
+  line-height: var(--dropdown-item-line-height);
   justify-content: space-between;
-  padding: 6px 0 6px 12px;
+  padding-left: var(--dropdown-item-menu-padding);
+  padding-right: var(--dropdown-item-menu-padding);
 }
 .na-dropdown-sub-menu a {
   color: inherit;
@@ -64,9 +68,15 @@
 
 .na-dropdown-sub-menu.active .na-dropdown-sub-menu-container {
   position: absolute;
-  top: 0;
+  top: calc(var(--nth) * var(--dropdown-item-line-height)); 
   left: 100%;
   display: flex;
+  flex-direction: column;
+  min-width: 15em;
+  background: var(--dropdown-background);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 5px;
+  padding: calc(var(--dropdown-main-menu-padding) / 2);
 }
 
 .na-dropdown-divider {

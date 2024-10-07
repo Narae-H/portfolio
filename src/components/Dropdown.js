@@ -1,40 +1,52 @@
 import './../styles/Dropdown.css';
 
-import { useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { VscChevronRight } from 'react-icons/vsc';
 
+// Create a context for the dropdown
+const DropDownContext = createContext();
+
 export function Dropdown ({ children, className = '', title='', ...props }) {
-  // 
-  const [ isOpen, setIsOpen ] = useState(false);
-  const dropdownRef = useRef(null);
-
-  const openMenu = (e) => {
+  // 1. Controlling dropdown open/close state
+  // 1-1) Initialize variables
+  const [ isDropdownOpen, setIsDropdownOpen ] = useState(false); // State for managing dropdown open/close 
+  const dropdownRef                           = useRef(null);    // Ref for dropdown element (used for click outside detection)
+  
+  // 1-2) Toggle dropdown open/close
+  const handleDropdownClick = (e) => {
     e.preventDefault();
-    setIsOpen(!isOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   };
-
+  
+  // 1-3) Close dropdown when clicking outside
   const closeMenu = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-      setIsOpen(false);
+      setIsDropdownOpen(false);
+      setActiveKey(null);
     }
   };
-
+  
+  // 1-4) Add/remove event listener for click outside detection
   useEffect(() => {
     document.addEventListener('mousedown', closeMenu);
     return () => {
       document.removeEventListener('mousedown', closeMenu);
     };
-  }, [isOpen]);
+  }, [isDropdownOpen]);
+  
 
-  // 2. Open Children => 여기서 부터 해야함. 자식 열리는 부분 구현 제대로 안됨. 선택된 자식만 열자.
-  const [activeMenuItem, setActiveMenuItem] = useState(null);
-
-  const handleMenuItemClick = (eventKey) => {
-    setActiveMenuItem(eventKey);
-  };
-
+  // 2. Controlling an active state of children
+  // 2-1) Initialize variables
+  const [ activeKey, setActiveKey ] = useState(null); // State for managing active item
+  
+  // 2-2) Memoize context value to prevent unnecessary re-renders
+  const contextValue = useMemo(() => ({
+    activeKey,
+    setActiveKey
+  }), [activeKey]);
+  
   return (
     <div 
       ref={dropdownRef}
@@ -43,16 +55,18 @@ export function Dropdown ({ children, className = '', title='', ...props }) {
     >
       { title && (
         <div 
-          className={`na-dropdown-main-menu ${isOpen && `open`}`} 
-          onClick={openMenu}
+          className={`na-dropdown-main-menu ${isDropdownOpen && `open`}`} 
+          onClick={handleDropdownClick}
         >
           {title}
         </div>
       )}
       { children && (
-        <div className='na-dropdown-sub-menu-container'>
-          { children }
-        </div>
+        <DropDownContext.Provider value= {contextValue}>
+          <div className='na-dropdown-sub-menu-container'>
+            {children}
+          </div>
+        </DropDownContext.Provider> 
       )}
     </div>
   )
@@ -63,44 +77,39 @@ Dropdown.propTypes = {
   title: PropTypes.string
 };
 
-function Item ({ children, className = '', title='', link = '/', eventKey, ...props }) {
-  // 1. Item children
-  let hasChildren = React.Children.toArray(children).some( (child) => {
+function Item ({ children, className = '', title='', link = '/', eventKey, index, ...props }) {
+  // 1. Initialize variables
+  const { activeKey, setActiveKey  } = useContext(DropDownContext);
+  const isActive                     = (eventKey === activeKey);
+
+  // 2. Check if this item has children (for nested items)
+  let hasChildren = React.Children.toArray(children).some((child) => {
     return child.type === Item;
   });
-
-  // 2. Open sub menu
-  const [isActive, setIsActive] = useState(false);
-  const actvieMenu = (activeKey) => (e) => {
-    console.log(activeKey);
-    console.log(eventKey);
-
+  
+  // 3. Handling item when it's clicked 
+  const handleItemClick = useCallback((e) => {
     e.preventDefault();
-    const isActive = eventKey === activeKey;
-    setIsActive(isActive);
-    console.log(`Event Key: ${eventKey}, Active Key: ${activeKey}, Is Active: ${isActive}`);
-  };
+    setActiveKey(eventKey);
+  }, [eventKey, setActiveKey]);
   
   return (
     <div 
-      onClick={actvieMenu(title)} 
-      className={`na-dropdown-sub-menu ${className} ${isActive? 'active' : ''}`.trim()} 
+      onClick={ handleItemClick } 
+      className={`na-dropdown-sub-menu ${className} ${isActive ? 'active' : ''}`.trim()}
+      style={{ '--nth': index }} 
       {...props}
     >
-      {hasChildren?(
-        <>
-          <span className='na-dropdown-sub-menu-plain'>{title}</span>
-          <span className='na-dropdown-sub-menu-icon'>
-            <VscChevronRight />
-          </span>
-          
+      {hasChildren ? 
+      (<>
+          <span className='na-dropdown-sub-menu-plain'> {title} </span>
+          <span className='na-dropdown-sub-menu-icon'> <VscChevronRight /> </span>
           <div className="na-dropdown-sub-menu-container">
-            {React.Children.map(children, child => React.cloneElement(child) )}
+            {children}
           </div>
-        </>
-      ):
-      ( <a href={link}>{title}</a> )
-    }
+      </>) : 
+      (<a href={link}>{title}</a>)
+      }
     </div>
   )
 }
@@ -109,7 +118,8 @@ Item.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string,
   link: PropTypes.string,
-  eventKey: PropTypes.string
+  eventKey: PropTypes.string,
+  index: PropTypes.number
 };
 
 function Divider ({ className = '', ...props }) {
