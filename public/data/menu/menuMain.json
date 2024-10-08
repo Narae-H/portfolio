@@ -11,6 +11,7 @@
       "items": [
           {
             "name": "Backend",
+            "important" : true,
             "items": [
               { "name": "Java" },
               { "name": "Spring Boot" }
@@ -18,6 +19,7 @@
           },
           {
             "name": "Frontend",
+            "important" : true,
             "items": [
               { "name": "HTML" },
               { "name": "CSS" },

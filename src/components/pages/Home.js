@@ -1,16 +1,22 @@
 import './../../styles/pages/Home.css';
 
 import { ListGroup } from 'react-bootstrap';
-import { VscVariableGroup } from 'react-icons/vsc';
 
-import { useSelector } from 'react-redux';
+import { useQuery } from 'react-query';
 import { Editor } from '../Editor';
 import { Card } from '../Card';
 import { Icon } from '../../assets/customIcon/Icon';
+import axios from 'axios';
+import { transformToLink } from '../../utils/common';
 
 function Home() {
-  // 1. Menus
-  let mainMenu = useSelector( (state) => state.mainMenu );
+  // 1. Get menus
+  const { data: menus, isSuccess } = useQuery(
+                                      'menuMain',
+                                      () => axios.get('data/menu/menuMain.json'),
+                                      {refetchOnWindowFocus: false,
+                                      staleTime: Infinity}
+                                    );
 
   return(
     <>
@@ -31,9 +37,9 @@ function Home() {
                 <Editor.SubSubTitle>Contents</Editor.SubSubTitle>
                 <ListGroup variant="flush" className='na-list-group'>
                   {
-                    mainMenu.map( (item) => {
+                    isSuccess && menus.data.menus.map( (item, index) => {
                       return(
-                        <ListGroup.Item action href={`/${item.name}`} className='na-list-group-item' key={item.name}>
+                        <ListGroup.Item action href={`/${transformToLink(item.name)}`} className='na-list-group-item' key={`key_${index}`}>
                           <Icon name={item.name}/> <span>{item.name}</span>
                         </ListGroup.Item>
                       )
@@ -44,13 +50,17 @@ function Home() {
               
               <div className='mt-2 mb-4'>
                 <Editor.SubSubTitle>Experiences</Editor.SubSubTitle>
-                <ListGroup variant="flush" className='na-list-group'>
-                  <ListGroup.Item className='na-list-group-item'>
-                    <a href='#home'>Exp1</a>
-                    <p className='list-group-des'>Here is a description section Here is a description section Here is a description section</p>
+                <ListGroup>
+                  <ListGroup.Item className='na-list-group-item' >
+                    <a href='/experiences/hhlawyers-website' className='na-list-group-item-header'> H &amp; H Lawyers Website </a>
+                    <p className='list-group-des'> Developed a new H &amp; H Lawyers website and migrated servers from on-premise to Microsoft Exchange and AWS </p>
+                  </ListGroup.Item>
+                  <ListGroup.Item className='na-list-group-item' >
+                    <a href='/experiences/octm-website' className='na-list-group-item-header'> OCTM Website </a>
+                    <p className='list-group-des'> Developed the One Click Trade Mark website to enable clients to easily register their trade marks online </p>
                   </ListGroup.Item>
                   <ListGroup.Item className='na-list-group-item'>
-                    <a href='#home'>More...</a>
+                    <a href='/experiences'>More...</a>
                   </ListGroup.Item>
                 </ListGroup>
               </div>  
@@ -58,24 +68,38 @@ function Home() {
             <div className='col-lg-6 col-md-12'>
               <div className='mt-2 mb-4'>
                 <Editor.SubSubTitle>Skills</Editor.SubSubTitle>
-                <Card className='important'>
-                  <Card.Img>
-                  <VscVariableGroup className='icon-lg'/>
-                  </Card.Img>
-                  <Card.Body>
-                    <Card.Title>Back-end developing</Card.Title>
-                    <Card.Description>This is description</Card.Description>
-                  </Card.Body>
-                </Card>
-                <Card>
-                  <Card.Img>
-                  <VscVariableGroup className='icon-lg'/>
-                  </Card.Img>
-                  <Card.Body>
-                    <Card.Title>Fornt-end developing</Card.Title>
-                    <Card.Description>This is description</Card.Description>
-                  </Card.Body>
-                </Card>
+                  <Card className='important'>
+                    <Card.Img>
+                      <Icon name='java' className='icon-lg'/>
+                    </Card.Img>
+                    <Card.Body>
+                      <Card.Title>Java</Card.Title>
+                      <Card.Description>8+ years Java development and familiar with Java platforms such as Spring Framework</Card.Description>
+                    </Card.Body>
+                  </Card>
+                  <Card className='important'>
+                    <Card.Img>
+                      <Icon name='react' className='icon-lg'/>
+                    </Card.Img>
+                    <Card.Body>
+                      <Card.Title>React</Card.Title>
+                      <Card.Description>React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.</Card.Description>
+                    </Card.Body>
+                  </Card>
+                  <Card className='important'>
+                    <Card.Img>
+                      <Icon name='aws' className='icon-lg'/>
+                    </Card.Img>
+                    <Card.Body>
+                      <Card.Title>AWS</Card.Title>
+                      <Card.Description>8+ years Java development and familiar with Java platforms such as Spring Framework</Card.Description>
+                    </Card.Body>
+                  </Card>
+                <ListGroup>
+                  <ListGroup.Item className='na-list-group-item'>
+                    <a href='/skills'>More...</a>
+                  </ListGroup.Item>
+                </ListGroup>
               </div>
             </div>
           </div>

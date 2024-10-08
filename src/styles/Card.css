@@ -59,6 +59,11 @@
   height: 100%;
   margin-left: 6px;
 }
+
+.na-card-title {
+  font-family: 'mono-space-neon-bold';
+}
+
 .na-card-description {
   font-size: var(--fs-small);
 }

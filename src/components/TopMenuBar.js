@@ -10,8 +10,8 @@ import { Icon } from '../assets/customIcon/Icon';
 function TopMenuBar(){
   // 1. Get menus depending on window size
   const { isMobile } = useWindowSize();
-  const url = isMobile ? 'data/menu/menuMain.json' : 'data/menu/menuTop.json';
-  const queryKey = ['menus', isMobile];
+  const url = isMobile? 'data/menu/menuMain.json' : 'data/menu/menuTop.json';
+  const queryKey = isMobile? 'menuMain': 'menuTop';
 
   const { data: menus, isSuccess } = useQuery({
                                                 queryKey,
