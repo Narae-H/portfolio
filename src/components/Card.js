@@ -3,7 +3,7 @@ import './../styles/Card.css';
 export function Card(props) {
   return (
     <>
-      <div id={props.id} className={`na-card ${props.className}`}>
+      <div id={props.id} className='na-card'>
         {props.children}
         <div className='important-icon-area'>
           <div className='icon'>&#9733;</div>
@@ -13,40 +13,40 @@ export function Card(props) {
   )
 }
 
-function Img({ children, id, className, ...props }) {
+function Img({ children, id='', className='', ...props }) {
   return(
     <>
-      <div id={props.id} className={`na-card-img ${props.className}`}>
+      <div id={props.id} className={`na-card-img ${className}`.trim()}>
         { children }
       </div>
     </>
   )
 }
 
-function Body({ children, id, className, ...props }) {
+function Body({ children, id='', className='', ...props }) {
   return(
     <>
-      <div id={props.id} className={`na-card-body ${props.className}`}>
+      <div id={props.id} className={`na-card-body ${className}`.trim()}>
         { children }
       </div>
     </>
   )
 }
 
-function Title({ children, id, className, ...props }) {
+function Title({ children, id='', className='', ...props }) {
   return(
     <>
-      <div id={props.id} className={`na-card-title ${props.className}`}>
+      <div id={props.id} className={`na-card-title ${className}`.trim()}>
         { children }
       </div>
     </>
   )
 }
 
-function Description({ children, id, className, ...props }) {
+function Description({ children, id='', className='', ...props }) {
   return(
     <>
-      <div id={props.id} className={`na-card-description ${props.className}`}>
+      <div id={props.id} className={`na-card-description ${className}`.trim()}>
         { children }
       </div>
     </>

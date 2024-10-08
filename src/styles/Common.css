@@ -26,7 +26,7 @@
   background-color: var(--editor-background);
   color: var(--editor-text-color);
 }
-.na-list-group a {
+.na-list-group a, .na-list-group-item a {
   display: flex;
   align-items: center;
   gap: 0.25em;
@@ -41,6 +41,10 @@
 .na-list-group a:active, .na-list-group a:focus {
   background-color: transparent;
   color: var(--point-color);
+}
+.na-list-group-item-header {
+  min-width: max-content;
+  /* font-family: 'mono-space-neon-bold'; */
 }
 .list-group-des{
   margin: 0;
