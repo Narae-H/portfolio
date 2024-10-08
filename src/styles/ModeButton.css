@@ -1,0 +1,107 @@
+.na-mode-button-wrapper, .na-mode-button-wrapper div {
+  display: flex;
+
+  --na-mode-button-wrapper-margin-top-bottom: 2px;
+  --na-mode-button-wrapper-margin-left-right: 5px;
+  --na-mode-button-wrapper-padding-left-right: 5px;
+}
+
+.na-mode-button-wrapper {
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  width: 3.5em;
+  padding: 0 var(--na-mode-button-wrapper-padding-left-right);
+  margin: var(--na-mode-button-wrapper-margin-top-bottom) var(--na-mode-button-wrapper-margin-left-right);
+  border-radius: 10px;
+  background-color: #374151;
+  transition: background-color 0.5s ease-in-out;
+}
+.na-mode-button-wrapper.light {
+  background-color: #fdfdfd ;
+}
+
+.na-mode-button-wrapper.light .na-mode-button.light {
+  animation-name: rotate-left-and-right;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 3;
+}
+
+.na-mode-button-wrapper.dark .na-mode-button.dark {
+  animation-name: rotate-left-and-right;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 3;
+}
+@keyframes rotate-left-and-right{
+  0% {
+    transform : rotate(0);
+  }
+  50% {
+    transform : rotate(-30deg);
+  }
+  100% {
+    transform : rotate(30deg);
+  }
+}
+
+.na-mode-button-selected {
+  --na-mode-button-selected-border-width: 3px;
+  --na-mode-button-selected-width: calc(var(--footer-height) - var(--na-mode-button-wrapper-margin-top-bottom) * 2 - var(--na-mode-button-selected-border-width));
+
+  position: absolute;
+  top: var(--na-mode-button-wrapper-margin-top-bottom);
+  left: calc(var(--na-mode-button-wrapper-margin-left-right) - 2px);
+  right: auto;
+  transform : translateX(0);
+  display: flex;
+  width: var(--na-mode-button-selected-width);
+  height: var(--na-mode-button-selected-width);
+  background-color: #374151;
+  border-width: var(--na-mode-button-selected-border-width);
+  border-style: solid;
+  border-radius: calc(var(--na-mode-button-selected-width) / 2);
+  border-color: #cccccc;
+  cursor: pointer;
+  animation-name: to-the-left;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  /* animation-fill-mode: forward; */
+}
+.na-mode-button-wrapper.light .na-mode-button-selected {
+  background-color: #ffeccf;
+  border-color: #ffbb52;
+  left: auto;
+  right: calc(var(--na-mode-button-wrapper-margin-left-right) - 2px);
+  animation-name: to-the-right;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  /* animation-fill-mode: forward; */
+}
+
+@keyframes to-the-left{
+  0% {
+    left: 10px;
+  }
+  50% {
+    left: -1px;
+  }
+  100% {
+    left: calc(var(--na-mode-button-wrapper-margin-left-right) + 2px);
+  }
+}
+@keyframes to-the-right{
+  0% {
+    right: 10px;
+  }
+  50% {
+    right: -1px;
+  }
+  100% {
+    right: calc(var(--na-mode-button-wrapper-margin-left-right) + 2px);
+  }
+}
+

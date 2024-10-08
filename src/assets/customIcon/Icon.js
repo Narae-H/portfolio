@@ -2,12 +2,12 @@ import React from 'react';
 import { FaJ, FaJava, FaHashtag, FaReact, FaAws, FaMicrosoft, FaS, FaMaxcdn } from "react-icons/fa6";
 import { IoLogoJavascript, IoMdGitBranch } from 'react-icons/io';
 import { SiSpringboot, SiMariadb } from "react-icons/si";
-import { MdCode } from "react-icons/md";
+import { MdCode, MdDarkMode, MdLightMode } from "react-icons/md";
 import { BiLogoRedux, BiLeaf } from "react-icons/bi";
 import { RiBootstrapLine } from "react-icons/ri";
 import { TbBrandMysql } from "react-icons/tb";
-import { VscAzure, VscFiles, VscCode, VscFolderLibrary, VscMail, VscSettingsGear, VscVscode } from "react-icons/vsc";
-import { ImOnedrive } from "react-icons/im";
+import { VscAzure, VscFiles, VscCode, VscFolderLibrary, VscMail, VscSettingsGear, VscVscode, VscRemote } from "react-icons/vsc";
+import { ImGithub, ImLinkedin, ImOnedrive } from "react-icons/im";
 
 const iconMap = {
   vscode : {
@@ -109,6 +109,26 @@ const iconMap = {
   mspowerplatform: {
     component: FaMaxcdn,
     style: { color: '#7bb400', size: '24px' }
+  },
+  lightmode: {
+    component: MdLightMode, 
+    style: { color: '#ffbb52', width: '15px', height: '15px' }
+  },
+  darkmode: {
+    component: MdDarkMode, 
+    style: { color: '#f8f8f8', width: '15px', height: '15px' }
+  },
+  vscremote:{
+    component: VscRemote, 
+    style: { color: '#cccccc', width: '15px', height: '15px' }
+  },
+  imgithub:{
+    component: ImGithub, 
+    style: { color: '#cccccc', width: '13px', height: '13px' }
+  },
+  imlinkedin:{
+    component: ImLinkedin, 
+    style: { color: '#cccccc', width: '13px', height: '13px' }
   },
   vscodec: {
     component: ( ) => {

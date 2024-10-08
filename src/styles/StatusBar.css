@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+#status-wrapper div, #status-wrapper p, #status-wrapper span {
+  display: flex;
+}
+
 #status-wrapper {
   display: flex;
   flex-direction: row;
@@ -32,18 +36,18 @@ a {
 .menu-icon.bg-activity {
   background-color: var(--activitybar-active-border); 
 }
-.menu-icon.link {
+/* .menu-icon.link {
   cursor: pointer;
-}
-.menu-icon p {
+} */
+/* .menu-icon p {
   margin: 0;
   padding: 0;
-}
-.status-icon{
+} */
+/* .status-icon{
   margin: 0 5px;
   width: 1.5em;
   height: 1.5em;
-}
+} */
 
 .menu-icon.link {
   display: flex;
@@ -58,6 +62,6 @@ a {
 }
 .menu-icon.link:hover {
   background: var(--list-hover-background);
+  cursor: pointer;
 }
-
 

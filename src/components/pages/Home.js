@@ -23,7 +23,7 @@ function Home() {
       <Editor>
         <Editor.Header>
           <Editor.HeaderTab title='Welcome' icon={<Icon name='vscode'/>} className='active' />
-          <Editor.HeaderTab title='Test' icon={<Icon name='vscode'/>} />
+          {/* <Editor.HeaderTab title='Test' icon={<Icon name='vscode'/>} /> */}
         </Editor.Header>
 
         <Editor.Body id='editor-area-body'>
