@@ -31,4 +31,4 @@ function StatusBar(){
   )
 }
 
-export default StatusBar
+export default StatusBar;

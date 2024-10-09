@@ -1,5 +1,6 @@
 // VScode default dark
-export const defaultTheme = {
+export const darkTheme = {
+// export const defaultTheme = {
   // Base colors
   base: {
     background        : '#181818',
@@ -59,7 +60,8 @@ export const defaultTheme = {
 }
 
 // Tokyo Night theme
-export const tokyoNightTheme = {
+export const lightTheme = {
+// export const tokyoNightTheme = {
   // Base colors
   base: {
     background        : '#16161e',
@@ -119,6 +121,6 @@ export const tokyoNightTheme = {
 }
 
 export const theme = {
-  defaultTheme,
-  tokyoNightTheme
+  darkTheme,
+  lightTheme
 }
