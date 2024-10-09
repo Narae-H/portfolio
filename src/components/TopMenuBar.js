@@ -4,7 +4,7 @@ import { VscChromeClose, VscChromeMinimize, VscChromeRestore, VscMail } from "re
 import { Dropdown } from './Dropdown';
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import useWindowSize from '../hooks/windowSize';
+import useWindowSize from '../hooks/useWindowSize';
 import { Icon } from '../assets/customIcon/Icon';
 
 function TopMenuBar(){

@@ -15,12 +15,14 @@
   width: 3.5em;
   padding: 0 var(--na-mode-button-wrapper-padding-left-right);
   margin: var(--na-mode-button-wrapper-margin-top-bottom) var(--na-mode-button-wrapper-margin-left-right);
-  border-radius: 10px;
-  background-color: #374151;
+  border-radius: 12px;
+  box-shadow: inset -1px 1px 4px 0px rgba(0,0,0,0.5);
+  background-color: #626262;
   transition: background-color 0.5s ease-in-out;
 }
 .na-mode-button-wrapper.light {
-  background-color: #fdfdfd ;
+  box-shadow: inset -5px 2px 5px 0px rgba(151, 95, 0, 0.5);
+  background-color: #ffc563 ;
 }
 
 .na-mode-button-wrapper.light .na-mode-button.light {
@@ -48,9 +50,18 @@
   }
 }
 
+.na-mode-button-selected-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}
 .na-mode-button-selected {
   --na-mode-button-selected-border-width: 3px;
-  --na-mode-button-selected-width: calc(var(--footer-height) - var(--na-mode-button-wrapper-margin-top-bottom) * 2 - var(--na-mode-button-selected-border-width));
+  --na-mode-button-selected-width: calc(var(--footer-height) - var(--na-mode-button-wrapper-margin-top-bottom) * 2 - var(--na-mode-button-selected-border-width) - 1px);
 
   position: absolute;
   top: var(--na-mode-button-wrapper-margin-top-bottom);
@@ -60,26 +71,20 @@
   display: flex;
   width: var(--na-mode-button-selected-width);
   height: var(--na-mode-button-selected-width);
-  background-color: #374151;
-  border-width: var(--na-mode-button-selected-border-width);
-  border-style: solid;
-  border-radius: calc(var(--na-mode-button-selected-width) / 2);
-  border-color: #cccccc;
-  cursor: pointer;
+  background-color: #f2f1ee;
+  border-radius: 50%;
+  box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.5);
   animation-name: to-the-left;
   animation-duration: 0.3s;
   animation-timing-function: ease-out;
-  /* animation-fill-mode: forward; */
 }
 .na-mode-button-wrapper.light .na-mode-button-selected {
-  background-color: #ffeccf;
-  border-color: #ffbb52;
   left: auto;
   right: calc(var(--na-mode-button-wrapper-margin-left-right) - 2px);
+  box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   animation-name: to-the-right;
   animation-duration: 0.3s;
   animation-timing-function: ease-out;
-  /* animation-fill-mode: forward; */
 }
 
 @keyframes to-the-left{

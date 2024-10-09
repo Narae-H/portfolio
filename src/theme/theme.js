@@ -1,6 +1,5 @@
 // VScode default dark
 export const darkTheme = {
-// export const defaultTheme = {
   // Base colors
   base: {
     background        : '#181818',
@@ -17,6 +16,16 @@ export const darkTheme = {
     foreground         : '#cccccc', // icon colour
     inactiveForeground : '#7b7b7b', // icon colour when it is inactive
     activeBorder       : '#0078d4' // Active indicator border colour
+  },
+
+  // Status bar
+  statusbar: {
+    background: '#181818',
+    foreground: '#cccccc',
+    hoverBackground: '#262626',
+    hoverForeground: '#ffffff',
+    pointBackground: '#0078d4',
+    pointForeground: '#ffffff'
   },
 
   // Primary-side-bar: Lists and trees
@@ -37,11 +46,17 @@ export const darkTheme = {
     foreground   : '#cccccc'
   },
 
+  // Editor blog
+  editorblog: {
+    border: '#37373d',
+    activeBorder: '#0078d4'
+  },
+
   // Scrollbar
   scrollbar: {
     trackColor: '#cccccc',
-    thumbColor: '#181818',
-    thumbHoverColor: 'rgba(248, 248, 248, 0.1)',
+    thumbColor: 'rgba(120, 120, 120, 0.1)',
+    thumbHoverColor: 'rgba(120, 120, 120, 0.2)',
   },
 
   // Tooltip
@@ -59,63 +74,78 @@ export const darkTheme = {
   }
 }
 
-// Tokyo Night theme
 export const lightTheme = {
-// export const tokyoNightTheme = {
   // Base colors
   base: {
-    background        : '#16161e',
-    inactiveTextColor : '#787c99',
-    activeTextColor   : '#A9B1D6',
-    border            : '#13131a',
-    activeborder      : '#0078d4',
-    pointColor        : '#13131a'
+    background        : '#d6cfe2',
+    inactiveTextColor : '#737078',
+    activeTextColor   : '#737078',
+    border            : '#f3f3f3',
+    activeborder      : '#f3f3f3',
+    pointColor        : '#006ab1'
   },
 
   // Activity Bar
   activitybar: {
-    background         : '#16161e',
-    foreground         : '#787c99', // icon colour
-    inactiveForeground : '#3b3e52', // icon colour when it is inactive
-    activeBorder       : '#787c99'  // Active indicator border colour
+    background         : '#ededf5',
+    foreground         : '#705697', // icon colour
+    inactiveForeground : '#bbb0d9', // icon colour when it is inactive
+    activeBorder       : '#705697'  // Active indicator border colour
+  },
+
+  // Status bar
+  statusbar: {
+    background: '#705697',
+    foreground: '#fbfafc',
+    hoverBackground: '#7e69a1',
+    hoverForeground: '#ffffff',
+    pointBackground: '#4e3c69',
+    pointForeground: '#e5e3e9'
   },
   
   // Primary-side-bar: Lists and trees
   list:{
-    inactiveSelectionBackground: '#16161e',
-    inactiveSelectionForeground: '#787c99',
-    hoverForeground            : '#a9b1d6', // text color
-    hoverBackground            : '#2D2E2E',
-    searchAreaBackground       : '#313131',
-    searchAreaForeground       : '#747474',
-    searchAreaActiveBorder     : '#0078d4'
+    inactiveSelectionBackground: '#f0f0f7',
+    inactiveSelectionForeground: '#61618f',
+    hoverBackground            : '#ede8ef',
+    hoverForeground            : '#61618f', // text color
+    searchAreaBackground       : '#ffffff',
+    searchAreaForeground       : '#616161',
+    searchAreaActiveBorder     : '#ffffff'
   }, 
   
   // Editor groups & tabs
   editor: {
-    tabBackground: '#16161e',
-    background   : '#1a1b26',
-    foreground   : '#c0caf5'
+    tabBackground: '#ececec',
+    background   : '#f5f5f5',
+    foreground   : '#616161'
+  },
+
+  // Editor blog
+  editorblog: {
+    border: '#d6cfe2',
+    activeBorder: '#705697'
   },
 
   // Scrollbar
    scrollbar: {
-    trackColor: '#37373d',
-    thumbColor: '#ffffff'
+    trackColor: '#f5f5f5',
+    thumbColor: 'rgba(115, 115, 115, 0.1)',
+    thumbHoverColor: 'rgba(115, 115, 115, 0.3)'
   },
 
   // Tooltip
   tooltip: {
-    background: '#1e1e1e',
-    foreground: '#cccccc',
+    background: '#f3f3f3',
+    foreground: '#616161',
     border: '#cccccc',
   },
 
   // Dropdown
   dropdown: {
-    background: '#181818',
-    foreground: '#cccccc',
-    hover: '#0078d4',
+    background: '#f5f5f5',
+    foreground: '#616161',
+    hover: '#c4d9b1',
   }
 
 }

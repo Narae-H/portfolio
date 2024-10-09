@@ -4,19 +4,13 @@ import 'normalize.css';
 import { GlobalStyle } from './theme/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 
-import { useLocalStorage } from './hooks/localStorage';
-
 import Layout from './components/Layout';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { useEffect } from 'react';
+import { useTheme } from './hooks/useTheme';
 
 function App() {
   // 1. Selected Theme
-  const [currentThemeName, currentThemeObject] = useLocalStorage();
-  useEffect(() => {
-    console.log(currentThemeName);
-   }, [currentThemeName]);
-  
+  const [, currentThemeObject] = useTheme();
 
   // 2. QueryClient
   const queryClient = new QueryClient(); 

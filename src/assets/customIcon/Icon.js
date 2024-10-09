@@ -112,7 +112,7 @@ const iconMap = {
   },
   lightmode: {
     component: MdLightMode, 
-    style: { color: '#ffbb52', width: '15px', height: '15px' }
+    style: { color: '#ffffff', width: '15px', height: '15px' }
   },
   darkmode: {
     component: MdDarkMode, 
