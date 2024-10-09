@@ -8,18 +8,23 @@ import { useLocalStorage } from './hooks/localStorage';
 
 import Layout from './components/Layout';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { useEffect } from 'react';
 
 function App() {
   // 1. Selected Theme
-  const [localThemeObj] = useLocalStorage();
+  const [currentThemeName, currentThemeObject] = useLocalStorage();
+  useEffect(() => {
+    console.log(currentThemeName);
+   }, [currentThemeName]);
+  
 
   // 2. QueryClient
-  const queryClient =  new QueryClient(); 
+  const queryClient = new QueryClient(); 
 
   return (
     <>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={localThemeObj}>
+      <ThemeProvider theme={currentThemeObject}>
         <GlobalStyle />
         <Layout/>
       </ThemeProvider>

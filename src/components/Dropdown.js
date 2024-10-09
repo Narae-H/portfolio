@@ -88,10 +88,10 @@ function Item ({ children, className = '', title='', link = '/', eventKey, index
   });
   
   // 3. Handling item when it's clicked 
-  const handleItemClick = useCallback((e) => {
+  const handleItemClick = (e) => {
     e.preventDefault();
     setActiveKey(eventKey);
-  }, [eventKey, setActiveKey]);
+  };
   
   return (
     <div 
