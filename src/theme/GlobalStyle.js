@@ -48,6 +48,13 @@ export const GlobalStyle = createGlobalStyle`
     --activitybar-text-color         : ${ ({theme}) => theme.activitybar.foreground };
     --activitybar-inactive-text-color: ${ ({theme}) => theme.activitybar.inactiveForeground };
     --activitybar-active-border      : ${ ({theme}) => theme.activitybar.activeBorder };
+    
+    --statusbar-background      : ${ ({theme}) => theme.statusbar.background };
+    --statusbar-text-color      : ${ ({theme}) => theme.statusbar.foreground };
+    --statusbar-hover-background: ${ ({theme}) => theme.statusbar.hoverBackground };
+    --statusbar-hover-text-color: ${ ({theme}) => theme.statusbar.hoverForeground };
+    --statusbar-point-background: ${ ({theme}) => theme.statusbar.pointBackground };
+    --statusbar-point-text-color: ${ ({theme}) => theme.statusbar.pointForeground };
 
     --list-inactive-selection-background: ${ ({theme}) => theme.list.inactiveSelectionBackground };
     --list-inactive-selection-text-color: ${ ({theme}) => theme.list.inactiveSelectionForeground };
@@ -60,6 +67,9 @@ export const GlobalStyle = createGlobalStyle`
     --editor-tab-background: ${ ({theme}) => theme.editor.tabBackground };
     --editor-background    : ${ ({theme}) => theme.editor.background };
     --editor-text-color    : ${ ({theme}) => theme.editor.foreground };
+
+    --editor-blog-border        : ${ ({theme}) => theme.editorblog.border };
+    --editor-blog-active-border : ${ ({theme}) => theme.editorblog.activeBorder };
 
     --scrollbar-track-color: ${({theme}) => theme.scrollbar.trackColor};
     --scrollbar-thumb-color: ${({theme}) => theme.scrollbar.thumbColor};

@@ -57,7 +57,7 @@
   font-size: var(--fs-small);
   color: var(--editor-text-color);
   word-wrap: break-word;
-  border-bottom: var(--border-color) var(--border-width) solid;
+  border-bottom: var(--editor-blog-border) var(--border-width) solid;
 }
 
 .na-editor-blog-details-navs {
@@ -93,7 +93,7 @@
 }
 
 .na-editor-blog-details-nav-item.active {
-  border-bottom: var(--border-width) solid var(--active-border-color);
+  border-bottom: var(--border-width) solid var(--editor-blog-active-border);
 }
 
 .na-editor-blog-body-header {
@@ -117,7 +117,7 @@
   border: 1px solid var(--inactiveTextColor);
   opacity: 0.5;
   border-radius: 20px;
-  color: var(--active-text-color);
+  color: #ffffff;
   cursor: pointer;
 }
 #go-to-top-button:hover {

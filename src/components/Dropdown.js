@@ -2,7 +2,7 @@ import './../styles/Dropdown.css';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { VscChevronRight } from 'react-icons/vsc';
 
 // Create a context for the dropdown

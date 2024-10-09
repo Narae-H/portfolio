@@ -20,7 +20,7 @@
   color: var(--activitybar-inactive-text-color);
 }
 .na-nav-link.active {
-  border-left: 2px solid var(--activitybar-active-border); 
+  border-left: 3px solid var(--activitybar-active-border); 
 }
 .na-nav-link:hover {
   color: var(--activitybar-text-color);
