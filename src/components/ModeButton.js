@@ -5,8 +5,7 @@ import { Icon } from '../assets/customIcon/Icon';
 import { useTheme, DARK_THEME, LIGHT_THEME } from '../hooks/useTheme';
 
 export function ModeButton({children, id='', className='', ...props}) {
-  // 1. Controlling dark/light mode state
-  // 1-1) Get the currne theme
+  // 1. Get the currne theme
   const [ currentThemeName, , setTheme ] = useTheme();
 
   // 2. Toggle mode

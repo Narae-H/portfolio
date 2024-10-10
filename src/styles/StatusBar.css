@@ -2,7 +2,7 @@ a {
   text-decoration: none;
 }
 
-#status-wrapper div, #status-wrapper p, #status-wrapper span {
+#status-wrapper div, #status-wrapper p {
   display: flex;
 }
 
@@ -55,3 +55,8 @@ a {
   cursor: pointer;
 }
 
+@media screen and (max-width : 768px) { 
+  .menu-icon.link span {
+    display: none;
+  }
+}

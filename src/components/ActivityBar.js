@@ -8,7 +8,6 @@ import { Icon } from '../assets/customIcon/Icon';
 function ActivityBar(){
   // 1. Menus
   let mainMenu = useSelector( (state) => state.mainMenu );
-  let subMenu  = useSelector( (state) => state.subMenu );
 
   // 2. Get the current page
   let location  = useLocation();
@@ -39,17 +38,12 @@ function ActivityBar(){
         </div>
 
         <div className='bottom-menu'>
-        {
-          subMenu.map( (iconObj)=>{
-            return(
-              <Tooltip content={iconObj.tooltip} position="right" hasArrow={true} key={iconObj.name}>
-                <a href={`/${iconObj.name}`} className={`na-nav-link ${isActive(iconObj.name) ? 'active' : ''}`}>
-                  <Icon name={iconObj.name} className='activity-icon'/>
-                </a>
-              </Tooltip>
-            )
-          })
-        }
+          <Tooltip content='Contact Me' position="right" hasArrow={true}>
+            <a href='/contactme' className={`na-nav-link ${isActive('contactme') ? 'active' : ''}`}>
+              <Icon name='contactme' className='activity-icon'/>
+            </a>
+          </Tooltip>
+
         </div>
       </div>
     </>
