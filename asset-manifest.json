@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.70fede50.css",
-    "main.js": "/portfolio/static/js/main.23b414c5.js",
+    "main.js": "/portfolio/static/js/main.fba25f33.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/MonaspaceNeon-Regular.woff": "/portfolio/static/media/MonaspaceNeon-Regular.2d34291b0f45daa945e2.woff",
     "static/media/MonaspaceNeon-SemiBold.woff": "/portfolio/static/media/MonaspaceNeon-SemiBold.7d2ee71e850ba0810c73.woff",
@@ -9,11 +9,11 @@
     "static/media/MonaspaceNeon-ExtraLight.woff": "/portfolio/static/media/MonaspaceNeon-ExtraLight.51b5ee109d35cf0c8ebd.woff",
     "index.html": "/portfolio/index.html",
     "main.70fede50.css.map": "/portfolio/static/css/main.70fede50.css.map",
-    "main.23b414c5.js.map": "/portfolio/static/js/main.23b414c5.js.map",
+    "main.fba25f33.js.map": "/portfolio/static/js/main.fba25f33.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.70fede50.css",
-    "static/js/main.23b414c5.js"
+    "static/js/main.fba25f33.js"
   ]
 }
