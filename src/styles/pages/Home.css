@@ -17,6 +17,7 @@
 @media screen and (max-width : 992px) {
   #editor-area-body {
     width: 100%;
+    height: calc(100vh - var(--header-height) * 2 - var(--footer-height));
     padding: 5rem 8rem;
     overflow-y: scroll;
   }
