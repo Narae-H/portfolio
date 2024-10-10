@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.a4a31e3d.css",
+    "main.css": "/portfolio/static/css/main.e3ec4248.css",
     "main.js": "/portfolio/static/js/main.270d586e.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/MonaspaceNeon-Regular.woff": "/portfolio/static/media/MonaspaceNeon-Regular.2d34291b0f45daa945e2.woff",
@@ -8,12 +8,12 @@
     "static/media/MonaspaceNeon-Light.woff": "/portfolio/static/media/MonaspaceNeon-Light.2e32b026b37ab8c8fb09.woff",
     "static/media/MonaspaceNeon-ExtraLight.woff": "/portfolio/static/media/MonaspaceNeon-ExtraLight.51b5ee109d35cf0c8ebd.woff",
     "index.html": "/portfolio/index.html",
-    "main.a4a31e3d.css.map": "/portfolio/static/css/main.a4a31e3d.css.map",
+    "main.e3ec4248.css.map": "/portfolio/static/css/main.e3ec4248.css.map",
     "main.270d586e.js.map": "/portfolio/static/js/main.270d586e.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4a31e3d.css",
+    "static/css/main.e3ec4248.css",
     "static/js/main.270d586e.js"
   ]
 }
