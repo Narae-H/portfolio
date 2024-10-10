@@ -18,7 +18,7 @@ console.log( process.env.PUBLIC_URL );
 root.render(
   <Provider store={store}>
     <React.StrictMode>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename='/portfolio'>
         <App />
       </BrowserRouter>
     </React.StrictMode>

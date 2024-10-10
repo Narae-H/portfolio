@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import useWindowSize from '../hooks/useWindowSize';
 import { Icon } from '../assets/customIcon/Icon';
+import { Link } from 'react-router-dom';
 
 function TopMenuBar(){
   // 1. Get menus depending on window size
@@ -38,7 +39,7 @@ function TopMenuBar(){
       <div id='top-menu-wrapper'>
         <div className='left-menu'>
           <div className='menu-main-img'>
-            {<Icon name='vscodec'/>}
+            <Link to='/'> {<Icon name='vscodec'/>} </Link>
           </div>
           { isSuccess && menus.data.menus.map((menu, index) => {
             return (

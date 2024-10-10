@@ -8,6 +8,7 @@ import { Card } from '../Card';
 import { Icon } from '../../assets/customIcon/Icon';
 import axios from 'axios';
 import { transformToLink } from '../../utils/common';
+import { Link } from 'react-router-dom';
 
 function Home() {
   // 1. Get menus
@@ -39,8 +40,10 @@ function Home() {
                   {
                     isSuccess && menus.data.menus.map( (item, index) => {
                       return(
-                        <ListGroup.Item action href={`/${transformToLink(item.name)}`} className='na-list-group-item' key={`key_${index}`}>
-                          <Icon name={item.name}/> <span>{item.name}</span>
+                        <ListGroup.Item className='na-list-group-item' key={`key_${index}`}>
+                          <Link to={`/${transformToLink(item.name)}`}>
+                            <Icon name={item.name}/> <span>{item.name}</span>
+                          </Link>
                         </ListGroup.Item>
                       )
                     })
