@@ -1,4 +1,9 @@
 
+#root-container {
+  position: relative;
+  height: 100vh;
+}
+
 #top-menu-bar {
   display: flex;
   flex-direction: row;
@@ -34,6 +39,9 @@
 }
 
 #bottom-status-bar {
+  position: absolute;
+  z-index: 999;
+  bottom:0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -12,7 +12,16 @@ export function useLocalStorage (key) {
   }, [key])
 
   // Required! Snapshot: Read a snapshot of the data from the store.
-  const getSnapshot = () => JSON.parse( localStorage.getItem(key) );
+  // const getSnapshot = () => JSON.parse( localStorage.getItem(key) );
+  const getSnapshot = () => {
+    const value = localStorage.getItem(key);
+    try {
+      return JSON.parse( value );
+    } catch(error) {
+      console.warn(`Failed to parse stored value: ${error.message}`);
+      return value;
+    }
+  };
 
   // Required! Subscribe: The subscribe function should subscribe to the store and return a function that unsubscribes.
   const subscribe = (listener) => {

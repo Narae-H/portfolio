@@ -203,3 +203,48 @@ export function Dropdown ({ children, className = '', title='', ...props }) {
 
 
 ```
+
+## Publish the webpage to GitHub
+GitHub doesn't support Single Page Applications (SPAs), so clicking links resulted in a 404 error.    
+By following the solution from [spa-github-pages](https://github.com/rafgraph/spa-github-pages), I was able to fix the issue.
+
+### gh-pages
+1. Install `gh-pages`
+```
+npm install gh-pages
+```
+
+2. Modifiy `package.json`
+Add `homepage`, `predeploy`, and `deploy`.   
+ex) "homepage": <b>[GitHub user name]</b>.github.io/<b>[repository name]</b>
+```
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://narae-h.github.io/portfolio",
+  "dependencies": {
+    ...
+  },
+  "scripts": {
+    ...
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }, 
+  ...
+}
+```
+
+3. Add `basename` in the `<BrowserRouter>` component
+```
+root.render(
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <App />
+  </BrowserRouter>
+);
+```
+
+4. Deploy
+```
+npm run deploy
+```

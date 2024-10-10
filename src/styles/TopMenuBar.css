@@ -48,3 +48,9 @@
 .menu-img.bp-md {
   display: none;
 }
+
+@media screen and (max-width : 768px) { 
+  #top-menu-wrapper .right-menu {
+    display: none;
+  }
+ }

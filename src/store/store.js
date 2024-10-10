@@ -10,18 +10,18 @@ let mainMenu = createSlice({
   }             
 });
 
-let subMenu = createSlice({
-  name: 'subMenu',
-  initialState: [ {name: 'contactMe', tooltip: 'contact Me'}
-                , {name: 'settings' , tooltip: 'Settings'  }
-                ],
-  reducers: {
-  }             
-});
+// let subMenu = createSlice({
+//   name: 'subMenu',
+//   initialState: [ {name: 'contactMe', tooltip: 'contact Me'}
+//                 , {name: 'settings' , tooltip: 'Settings'  }
+//                 ],
+//   reducers: {
+//   }             
+// });
 
 export default configureStore({
   reducer: { 
     mainMenu: mainMenu.reducer,
-    subMenu : subMenu.reducer
+    // subMenu : subMenu.reducer
   }
 }) 

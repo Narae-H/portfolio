@@ -9,16 +9,23 @@ import StatusBar from './StatusBar';
 import Home from './pages/Home';
 
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { capitalizeFirstLetter } from '../utils/common';
+import { transformToLink } from '../utils/common';
+import { useQuery } from 'react-query';
+import axios from 'axios';
+import { PageComponent } from './PageComponent';
 
 function Layout() {
   // 1. Menus
-  let mainMenu = useSelector( (state) => state.mainMenu );
+  const { data: menus, isSuccess } = useQuery(
+                                      'menuMain',
+                                      () => axios.get('data/menu/menuMain.json'),
+                                      {refetchOnWindowFocus: false,
+                                      staleTime: Infinity}
+                                    );
 
   return (
     <>
-      <div>
+      <div id='root-container'>
         <div id='top-menu-bar'>
           <TopMenuBar/>
         </div>
@@ -30,16 +37,13 @@ function Layout() {
           <div id='editor-area'>
             <Routes>
               {
-                mainMenu.map( (item)=>{
-                  const CapitalizedComponent = React.lazy(() => import(`./pages/${capitalizeFirstLetter(item.name)}`));
+                isSuccess && menus.data.menus.map( (item)=>{
                   return (
                     <Route 
                       key={item.name} 
-                      path={`/${item.name}`} 
+                      path={`/${transformToLink(item.name)}`}
                       element={
-                        <React.Suspense fallback={<div>Loading...</div>}>
-                          <CapitalizedComponent />
-                        </React.Suspense>
+                        <PageComponent name={item.name} />
                       }
                     />
                   )
