@@ -11,13 +11,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// console.log( process );
-console.log( process.env );
-console.log( process.env.PUBLIC_URL );
-
 root.render(
   <Provider store={store}>
     <React.StrictMode>
+      {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
       <BrowserRouter basename='/portfolio'>
         <App />
       </BrowserRouter>

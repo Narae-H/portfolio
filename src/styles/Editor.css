@@ -13,6 +13,7 @@
 }
 
 .na-editor-header {
+  max-height: var(--header-height);
   padding: 0;
   margin: 0;
   border: var(--border-color) var(--border-width) solid;
@@ -93,11 +94,21 @@
 }
 .na-editor-subTitle {
   font-size: 1.3rem;
-  margin: 0;
-}
-.na-editor-subSubTitle {
-  font-size: 1.1rem;
-  margin: 0;
   padding: 0.25rem 0;
+  margin: 0;
 }
 
+.na-editor-subSubTitle {
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width : 768px) { 
+  .na-editor-title {
+    padding: 0.3rem 0; 
+  }
+  
+  .na-editor-subTitle {
+    padding: 0;
+    font-size: 1.1rem;
+  }
+ }
