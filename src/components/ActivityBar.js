@@ -1,7 +1,7 @@
 import './../styles/ActivityBar.css';
 
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Tooltip } from './Tooltip';
 import { Icon } from '../assets/customIcon/Icon';
 
@@ -28,9 +28,12 @@ function ActivityBar(){
             mainMenu.map( (iconObj)=>{
               return(
                 <Tooltip content={iconObj.tooltip} position="right" hasArrow={true} key={iconObj.name}>
-                  <a href={`/${iconObj.name}`} className={`na-nav-link ${isActive(iconObj.name) ? 'active' : ''}`}>
+                  {/* <a href={`./${iconObj.name}`} className={`na-nav-link ${isActive(iconObj.name) ? 'active' : ''}`}>
                     <Icon name={iconObj.name} className='activity-icon'/>
-                  </a>
+                  </a> */}
+                  <Link to={`/${iconObj.name}`} className={`na-nav-link ${isActive(iconObj.name) ? 'active' : ''}`}>
+                    <Icon name={iconObj.name} className='activity-icon'/>
+                  </Link>
                 </Tooltip>
               )
             })
