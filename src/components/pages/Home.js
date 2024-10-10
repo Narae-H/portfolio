@@ -24,7 +24,6 @@ function Home() {
       <Editor>
         <Editor.Header>
           <Editor.HeaderTab title='Welcome' icon={<Icon name='vscode'/>} className='active' />
-          {/* <Editor.HeaderTab title='Test' icon={<Icon name='vscode'/>} /> */}
         </Editor.Header>
 
         <Editor.Body id='editor-area-body'>
@@ -63,7 +62,7 @@ function Home() {
                     <p className='list-group-des'> Developed the One Click Trade Mark website to enable clients to easily register their trade marks online </p>
                   </ListGroup.Item>
                   <ListGroup.Item className='na-list-group-item'>
-                    <a href='/experiences'>More...</a>
+                    <Link to='/experiences'>More...</Link>
                   </ListGroup.Item>
                 </ListGroup>
               </div>  
@@ -100,7 +99,7 @@ function Home() {
                   </Card>
                 <ListGroup>
                   <ListGroup.Item className='na-list-group-item'>
-                    <a href='/skills'>More...</a>
+                    <Link to='/skills'>More...</Link>
                   </ListGroup.Item>
                 </ListGroup>
               </div>
