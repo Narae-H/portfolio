@@ -208,6 +208,9 @@ export function Dropdown ({ children, className = '', title='', ...props }) {
 GitHub doesn't support Single Page Applications (SPAs), so clicking links resulted in a 404 error.    
 By following the solution from [spa-github-pages](https://github.com/rafgraph/spa-github-pages), I was able to fix the issue.
 
+### spa-github-pages
+
+
 ### gh-pages
 1. Install `gh-pages`
 ```
