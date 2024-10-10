@@ -1,5 +1,7 @@
-import React, { createContext, useContext, useState } from 'react';
 import './../styles/CollapsibleList.css';
+
+import React, { createContext, useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import { VscChevronDown, VscChevronRight } from 'react-icons/vsc';
 
 const CollapsibleListContext = createContext();
@@ -13,8 +15,12 @@ export const CollapsibleList = ({ children, defaultOpenLevels = 1 }) => {
     </CollapsibleListContext.Provider>
   );
 };
+CollapsibleList.prototype = {
+  children: PropTypes.node,
+  defaultOpenLevels: PropTypes.number
+}
 
-function ListItem ({ children, title, icon: IconComponent, level = 1, ...props }) {
+function ListItem ({ children, title = '', link, icon: IconComponent, level = 1, ...props }) {
   // 1. Get the current level of list
   const { defaultOpenLevels } = useContext(CollapsibleListContext);
   const [isOpen, setIsOpen] = useState(level <= defaultOpenLevels);
@@ -59,6 +65,13 @@ function ListItem ({ children, title, icon: IconComponent, level = 1, ...props }
     </>
   )
 };
+ListItem.propTypes = {
+  children: PropTypes.node,
+  title: PropTypes.string,
+  link: PropTypes.string,
+  icon: PropTypes.oneOfType([PropTypes.node, PropTypes.elementType]),
+  level: PropTypes.number
+}
 
 CollapsibleList.ListItem = ListItem;
 

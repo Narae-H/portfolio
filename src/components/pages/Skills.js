@@ -5,9 +5,12 @@ import { PrimarySideBar } from '../PrimarySideBar';
 import { CollapsibleList } from '../CollapsibleList';
 import { Icon } from '../../assets/customIcon/Icon';
 import { EditorBlog } from '../EditorBlog';
+import { useParams } from 'react-router-dom';
 
-function Skills () {
-
+function Skills ( props ) {
+  let {id} = useParams();
+  console.log("id==> " + id);
+  
   return (
     <>
       <PrimarySideBar>
@@ -19,7 +22,7 @@ function Skills () {
         <PrimarySideBar.Body>
           <CollapsibleList defaultOpenLevels={0}>
             <CollapsibleList.ListItem title='Back End Skills'>
-              <CollapsibleList.ListItem title='Java' icon={<Icon name='java'/>} />
+              <CollapsibleList.ListItem title='Java' link='/java' icon={<Icon name='java'/>} />
               <CollapsibleList.ListItem title='Spring Boot' icon={<Icon name='springboot'/>} />
             </CollapsibleList.ListItem>
             <CollapsibleList.ListItem title='Front End Skills'>

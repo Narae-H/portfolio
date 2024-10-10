@@ -14,6 +14,8 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 import { PageComponent } from './PageComponent';
 
+export const LayoutContext = React.createContext();
+
 function Layout() {
   // 1. Menus
   const { data: menus, isSuccess } = useQuery(
@@ -49,6 +51,13 @@ function Layout() {
                   )
                 })
               }
+
+              <Route path='skills/:id' element={
+                <LayoutContext.Provider value='java'>
+                  <PageComponent name='skills' />
+                </LayoutContext.Provider>
+              } />
+
               <Route path='*' element={<Home />} />
             </Routes>
           </div>
