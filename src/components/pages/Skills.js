@@ -1,15 +1,37 @@
 import './../../styles/pages/Skills.css'
 
+import { useQuery } from 'react-query';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
+
 import { Editor } from '../Editor';
 import { PrimarySideBar } from '../PrimarySideBar';
 import { CollapsibleList } from '../CollapsibleList';
 import { Icon } from '../../assets/customIcon/Icon';
 import { EditorBlog } from '../EditorBlog';
-import { useParams } from 'react-router-dom';
 
 function Skills ( props ) {
+  // 1. Get sidebar menu
+  const { data: skills, isSuccess1 } = useQuery(
+                                          'menuMain',
+                                          () => axios.get('/data/menu/menuMain.json'),
+                                          {refetchOnWindowFocus: false,
+                                          staleTime: Infinity}
+  );
+  console.log( isSuccess1);
+
+  // 2. Get content
   let {id} = useParams();
-  console.log("id==> " + id);
+  
+  const { data: skillObj, isSuccess } = useQuery(
+                                          ['Skills', id],
+                                          () => axios.get(`/data/skills/${id}.json`).then( res => res.data),
+                                          {refetchOnWindowFocus: false,
+                                            staleTime: Infinity,
+                                            enabled: !!id}
+                                          );
+    
+  console.log( skillObj );
   
   return (
     <>
@@ -22,7 +44,7 @@ function Skills ( props ) {
         <PrimarySideBar.Body>
           <CollapsibleList defaultOpenLevels={0}>
             <CollapsibleList.ListItem title='Back End Skills'>
-              <CollapsibleList.ListItem title='Java' link='/java' icon={<Icon name='java'/>} />
+              <CollapsibleList.ListItem icon={<Icon name='java'/>}> <Link to='/skills/java'>Java</Link> </CollapsibleList.ListItem>
               <CollapsibleList.ListItem title='Spring Boot' icon={<Icon name='springboot'/>} />
             </CollapsibleList.ListItem>
             <CollapsibleList.ListItem title='Front End Skills'>
@@ -59,7 +81,32 @@ function Skills ( props ) {
           <Editor.HeaderTab title='Welcome' icon={<Icon name='skills' />} className='active' />
         </Editor.Header>
 
-        <Editor.Body className='skills-editor-body'>
+        {isSuccess?
+        (
+          <>
+            <Editor.Body className='skills-editor-body'>
+              <EditorBlog>
+                <EditorBlog.Overview>
+                  <EditorBlog.OverviewTitle title={skillObj.title} icon={<Icon name={skillObj.titleIconName} className='skills-icon' />} />
+                  <EditorBlog.OverviewContent>
+                    <p>{skillObj.overviewContent}</p>
+                  </EditorBlog.OverviewContent>  
+                </EditorBlog.Overview>
+                <EditorBlog.Details>
+                  <EditorBlog.DetailsNav activeKey='details'>
+                    <EditorBlog.DetailsNavItem title='DETAILS' eventKey='details' >
+                      <EditorBlog.DetailsBodyHeader title='Related Project'/>
+                        {skillObj.relatedProject}
+                      </EditorBlog.DetailsNavItem>
+                  </EditorBlog.DetailsNav>
+                </EditorBlog.Details>
+              </EditorBlog>
+            </Editor.Body>
+          </>
+        ): null
+        }
+
+        {/* <Editor.Body className='skills-editor-body'>
           <EditorBlog>
             <EditorBlog.Overview>
               <EditorBlog.OverviewTitle title='Java' icon={<Icon name='javalogo' className='skills-icon' />} />
@@ -111,7 +158,7 @@ function Skills ( props ) {
 
             </EditorBlog.Details>
           </EditorBlog>
-        </Editor.Body>
+        </Editor.Body> */}
       </Editor>
     </>
   )

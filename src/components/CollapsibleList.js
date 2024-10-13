@@ -49,7 +49,7 @@ function ListItem ({ children, title = '', link, icon: IconComponent, level = 1,
           )}
           <span className="list-item-content">
             {IconComponent && ( React.isValidElement(IconComponent)? IconComponent : <IconComponent />)}
-            {<span className='list-title-name'> {title} </span> }
+            {<span className='list-title-name'> {title || children} </span> }
           </span>
         </div>
           { hasChildren && (

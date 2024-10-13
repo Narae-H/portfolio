@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 function TopMenuBar(){
   // 1. Get menus depending on window size
   const { isMobile } = useWindowSize();
-  const url = isMobile? 'data/menu/menuMain.json' : 'data/menu/menuTop.json';
+  const url = isMobile? '/data/menu/menuMain.json' : '/data/menu/menuTop.json';
   const queryKey = isMobile? 'menuMain': 'menuTop';
 
   const { data: menus, isSuccess } = useQuery({
