@@ -12,10 +12,11 @@ function ActivityBar(){
   // 2. Get the current page
   let location  = useLocation();
   const isActive = (itemPath) => {
+    
     if( itemPath === 'home' && location.pathname === '/' ) {
       return true;
     } else {
-      return location.pathname === `/${itemPath}`;
+      return location.pathname?.split("/")[1] === itemPath;
     }
   };
   

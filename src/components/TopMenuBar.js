@@ -7,6 +7,7 @@ import { useQuery } from 'react-query';
 import useWindowSize from '../hooks/useWindowSize';
 import { Icon } from '../assets/customIcon/Icon';
 import { Link } from 'react-router-dom';
+import { transformToLink } from '../utils/common';
 
 function TopMenuBar(){
   // 1. Get menus depending on window size
@@ -22,13 +23,13 @@ function TopMenuBar(){
                                               });
 
   // 2. Render menu items
-  const renderMenuItem = (item, indices) => {
+  const renderMenuItem = (parentName, item, indices) => {
     const key = indices.join('_');
 
     return (
-      <Dropdown.Item key={`key_${key}`} index={indices[indices.length - 1]} title={item.name} eventKey={item.name}>
+      <Dropdown.Item key={`key_${key}`} index={indices[indices.length - 1]} title={item.name} eventKey={item.name} link={transformToLink(`${parentName}/${item.name}`)}>
         {item.items && item.items.map((subItem, index) => 
-          renderMenuItem(subItem, [...indices, index])
+          renderMenuItem(parentName, subItem, [...indices, index])
         )}
       </Dropdown.Item>
     )
@@ -43,10 +44,10 @@ function TopMenuBar(){
           </div>
           { isSuccess && menus.data.menus.map((menu, index) => {
             return (
-              <Dropdown key={index} index={index} title={menu.name} className='menu-icon' >
+              <Dropdown key={index} index={index} title={menu.name} className='menu-icon' link={transformToLink(menu.name)}>
                 {  menu.items && menu.items.map((item, subIndex) => {
                   return (
-                    renderMenuItem( item, [index, subIndex])
+                    renderMenuItem(menu.name, item, [index, subIndex])
                   )
                 }) }
               </Dropdown>

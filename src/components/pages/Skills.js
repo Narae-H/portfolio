@@ -1,7 +1,7 @@
 import './../../styles/pages/Skills.css'
 
 import { useQuery } from 'react-query';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import { Editor } from '../Editor';
@@ -9,30 +9,28 @@ import { PrimarySideBar } from '../PrimarySideBar';
 import { CollapsibleList } from '../CollapsibleList';
 import { Icon } from '../../assets/customIcon/Icon';
 import { EditorBlog } from '../EditorBlog';
+import { transformToLink } from '../../utils/common';
 
 function Skills ( props ) {
   // 1. Get sidebar menu
-  const { data: skills, isSuccess1 } = useQuery(
+  const { data: skills, isSuccess: isSuccessSkillMenu } = useQuery(
                                           'menuMain',
                                           () => axios.get('/data/menu/menuMain.json'),
                                           {refetchOnWindowFocus: false,
                                           staleTime: Infinity}
   );
-  console.log( isSuccess1);
 
   // 2. Get content
   let {id} = useParams();
   
-  const { data: skillObj, isSuccess } = useQuery(
+  const { data: skillObj, isSuccess: isSuccessSkillObj } = useQuery(
                                           ['Skills', id],
-                                          () => axios.get(`/data/skills/${id}.json`).then( res => res.data),
+                                          () => axios.get(`/data/skills/${id}.json`),
                                           {refetchOnWindowFocus: false,
                                             staleTime: Infinity,
                                             enabled: !!id}
                                           );
     
-  console.log( skillObj );
-  
   return (
     <>
       <PrimarySideBar>
@@ -43,34 +41,19 @@ function Skills ( props ) {
 
         <PrimarySideBar.Body>
           <CollapsibleList defaultOpenLevels={0}>
-            <CollapsibleList.ListItem title='Back End Skills'>
-              <CollapsibleList.ListItem icon={<Icon name='java'/>}> <Link to='/skills/java'>Java</Link> </CollapsibleList.ListItem>
-              <CollapsibleList.ListItem title='Spring Boot' icon={<Icon name='springboot'/>} />
-            </CollapsibleList.ListItem>
-            <CollapsibleList.ListItem title='Front End Skills'>
-              <CollapsibleList.ListItem title='HTML' icon={<Icon name='html'/>}/>
-              <CollapsibleList.ListItem title='CSS' icon={<Icon name='css'/>}/>
-              <CollapsibleList.ListItem title='JavaScript' icon={<Icon name='javascript'/>}/>
-              <CollapsibleList.ListItem title='React' icon={<Icon name='react'/>}/>
-              <CollapsibleList.ListItem title='Redux Toolkit' icon={<Icon name='reduxtoolkit'/>}/>
-              <CollapsibleList.ListItem title='BootStrap' icon={<Icon name='bootstrap'/>}/>
-              <CollapsibleList.ListItem title='Thymeleaf' icon={<Icon name='thymeleaf'/>}/>
-            </CollapsibleList.ListItem>
-            <CollapsibleList.ListItem title='Database Skills'>
-              <CollapsibleList.ListItem title='MySQL' icon={<Icon name='mysql'/>}/>
-              <CollapsibleList.ListItem title='Maria DB' icon={<Icon name='mariadb'/>}/>
-              <CollapsibleList.ListItem title='Azure DB' icon={<Icon name='azuredb'/>}/>
-            </CollapsibleList.ListItem>
-            <CollapsibleList.ListItem title='Cloud Services'>
-              <CollapsibleList.ListItem title='AWS' icon={<Icon name='aws'/>}/>
-              <CollapsibleList.ListItem title='Microsoft' icon={<Icon name='microsoft'/>}/>
-            </CollapsibleList.ListItem>
-            <CollapsibleList.ListItem title='Others'>
-              <CollapsibleList.ListItem title='Code Version Control' icon={<Icon name='codeversioncontrol'/>}/>
-              <CollapsibleList.ListItem title='SEO' icon={<Icon name='seo'/>}/>
-              <CollapsibleList.ListItem title='MS Office App' icon={<Icon name='msofficeapp'/>}/>
-              <CollapsibleList.ListItem title='MS Power Platform' icon={<Icon name='mspowerplatform'/>}/>
-            </CollapsibleList.ListItem>
+          { isSuccessSkillMenu && skills?.data?.menus[1]?.items.map( (menu, index)=> {
+            return (
+              <CollapsibleList.ListItem title={menu.name} key={index}>
+                { menu.items && menu.items.map((item, subIndex) => {
+                   return (
+                    <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} link={`/skills/${transformToLink(item.name)}`} key={`key_${index}_${subIndex}`} />
+                   )
+                  })
+                }
+              </CollapsibleList.ListItem>
+            )
+          })
+          }
           </CollapsibleList>
         </PrimarySideBar.Body>
 
@@ -81,29 +64,29 @@ function Skills ( props ) {
           <Editor.HeaderTab title='Welcome' icon={<Icon name='skills' />} className='active' />
         </Editor.Header>
 
-        {isSuccess?
+        { isSuccessSkillObj?
         (
           <>
             <Editor.Body className='skills-editor-body'>
               <EditorBlog>
                 <EditorBlog.Overview>
-                  <EditorBlog.OverviewTitle title={skillObj.title} icon={<Icon name={skillObj.titleIconName} className='skills-icon' />} />
+                  <EditorBlog.OverviewTitle title={skillObj.data.title} icon={<Icon name={skillObj.data.titleIconName} className='skills-icon' />} />
                   <EditorBlog.OverviewContent>
-                    <p>{skillObj.overviewContent}</p>
+                    <p>{skillObj.data.overviewContent}</p>
                   </EditorBlog.OverviewContent>  
                 </EditorBlog.Overview>
                 <EditorBlog.Details>
                   <EditorBlog.DetailsNav activeKey='details'>
                     <EditorBlog.DetailsNavItem title='DETAILS' eventKey='details' >
                       <EditorBlog.DetailsBodyHeader title='Related Project'/>
-                        {skillObj.relatedProject}
+                        {skillObj.data.relatedProject}
                       </EditorBlog.DetailsNavItem>
                   </EditorBlog.DetailsNav>
                 </EditorBlog.Details>
               </EditorBlog>
             </Editor.Body>
           </>
-        ): null
+        ): (<span>No data</span>)
         }
 
         {/* <Editor.Body className='skills-editor-body'>

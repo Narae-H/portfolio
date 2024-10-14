@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 function Home() {
   // 1. Get menus
   const { data: menus, isSuccess } = useQuery(
-                                      'menuMain',
+                                      ['menuMain'],
                                       () => axios.get('data/menu/menuMain.json'),
                                       {refetchOnWindowFocus: false,
                                       staleTime: Infinity}

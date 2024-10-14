@@ -3,6 +3,7 @@ import './../styles/CollapsibleList.css';
 import React, { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { VscChevronDown, VscChevronRight } from 'react-icons/vsc';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const CollapsibleListContext = createContext();
 
@@ -20,11 +21,18 @@ CollapsibleList.prototype = {
   defaultOpenLevels: PropTypes.number
 }
 
-function ListItem ({ children, title = '', link, icon: IconComponent, level = 1, ...props }) {
+function ListItem ({ children, parentTitle = '', title = '', link, icon: IconComponent, level = 1, ...props }) {
   // 1. Get the current level of list
-  const { defaultOpenLevels } = useContext(CollapsibleListContext);
-  const [isOpen, setIsOpen] = useState(level <= defaultOpenLevels);
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  const { defaultOpenLevels } = useContext(CollapsibleListContext);
+  // const [isOpen, setIsOpen] = useState(level <= defaultOpenLevels);
+  const [isOpen, setIsOpen] = useState(() => {
+    return location.state?.menuState?.[title] || level <= defaultOpenLevels;
+  });
+  
+ 
   // 2. ListItem children
   let childrenCount = 0;
   let hasChildren   = false;
@@ -34,14 +42,27 @@ function ListItem ({ children, title = '', link, icon: IconComponent, level = 1,
       hasChildren = true;
     }
   });
+  
+  //4. navigate or toggle:open/close menu
+  const newMenuState = {
+    ...(location.state?.menuState || {}),
+    [parentTitle]: !isOpen
+  };
 
-  //3. Toggle:open/close menu
-  const handleToggleOpen = () => setIsOpen(!isOpen);
+  const handleToggleMenu = () => {
+    if (link) {
+      // If a link is provided, navigate to it
+      navigate(link, { state: { menuState: newMenuState } });
+    } else {
+      // If no link, toggle the menu open/closed
+      setIsOpen(!isOpen);
+    }
+  }
 
   return (
     <>
       <div className={`list-item ${isOpen ? 'open' : ''}`}>
-        <div className="list-item-header" onClick={handleToggleOpen} style={{ '--depth': level - 1 }}>
+        <div className="list-item-header" onClick={handleToggleMenu} style={{ '--depth': level - 1 }}>
           { hasChildren && (
             <span className="toggle-icon">
               {isOpen ? <VscChevronDown /> : <VscChevronRight />}
@@ -56,7 +77,7 @@ function ListItem ({ children, title = '', link, icon: IconComponent, level = 1,
             <div className="list-item-children" style={{ '--childrenCount': childrenCount }}>
               {isOpen ? 
                 React.Children.map(children, child => 
-                  child.type === ListItem ? React.cloneElement(child, { level: level + 1 }) : null
+                  child.type === ListItem ? React.cloneElement(child, { level: level + 1, parentTitle: title }) : null
                 )
               : null}
             </div>
@@ -66,6 +87,7 @@ function ListItem ({ children, title = '', link, icon: IconComponent, level = 1,
   )
 };
 ListItem.propTypes = {
+  parentTitle: PropTypes.node,
   children: PropTypes.node,
   title: PropTypes.string,
   link: PropTypes.string,
