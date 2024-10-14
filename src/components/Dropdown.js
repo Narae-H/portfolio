@@ -4,25 +4,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { VscChevronRight } from 'react-icons/vsc';
+import { useNavigate } from 'react-router-dom';
 
 // Create a context for the dropdown
 const DropDownContext = createContext();
 
-export function Dropdown ({ children, className = '', title='', ...props }) {
+export function Dropdown ({ children, className = '', title='', link, ...props }) {
   // 1. Controlling dropdown open/close state
   // 1-1) Initialize variables
+  const navigate = useNavigate();
   const [ isDropdownOpen, setIsDropdownOpen ] = useState(false); // State for managing dropdown open/close 
   const dropdownRef                           = useRef(null);    // Ref for dropdown element (used for click outside detection)
   
   // 1-2) Toggle dropdown open/close
   const handleDropdownClick = (e) => {
-    e.preventDefault();
-    setIsDropdownOpen(!isDropdownOpen);
+    if( children ) {
+      e.preventDefault();
+      setIsDropdownOpen(!isDropdownOpen);
+    } else {
+      navigate(link);
+    }
   };
   
   // 1-3) Close dropdown when clicking outside
   const closeMenu = (e) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+    if ( (dropdownRef.current && !dropdownRef.current.contains(e.target))) {
       setIsDropdownOpen(false);
       setActiveKey(null);
     }
@@ -44,7 +50,8 @@ export function Dropdown ({ children, className = '', title='', ...props }) {
   // 2-2) Memoize context value to prevent unnecessary re-renders
   const contextValue = useMemo(() => ({
     activeKey,
-    setActiveKey
+    setActiveKey,
+    setIsDropdownOpen
   }), [activeKey]);
   
   return (
@@ -74,14 +81,15 @@ export function Dropdown ({ children, className = '', title='', ...props }) {
 Dropdown.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  link: PropTypes.string
 };
 
-function Item ({ children, className = '', title='', link = '/', eventKey, index, ...props }) {
+function Item ({ children, className = '', title='', link, eventKey, index, ...props }) {
   // 1. Initialize variables
-  const { activeKey, setActiveKey  } = useContext(DropDownContext);
-  const isActive                     = (eventKey === activeKey);
-
+  const navigate = useNavigate();
+  const { activeKey, setActiveKey, setIsDropdownOpen } = useContext(DropDownContext);
+  const isActive = (eventKey === activeKey);
   // 2. Check if this item has children (for nested items)
   let hasChildren = React.Children.toArray(children).some((child) => {
     return child.type === Item;
@@ -89,8 +97,14 @@ function Item ({ children, className = '', title='', link = '/', eventKey, index
   
   // 3. Handling item when it's clicked 
   const handleItemClick = (e) => {
-    e.preventDefault();
-    setActiveKey(eventKey);
+    if( hasChildren ) {
+      e.preventDefault();
+      setActiveKey(eventKey);
+    } else {
+      setActiveKey(null);
+      setIsDropdownOpen(false);
+      navigate(link);
+    }
   };
   
   return (
@@ -100,16 +114,20 @@ function Item ({ children, className = '', title='', link = '/', eventKey, index
       style={{ '--nth': index }} 
       {...props}
     >
-      {hasChildren ? 
-      (<>
-          <span className='na-dropdown-sub-menu-plain'> {title} </span>
-          <span className='na-dropdown-sub-menu-icon'> <VscChevronRight /> </span>
-          <div className="na-dropdown-sub-menu-container">
-            {children}
-          </div>
-      </>) : 
-      (<a href={link}>{title}</a>)
-      }
+      <>
+        <span className='na-dropdown-sub-menu-plain'> {title} </span>
+          { hasChildren?
+            (
+              <>
+                <span className='na-dropdown-sub-menu-icon'> <VscChevronRight /> </span>
+                <div className="na-dropdown-sub-menu-container">
+                  {children}
+                </div>
+              </>
+            ):
+            null
+          }
+      </>
     </div>
   )
 }

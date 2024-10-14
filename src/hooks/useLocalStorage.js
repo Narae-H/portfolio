@@ -18,7 +18,7 @@ export function useLocalStorage (key) {
     try {
       return JSON.parse( value );
     } catch(error) {
-      console.warn(`Failed to parse stored value: ${error.message}`);
+      // console.warn(`Failed to parse stored value: ${error.message}`);
       return value;
     }
   };

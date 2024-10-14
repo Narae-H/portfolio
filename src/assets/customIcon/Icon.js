@@ -150,7 +150,7 @@ const iconMap = {
 };
 
 export const Icon = ({ name, className = '',  ...props }) => {
-  const iconData = iconMap[name.toLowerCase()];
+  const iconData = iconMap[name.toLowerCase().replace(/\s+/g, '')];
 
   if (!iconData) {
     console.warn(`Icon not found: ${name}`);
