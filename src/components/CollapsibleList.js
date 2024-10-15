@@ -27,7 +27,6 @@ function ListItem ({ children, parentTitle = '', title = '', link, icon: IconCom
   const location = useLocation();
 
   const { defaultOpenLevels } = useContext(CollapsibleListContext);
-  // const [isOpen, setIsOpen] = useState(level <= defaultOpenLevels);
   const [isOpen, setIsOpen] = useState(() => {
     return location.state?.menuState?.[title] || level <= defaultOpenLevels;
   });
@@ -40,7 +39,7 @@ function ListItem ({ children, parentTitle = '', title = '', link, icon: IconCom
     if( child.type === ListItem ){
       childrenCount += 1;
       hasChildren = true;
-    }
+    } 
   });
   
   //4. navigate or toggle:open/close menu
@@ -56,6 +55,7 @@ function ListItem ({ children, parentTitle = '', title = '', link, icon: IconCom
     } else {
       // If no link, toggle the menu open/closed
       setIsOpen(!isOpen);
+      console.log( newMenuState ); 
     }
   }
 

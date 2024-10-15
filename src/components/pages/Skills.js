@@ -1,7 +1,7 @@
 import './../../styles/pages/Skills.css'
 
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import { Editor } from '../Editor';
@@ -10,6 +10,7 @@ import { CollapsibleList } from '../CollapsibleList';
 import { Icon } from '../../assets/customIcon/Icon';
 import { EditorBlog } from '../EditorBlog';
 import { transformToLink } from '../../utils/common';
+import { ListGroup } from 'react-bootstrap';
 
 function Skills ( props ) {
   // 1. Get sidebar menu
@@ -79,15 +80,37 @@ function Skills ( props ) {
                   <EditorBlog.DetailsNav activeKey='details'>
                     <EditorBlog.DetailsNavItem title='DETAILS' eventKey='details' >
                       <EditorBlog.DetailsBodyHeader title='Related Project'/>
-                        {skillObj.data.relatedProject}
+                        {/* {skillObj.data.relatedProject} */}
                       </EditorBlog.DetailsNavItem>
                   </EditorBlog.DetailsNav>
                 </EditorBlog.Details>
               </EditorBlog>
             </Editor.Body>
           </>
-        ): (<span>No data</span>)
+        ): null
         }
+
+        <Editor.Body className={`skills-editor-body welcome row ${!skillObj? 'active':''}`}>
+        { !skillObj && isSuccessSkillMenu && skills?.data?.menus[1]?.items.map( (menu, index)  =>{
+          return (
+            <div className='col-lg-6 col-md-12'>
+              <Editor.SubSubTitle>{menu.name}</Editor.SubSubTitle>
+              <ListGroup variant="flush">
+                { menu.items && menu.items.map((item, subIndex) => {
+                  return (
+                    <ListGroup.Item className='na-list-group-item' key={`${index}_${subIndex}`}>
+                      <Link to={transformToLink(`/skills/${item.name}`)}>
+                        <Icon name={item.name}/> <span>{item.name}</span>
+                      </Link>
+                    </ListGroup.Item>
+                  )
+                }) }
+              </ListGroup>
+            </div>
+          )
+        } )}
+        </Editor.Body>
+        
 
         {/* <Editor.Body className='skills-editor-body'>
           <EditorBlog>

@@ -1,0 +1,12 @@
+{
+  "title" : "Azure DB (Microsoft Azure SQL Database)",
+  "titleIconName": "azuredb",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I have worked with Azure DB to manage cloud-based database solutions, focusing on scalability, security, and performance. My responsibilities include configuring Azure SQL  to handle different types of data storage needs, ensuring that databases are integrated smoothly with other Azure services. I monitor database performance and make adjustments as needed to optimise the system for distributed environments, ensuring the solution remains efficient as the system scales.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title" : "JavaScript",
+  "titleIconName": "javascript",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "With a strong command of JavaScript, I have built dynamic, interactive web applications that deliver engaging user experiences. I use both ES5 and modern JavaScript (ES6+) features to write efficient, maintainable code. I frequently integrate third-party libraries and frameworks such as React, Bootstrap, jQuery, Popper, and jqGrid to enable complex user interactions and functionality. My work also involves optimizing JavaScript performance to ensure smooth interactivity across web platforms.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

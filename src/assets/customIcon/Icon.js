@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaJ, FaJava, FaHashtag, FaReact, FaAws, FaMicrosoft, FaS, FaMaxcdn } from "react-icons/fa6";
+import { FaJ, FaJava, FaHashtag, FaReact, FaAws, FaMicrosoft, FaS, FaMaxcdn, FaHtml5, FaCss3Alt } from "react-icons/fa6";
 import { IoLogoJavascript, IoMdGitBranch } from 'react-icons/io';
-import { SiSpringboot, SiMariadb } from "react-icons/si";
+import { SiSpringboot, SiMariadb, SiThymeleaf } from "react-icons/si";
 import { MdCode, MdDarkMode, MdLightMode } from "react-icons/md";
 import { BiLogoRedux, BiLeaf } from "react-icons/bi";
 import { RiBootstrapLine } from "react-icons/ri";
@@ -50,9 +50,17 @@ const iconMap = {
     component: MdCode,
     style: { color: '#dd7726', size: '24px' }
   },
+  htmllogo: {
+    component: FaHtml5,
+    style: { color: '#f77718', size: '24px' }
+  },
   css: {
     component: FaHashtag,
     style: { color: '#519aba', size: '24px' }
+  },
+  csslogo: {
+    component: FaCss3Alt,
+    style: { color: '#285fee', size: '24px' }
   },
   javascript: {
     component: IoLogoJavascript,
@@ -73,6 +81,10 @@ const iconMap = {
   thymeleaf: {
     component: BiLeaf,
     style: { color: '#bac431', size: '24px' }
+  },
+  thymeleaflogo: {
+    component: SiThymeleaf,
+    style: { color: '#005f0f', size: '24px' }
   },
   mysql: {
     component: TbBrandMysql,
@@ -129,6 +141,24 @@ const iconMap = {
   imlinkedin:{
     component: ImLinkedin, 
     style: { color: '#cccccc', width: '13px', height: '13px' }
+  },
+  mslogo: {
+    component: () => {
+      return (
+        <svg 
+          width="24" 
+          height="24" 
+          viewBox="0 0 23 23"
+          xmlns="http://www.w3.org/2000/svg" 
+        >
+          <path fill="#f35325" d="M1 1h10v10H1z"/>
+          <path fill="#81bc06" d="M12 1h10v10H12z"/>
+          <path fill="#05a6f0" d="M1 12h10v10H1z"/>
+          <path fill="#ffba08" d="M12 12h10v10H12z"/>
+        </svg>
+      )
+    },
+    style: { }
   },
   vscodec: {
     component: ( ) => {
