@@ -1,0 +1,12 @@
+{
+  "title" : "AWS (Amazon Web Services)",
+  "titleIconName": "aws",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I have an understanding of AWS services, including EC2, S3, RDS, and Elastic Beanstalk, which I use to manage, deploy, and scale applications. My experience includes optimising cloud infrastructure for cost and performance, setting up secure IAM roles for user access, using CloudWatch for monitoring and troubleshooting, and setting up Amazon SQS for efficient development. I have also utilised AWS services like Elastic Load Balancing and Route 53 to ensure high availability and scalability in distributed web-based applications.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

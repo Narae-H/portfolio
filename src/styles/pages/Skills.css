@@ -4,6 +4,16 @@
   height: 100%;
   padding: 2.8em 6em;
 }
+.skills-editor-body.welcome { 
+  display: none;
+  width: 70%;
+  height: 80%;
+  margin: auto auto;
+}
+.skills-editor-body.active { 
+  display: flex;
+}
+
 
 .skills-icon {
   width: 2.5em;
@@ -16,5 +26,15 @@
     height: fit-content;
     padding: 2em;
     overflow-y: scroll;
+  }
+
+  .skills-editor-body.welcome {
+    width: 100%;
+    height: 100%;
+    padding: 3em; 
+  }
+
+  .skills-editor-body.welcome .col-md-12 {
+    padding-bottom: 2em;
   }
 }

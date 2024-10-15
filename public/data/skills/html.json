@@ -1,0 +1,12 @@
+{
+  "title" : "HTML",
+  "titleIconName": "htmllogo",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I am highly skilled in using HTML to structure web applications with a strong focus on accessibility, user experience, and SEO (Search engine optimisation). By adhering to W3C standards, I ensure that websites are not only visually appealing but also search engine optimised. I regularly collaborate with UI/UX designers to translate design concepts into fully functional, responsive web pages, while ensuring the structure supports efficient front-end performance.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

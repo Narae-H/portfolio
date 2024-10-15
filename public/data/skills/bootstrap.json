@@ -1,0 +1,12 @@
+{
+  "title" : "Bootstrap",
+  "titleIconName": "bootstrap",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I regularly use Bootstrap to develop responsive, mobile-friendly web applications, enabling rapid front-end development while maintaining design consistency. With its pre-built components and flexible grid system, I can create sleek, user-friendly interfaces efficiently. I often customize Bootstrap themes to align with project requirements, ensuring that the user interface reflects the website’s identity while also providing an excellent user experience.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}
