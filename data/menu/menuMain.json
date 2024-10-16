@@ -25,7 +25,6 @@
               { "name": "CSS" },
               { "name": "JavaScript" },
               { "name": "React" },
-              { "name": "Redux Toolkit" },
               { "name": "BootStrap" },
               { "name": "Thymeleaf" }
             ]
@@ -48,10 +47,6 @@
           {
             "name": "Others",
             "items": [
-              { "name": "Code Version Control" },
-              { "name": "SEO" },
-              { "name": "MS Office App" },
-              { "name": "MS Power Platform" },
               { "name": "Code Version Control" },
               { "name": "SEO" },
               { "name": "MS Office App" },

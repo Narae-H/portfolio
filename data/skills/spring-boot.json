@@ -1,0 +1,12 @@
+{
+  "title" : "Spring Boot",
+  "titleIconName": "springboot",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I have leveraged Spring Boot to rapidly develop scalable, microservices-based applications. Its streamlined dependency management and embedded server capabilities have allowed me to create and maintain complex systems efficiently. I have worked extensively with RESTful APIs, implemented security features, and handled configuration management, ensuring that solutions are modular, flexible, and high-performing.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

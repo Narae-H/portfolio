@@ -1,0 +1,12 @@
+{
+  "title" : "Microsoft",
+  "titleIconName": "microsoft",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I manage Microsoft Entra ID to ensure secure access to corporate systems. My experience includes implementing Multi-Factor Authentication (MFA), managing conditional access policies, and monitoring audit and sign-in logs for potential security issues. By maintaining strict access control policies and regularly reviewing user activities, I contribute to the organisation’s overall security posture, ensuring that business-critical systems remain protected against unauthorised access.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

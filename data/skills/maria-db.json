@@ -1,0 +1,12 @@
+{
+  "title" : "MariaDB",
+  "titleIconName": "mariadb",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "In my work with MariaDB, I have set up and maintained databases to support web-based systems. I create basic SQL queries to facilitate the development of applications, ensuring they align with the Model-View-Controller (MVC) architecture. My role involves collaborating with development teams to design efficient database structures that integrate smoothly with back-end logic, supporting the overall system’s functionality.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

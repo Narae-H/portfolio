@@ -1,0 +1,12 @@
+{
+  "title" : "Code Version Control",
+  "titleIconName": "codeversioncontrol",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I am skilled in using version control systems, such as Git and SVN, to manage codebase changes efficiently. I have established branching strategies that help maintain organised and structured code, ensuring smooth collaboration across teams. My experience includes resolving conflicts, merging changes, and tracking version history to ensure code integrity throughout the development process. By maintaining clear version control practices, I facilitate collaborative work while reducing the risk of errors in large, shared codebases.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}
