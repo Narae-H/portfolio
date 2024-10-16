@@ -1,0 +1,12 @@
+{
+  "title" : "Java",
+  "titleIconName": "javalogo",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I have extensive experience with Java, enabling me to build robust, scalable, and efficient back-end systems. I apply object-oriented programming principles in multi-tiered architectures and integrating complex third-party APIs. Whether working on full-stack development projects or Product Lifecycle Management (PLM) systems, I have ensured high performance, troubleshooting issues and optimising codebases for long-term maintainability in enterprise-level applications.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

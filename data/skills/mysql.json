@@ -1,0 +1,12 @@
+{
+  "title" : "MySQL",
+  "titleIconName": "mysql",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "I am skilled in designing, optimising, and managing relational databases using MySQL. My experience includes writing complex SQL queries, managing stored procedures, and ensuring that databases are optimised for performance and data integrity.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}

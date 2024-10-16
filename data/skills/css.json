@@ -1,0 +1,12 @@
+{
+  "title" : "CSS",
+  "titleIconName": "csslogo",
+  "subTitle": "This is a subtitle",
+  "overviewContent": "My proficiency in CSS enables me to design responsive, mobile-first websites with consistency across devices and platforms. I have successfully implemented front-end designs that are user-friendly and optimised for performance. By working with frameworks such as Bootstrap and applying advanced CSS techniques like flexbox and grid, I ensure that user interfaces are both functional and visually consistent. This work often involves close collaboration with designers and front-end developers to maintain the highest standards of user experience.",
+  "relatedProject": [
+    {
+      "projectName": "",
+      "projectLink": ""
+    }
+  ]
+}
