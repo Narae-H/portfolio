@@ -13,7 +13,7 @@ export function useLocalStorage (key) {
 
   // Required! Snapshot: Read a snapshot of the data from the store.
   // const getSnapshot = () => JSON.parse( localStorage.getItem(key) );
-  const getSnapshot = () => {
+  const getSnapshot = useCallback( () => {
     const value = localStorage.getItem(key);
     try {
       return JSON.parse( value );
@@ -21,13 +21,13 @@ export function useLocalStorage (key) {
       // console.warn(`Failed to parse stored value: ${error.message}`);
       return value;
     }
-  };
-
+  }, [])
+  
   // Required! Subscribe: The subscribe function should subscribe to the store and return a function that unsubscribes.
-  const subscribe = (listener) => {
+  const subscribe = useCallback( (listener) => {
     window.addEventListener('storage', listener);
     return () => window.removeEventListener('storage', listener);
-  };
+  }, []);
 
   // Sync local storage
   const store = useSyncExternalStore(subscribe, getSnapshot);

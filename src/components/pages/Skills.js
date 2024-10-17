@@ -1,7 +1,7 @@
 import './../../styles/pages/Skills.css'
 
 import { useQuery } from 'react-query';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import { ListGroup } from 'react-bootstrap';
@@ -13,7 +13,7 @@ import { CollapsibleList } from '../CollapsibleList';
 import { Editor } from '../Editor';
 import { EditorBlog } from '../EditorBlog';
 import { Icon } from '../../assets/customIcon/Icon';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { KEY_VISITED_SKILLS, useVisitedMenus } from '../../hooks/useVisitedMenus';
 
 function Skills ( props ) {
@@ -36,15 +36,17 @@ function Skills ( props ) {
                                           );
   
   const [visitedMenus, setVisitedMenu] = useVisitedMenus(KEY_VISITED_SKILLS);
+
+  // 1. Get the current level of list
   const handleLink = (name) => {
     // Check if the click is directly on the Skills component, not on a child
     console.log(name);
-    console.log(visitedMenus);
+    // console.log(visitedMenus);
     console.log('Skills component clicked');
 
-    setVisitedMenu(name);
+    // setVisitedMenu(name);
 
-    // Navigate(`/skills/${transformToLink(name)}`);
+    // navigate(`/skills/${transformToLink(name)}`);
   }
 
   return (
@@ -62,8 +64,8 @@ function Skills ( props ) {
               <CollapsibleList.ListItem title={menu.name} key={index}>
                 { menu.items && menu.items.map((item, subIndex) => {
                    return (
-                    <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} onClick={() => {handleLink(item.name)}} key={`key_${index}_${subIndex}`}/>
-                    // <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} link={`/skills/${transformToLink(item.name)}`} key={`key_${index}_${subIndex}`}/>
+                    // <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} onClick={() => {handleLink(item.name)}} key={`key_${index}_${subIndex}`}/>
+                    <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} link={`/skills/${transformToLink(item.name)}`} key={`key_${index}_${subIndex}`}/>
                    )
                   })
                 }
