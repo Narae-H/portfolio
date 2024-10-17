@@ -1,11 +1,14 @@
 import './../styles/CollapsibleList.css';
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { VscChevronDown, VscChevronRight } from 'react-icons/vsc';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { useLocalStorage } from '../hooks/useLocalStorage';
+
 const CollapsibleListContext = createContext();
+const SKILLS_KEY = 'visited-skills';
 
 export const CollapsibleList = ({ children, defaultOpenLevels = 1 }) => {
   return (
@@ -48,20 +51,27 @@ function ListItem ({ children, parentTitle = '', title = '', link, icon: IconCom
     [parentTitle]: !isOpen
   };
 
+  // const {store, setStorage} = useLocalStorage('visited-skills');
+  
   const handleToggleMenu = () => {
     if (link) {
       // If a link is provided, navigate to it
+      // const updatedVisitedSkillsArr = store ? [...store, title] : [title];
+      // console.log( updatedVisitedSkillsArr );
+
+      // setStorage(updatedVisitedSkillsArr);
       navigate(link, { state: { menuState: newMenuState } });
+
     } else {
       // If no link, toggle the menu open/closed
+      console.log('CollapsibleList.js clicked: handleToggleMenu')
       setIsOpen(!isOpen);
-      console.log( newMenuState ); 
     }
   }
 
   return (
     <>
-      <div className={`list-item ${isOpen ? 'open' : ''}`}>
+      <div className={`list-item ${isOpen ? 'open' : ''}`} {...props}>
         <div className="list-item-header" onClick={handleToggleMenu} style={{ '--depth': level - 1 }}>
           { hasChildren && (
             <span className="toggle-icon">

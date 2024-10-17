@@ -14,7 +14,7 @@ function Home() {
   // 1. Get menus
   const { data: menus, isSuccess } = useQuery(
                                       ['menuMain'],
-                                      () => axios.get('data/menu/menuMain.json'),
+                                      () => axios.get('/data/menu/menuMain.json'),
                                       {refetchOnWindowFocus: false,
                                       staleTime: Infinity}
                                     );
@@ -76,7 +76,7 @@ function Home() {
                     </Card.Img>
                     <Card.Body>
                       <Card.Title>Java</Card.Title>
-                      <Card.Description>8+ years Java development and familiar with Java platforms such as Spring Framework</Card.Description>
+                      <Card.Description>I have extensive experience with Java, enabling me to build robust, scalable, and efficient back-end systems. I apply object-oriented programming principles in multi-tiered architectures and integrating complex third-party APIs. Whether working on full-stack development projects or Product Lifecycle Management (PLM) systems, I have ensured high performance, troubleshooting issues and optimising codebases for long-term maintainability in enterprise-level applications.</Card.Description>
                     </Card.Body>
                   </Card>
                   <Card className='important'>

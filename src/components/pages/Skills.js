@@ -4,13 +4,17 @@ import { useQuery } from 'react-query';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import { Editor } from '../Editor';
+import { ListGroup } from 'react-bootstrap';
+
+import { transformToLink } from '../../utils/common';
+
 import { PrimarySideBar } from '../PrimarySideBar';
 import { CollapsibleList } from '../CollapsibleList';
-import { Icon } from '../../assets/customIcon/Icon';
+import { Editor } from '../Editor';
 import { EditorBlog } from '../EditorBlog';
-import { transformToLink } from '../../utils/common';
-import { ListGroup } from 'react-bootstrap';
+import { Icon } from '../../assets/customIcon/Icon';
+import { useEffect } from 'react';
+import { KEY_VISITED_SKILLS, useVisitedMenus } from '../../hooks/useVisitedMenus';
 
 function Skills ( props ) {
   // 1. Get sidebar menu
@@ -23,7 +27,6 @@ function Skills ( props ) {
 
   // 2. Get content
   let {id} = useParams();
-  
   const { data: skillObj, isSuccess: isSuccessSkillObj } = useQuery(
                                           ['Skills', id],
                                           () => axios.get(`/data/skills/${id}.json`),
@@ -31,7 +34,19 @@ function Skills ( props ) {
                                             staleTime: Infinity,
                                             enabled: !!id}
                                           );
-    
+  
+  const [visitedMenus, setVisitedMenu] = useVisitedMenus(KEY_VISITED_SKILLS);
+  const handleLink = (name) => {
+    // Check if the click is directly on the Skills component, not on a child
+    console.log(name);
+    console.log(visitedMenus);
+    console.log('Skills component clicked');
+
+    setVisitedMenu(name);
+
+    // Navigate(`/skills/${transformToLink(name)}`);
+  }
+
   return (
     <>
       <PrimarySideBar>
@@ -47,7 +62,8 @@ function Skills ( props ) {
               <CollapsibleList.ListItem title={menu.name} key={index}>
                 { menu.items && menu.items.map((item, subIndex) => {
                    return (
-                    <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} link={`/skills/${transformToLink(item.name)}`} key={`key_${index}_${subIndex}`} />
+                    <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} onClick={() => {handleLink(item.name)}} key={`key_${index}_${subIndex}`}/>
+                    // <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} link={`/skills/${transformToLink(item.name)}`} key={`key_${index}_${subIndex}`}/>
                    )
                   })
                 }
@@ -93,7 +109,7 @@ function Skills ( props ) {
         <Editor.Body className={`skills-editor-body welcome row ${!skillObj? 'active':''}`}>
         { !skillObj && isSuccessSkillMenu && skills?.data?.menus[1]?.items.map( (menu, index)  =>{
           return (
-            <div className='col-lg-6 col-md-12'>
+            <div className='col-lg-6 col-md-12' key={index}>
               <Editor.SubSubTitle>{menu.name}</Editor.SubSubTitle>
               <ListGroup variant="flush">
                 { menu.items && menu.items.map((item, subIndex) => {
