@@ -53,26 +53,37 @@ function ListItem ({ children, parentTitle = '', title = '', link, icon: IconCom
 
   // const {store, setStorage} = useLocalStorage('visited-skills');
   
-  const handleToggleMenu = () => {
-    if (link) {
+  const handleToggleMenu = (hasChildren) => {
+    console.log(`hasChildren => ${hasChildren}`);
+    console.log('CollapsibleList.js clicked: handleToggleMenu')
+    //setIsOpen(!isOpen);
+    
+    // hasChildren &&  
+    
+    if( hasChildren ) {
+      setIsOpen(!isOpen);
+    }else {
+      navigate(link, { state: { menuState: newMenuState } });
+    }
+
+    // if (link) {
       // If a link is provided, navigate to it
       // const updatedVisitedSkillsArr = store ? [...store, title] : [title];
       // console.log( updatedVisitedSkillsArr );
 
       // setStorage(updatedVisitedSkillsArr);
-      navigate(link, { state: { menuState: newMenuState } });
+      // navigate(link, { state: { menuState: newMenuState } });
 
-    } else {
+    // } else {
       // If no link, toggle the menu open/closed
-      console.log('CollapsibleList.js clicked: handleToggleMenu')
-      setIsOpen(!isOpen);
-    }
+      //setIsOpen(!isOpen);
+    // }
   }
 
   return (
     <>
       <div className={`list-item ${isOpen ? 'open' : ''}`} {...props}>
-        <div className="list-item-header" onClick={handleToggleMenu} style={{ '--depth': level - 1 }}>
+        <div className="list-item-header" onClick={() => handleToggleMenu(hasChildren)} style={{ '--depth': level - 1 }}>
           { hasChildren && (
             <span className="toggle-icon">
               {isOpen ? <VscChevronDown /> : <VscChevronRight />}
