@@ -1,5 +1,6 @@
-import { useCallback, useMemo } from "react";
 import { theme } from "../theme/theme";
+
+import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 // Constant variables
