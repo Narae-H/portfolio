@@ -6,10 +6,11 @@ import { useTheme, DARK_THEME, LIGHT_THEME } from '../hooks/useTheme';
 
 export function ModeButton({children, id='', className='', ...props}) {
   // 1. Get the currne theme
-  const [ currentThemeName, , setTheme ] = useTheme();
+  const [ currentThemeName, , setTheme, removeTheme ] = useTheme();
 
   // 2. Toggle mode
   const handleModeToggle = (e) => {
+    removeTheme();
     setTheme( (currentThemeName === LIGHT_THEME)? DARK_THEME:LIGHT_THEME );
   }
 

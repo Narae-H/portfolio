@@ -80,7 +80,8 @@ export const lightTheme = {
     background        : '#d6cfe2',
     inactiveTextColor : '#737078',
     activeTextColor   : '#737078',
-    border            : '#f3f3f3',
+    // border            : '#f3f3f3',
+    border            : '#d6cfe2',
     activeborder      : '#f3f3f3',
     pointColor        : '#006ab1'
   },
