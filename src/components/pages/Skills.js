@@ -13,7 +13,6 @@ import { CollapsibleList } from '../CollapsibleList';
 import { Editor } from '../Editor';
 import { EditorBlog } from '../EditorBlog';
 import { Icon } from '../../assets/customIcon/Icon';
-import { useCallback, useEffect } from 'react';
 import { KEY_VISITED_SKILLS, useVisitedMenus } from '../../hooks/useVisitedMenus';
 
 function Skills ( props ) {
@@ -35,18 +34,19 @@ function Skills ( props ) {
                                             enabled: !!id}
                                           );
   
+  // 3. Event handlers 
+  // 3-1) Save the visited menu info in the local storage
   const [visitedMenus, setVisitedMenu] = useVisitedMenus(KEY_VISITED_SKILLS);
-
-  // 1. Get the current level of list
-  const handleLink = (name) => {
+  const handleLocalStorage = (name) => {
     // Check if the click is directly on the Skills component, not on a child
-    console.log(name);
-    // console.log(visitedMenus);
-    console.log('Skills component clicked');
-
-    // setVisitedMenu(name);
-
-    // navigate(`/skills/${transformToLink(name)}`);
+    console.log(`Selected menu => ${name}`);
+    console.log(`Skills component clicked => ${visitedMenus}`);
+    setVisitedMenu(name);
+  }
+  
+  // 3-2) When a header tab is selected, navigate to the corresponding page  
+  const handleHeaderTab = (e) => {
+    console.log( `handleHeaderTab=> ${e.target}`)
   }
 
   return (
@@ -64,8 +64,7 @@ function Skills ( props ) {
               <CollapsibleList.ListItem title={menu.name} key={index}>
                 { menu.items && menu.items.map((item, subIndex) => {
                    return (
-                    // <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} onClick={() => {handleLink(item.name)}} key={`key_${index}_${subIndex}`}/>
-                    <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} link={`/skills/${transformToLink(item.name)}`} key={`key_${index}_${subIndex}`}/>
+                    <CollapsibleList.ListItem title={item.name} icon={<Icon name={item.name}/>} onClick={() => {handleLocalStorage(item.name)}} link={`/skills/${transformToLink(item.name)}`} key={`key_${index}_${subIndex}`}/>
                    )
                   })
                 }
@@ -80,7 +79,13 @@ function Skills ( props ) {
       
       <Editor>
         <Editor.Header>
-          <Editor.HeaderTab title='Welcome' icon={<Icon name='skills' />} className='active' />
+          <Editor.HeaderTab title='Welcome' className='active' icon={<Icon name='skills' onClick={handleHeaderTab}/>}  />
+          { visitedMenus? visitedMenus.map ( (menu, index) =>{
+            return (
+              <Editor.HeaderTab title={menu} icon={<Icon name={menu} />} key={index} />
+            )
+          }) : null
+          }
         </Editor.Header>
 
         { isSuccessSkillObj?

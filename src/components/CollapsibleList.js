@@ -45,39 +45,19 @@ function ListItem ({ children, parentTitle = '', title = '', link, icon: IconCom
     } 
   });
   
-  //4. navigate or toggle:open/close menu
+  //3. navigate or toggle:open/close menu
   const newMenuState = {
     ...(location.state?.menuState || {}),
     [parentTitle]: !isOpen
   };
 
-  // const {store, setStorage} = useLocalStorage('visited-skills');
-  
+  // 4. Toggle menu or naviate
   const handleToggleMenu = (hasChildren) => {
-    console.log(`hasChildren => ${hasChildren}`);
-    console.log('CollapsibleList.js clicked: handleToggleMenu')
-    //setIsOpen(!isOpen);
-    
-    // hasChildren &&  
-    
     if( hasChildren ) {
       setIsOpen(!isOpen);
     }else {
       navigate(link, { state: { menuState: newMenuState } });
     }
-
-    // if (link) {
-      // If a link is provided, navigate to it
-      // const updatedVisitedSkillsArr = store ? [...store, title] : [title];
-      // console.log( updatedVisitedSkillsArr );
-
-      // setStorage(updatedVisitedSkillsArr);
-      // navigate(link, { state: { menuState: newMenuState } });
-
-    // } else {
-      // If no link, toggle the menu open/closed
-      //setIsOpen(!isOpen);
-    // }
   }
 
   return (
