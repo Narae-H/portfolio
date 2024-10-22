@@ -1,5 +1,9 @@
+import PropTypes from 'prop-types';
 import './../styles/Editor.css'
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
+import { IoIosClose } from 'react-icons/io';
+import { transformToLink } from '../utils/common';
 
 // const EditorContext = React.createContext();
 
@@ -14,6 +18,11 @@ export const Editor = ({ children,  id = '', className = '', ...props }) => {
     </>
   )
 }
+Editor.prototype = {
+  children: PropTypes.node,
+  id: PropTypes.string,
+  className: PropTypes.string
+}
 
 function Header ({ children, id = '', className = '' , ...props }) {
   return(
@@ -26,20 +35,79 @@ function Header ({ children, id = '', className = '' , ...props }) {
     </>
   )
 }
+Header.prototype = {
+  children: PropTypes.node,
+  id: PropTypes.string,
+  className: PropTypes.string
+}
 
-function HeaderTab ({ children, id = '', className = '', title, icon, ...props }) {
+
+function HeaderTab ({ children, id = '', className = '', title = '', link = '', icon, removeVisitedMenu, ...props }) {
+  // 1. Variables
+  const navigate                  = useNavigate();
+  const location                  = useLocation();
+  const [activeTab, setActiveTab] = useState('welcome');
+
+  // 2. Set an active tab
+  useEffect(() => {
+    const getCurrentTab = () => {
+      const pathSegments = location.pathname.split('/');
+      return pathSegments[pathSegments.length - 1];
+    };
+  
+    const updateActiveTab = (tab) => {
+      if (tab && tab !== '' && tab !== 'skills') {
+        setActiveTab(tab);
+      }
+    };
+  
+    const currentTab = getCurrentTab();
+    updateActiveTab(currentTab);
+  }, [location, setActiveTab]);
+  
+
+  // 3. When a tab is selected
+  const handleLink = useCallback((e) => {
+    e.stopPropagation();
+
+    const selectedTab = transformToLink(e.currentTarget.innerText);
+    if ( activeTab !== selectedTab ) {
+      setActiveTab(selectedTab);
+      navigate(link);
+    }
+  }, [link, activeTab, navigate]);
+
+  // 4. When a tab close button is clicked
+  const handleClose = (e) => {
+    e.stopPropagation();
+
+    if (typeof removeVisitedMenu === 'function') {
+      removeVisitedMenu(title); 
+    }
+  }
+
   return(
     <>
-      <div id={id} className={`na-editor-tab-item ${className}`.trim()}>
+      <div id={id} className={`na-editor-tab-item ${activeTab === transformToLink(title)? 'active':'' } ${className}`.trim()} onClick={handleLink}>
         <span className='na-editor-tab-icon'>
           {icon && ( React.isValidElement(icon)? icon : <span className='title-icon'/>)}
         </span>
-        <a href='#link' className='na-editor-tab-link'>
+        <span className='na-editor-tab-link'>
           { title || children }
-        </a>
+        </span>
+        <span className="na-editor-tab-close" onClick={handleClose}><IoIosClose /></span>
       </div>
     </>
   )
+}
+HeaderTab.prototype = {
+  children: PropTypes.node,
+  id: PropTypes.string,
+  className: PropTypes.string,
+  title: PropTypes.string,
+  link: PropTypes.string,
+  icon: PropTypes.oneOfType([PropTypes.node, PropTypes.elementType]),
+  removeVisitedMenu: PropTypes.func
 }
 
 function Body ({ children, id = '', className = '', ...props }) {
@@ -51,6 +119,12 @@ function Body ({ children, id = '', className = '', ...props }) {
     </>
   )
 }
+Body.prototype = {
+  children: PropTypes.node,
+  id: PropTypes.string,
+  className: PropTypes.string
+}
+
 function Title ({ children, id = '', className = '', ...props }) {
   return(
     <>
@@ -60,6 +134,12 @@ function Title ({ children, id = '', className = '', ...props }) {
     </>
   )
 }
+Title.prototype = {
+  children: PropTypes.node,
+  id: PropTypes.string,
+  className: PropTypes.string
+}
+
 function SubTitle ({ children, id = '', className = '', ...props }) {
   return(
     <>
@@ -69,6 +149,12 @@ function SubTitle ({ children, id = '', className = '', ...props }) {
     </>
   )
 }
+SubTitle.prototype = {
+  children: PropTypes.node,
+  id: PropTypes.string,
+  className: PropTypes.string
+}
+
 function SubSubTitle ({ children, id = '', className = '', ...props }) {
   return(
     <>
@@ -77,6 +163,11 @@ function SubSubTitle ({ children, id = '', className = '', ...props }) {
       </h3>
     </>
   )
+}
+SubSubTitle.prototype = {
+  children: PropTypes.node,
+  id: PropTypes.string,
+  className: PropTypes.string
 }
 
 

@@ -10,7 +10,6 @@ export const LIGHT_THEME   = 'lightTheme';
 export const DEFAULT_THEME = DARK_THEME;
 
 export function useTheme() {
-  console.log(`useTheme()`);
   // 1. Get store
   const {store, setStorage, removeStorage} = useLocalStorage(THEME_KEY);
   
@@ -33,7 +32,7 @@ export function useTheme() {
 
   // 3. Get details related to theme
   // 3-1) Get a valid theme
-  const validThemeName = useMemo( () => getValidThemeName(store), [store]); 
+  const validThemeName = useMemo( () => getValidThemeName(store), [getValidThemeName, store]); 
 
   // 3-2) Get Current theme's Object
   const currentThemeObject = useMemo(() => theme[validThemeName], [validThemeName]);

@@ -38,12 +38,13 @@ export const darkTheme = {
     searchAreaForeground       : '#747474',
     searchAreaActiveBorder     : '#0078d4'
   }, 
-
+  
   // Editor groups & tabs
   editor: {
-    tabBackground: '#181818',
-    background   : '#1e1e1e',
-    foreground   : '#cccccc'
+    tabBackground   : '#181818',
+    background      : '#1e1e1e',
+    hoverBackground : '#262626',
+    foreground      : '#cccccc'
   },
 
   // Editor blog
@@ -79,7 +80,7 @@ export const lightTheme = {
   base: {
     background        : '#d6cfe2',
     inactiveTextColor : '#737078',
-    activeTextColor   : '#737078',
+    activeTextColor   : '#616161',
     // border            : '#f3f3f3',
     border            : '#d6cfe2',
     activeborder      : '#f3f3f3',
@@ -117,9 +118,10 @@ export const lightTheme = {
   
   // Editor groups & tabs
   editor: {
-    tabBackground: '#ececec',
-    background   : '#f5f5f5',
-    foreground   : '#616161'
+    tabBackground   : '#ececec',
+    background      : '#f5f5f5',
+    hoverBackground : '#ede8ef',
+    foreground      : '#616161'
   },
 
   // Editor blog

@@ -64,9 +64,10 @@ export const GlobalStyle = createGlobalStyle`
     --list-search-area-foreground       : ${ ({theme}) => theme.list.searchAreaForeground };
     --list-search-area-active-border    : ${ ({theme}) => theme.list.searchAreaActiveBorder };
     
-    --editor-tab-background: ${ ({theme}) => theme.editor.tabBackground };
-    --editor-background    : ${ ({theme}) => theme.editor.background };
-    --editor-text-color    : ${ ({theme}) => theme.editor.foreground };
+    --editor-tab-background   : ${ ({theme}) => theme.editor.tabBackground };
+    --editor-background       : ${ ({theme}) => theme.editor.background };
+    --editor-hover-background : ${ ({theme}) => theme.editor.hoverBackground };
+    --editor-text-color       : ${ ({theme}) => theme.editor.foreground };
 
     --editor-blog-border        : ${ ({theme}) => theme.editorblog.border };
     --editor-blog-active-border : ${ ({theme}) => theme.editorblog.activeBorder };
