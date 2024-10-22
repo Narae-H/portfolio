@@ -1,7 +1,7 @@
 import './../../styles/pages/Skills.css'
 
 import { useQuery } from 'react-query';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import { ListGroup } from 'react-bootstrap';
@@ -36,7 +36,7 @@ function Skills ( props ) {
   
   // 3. Event handlers 
   // 3-1) Save the visited menu info in the local storage
-  const [visitedMenus, setVisitedMenu] = useVisitedMenus(KEY_VISITED_SKILLS);
+  const [visitedMenus, setVisitedMenu, removeVisitedMenu] = useVisitedMenus(KEY_VISITED_SKILLS);
   const handleLocalStorage = (name) => {
     // Check if the click is directly on the Skills component, not on a child
     console.log(`Selected menu => ${name}`);
@@ -44,11 +44,6 @@ function Skills ( props ) {
     setVisitedMenu(name);
   }
   
-  // 3-2) When a header tab is selected, navigate to the corresponding page  
-  const handleHeaderTab = (e) => {
-    console.log( `handleHeaderTab=> ${e.target}`)
-  }
-
   return (
     <>
       <PrimarySideBar>
@@ -79,10 +74,10 @@ function Skills ( props ) {
       
       <Editor>
         <Editor.Header>
-          <Editor.HeaderTab title='Welcome' className='active' icon={<Icon name='skills' onClick={handleHeaderTab}/>}  />
+          <Editor.HeaderTab title='Welcome' icon={<Icon name='skills' />} link='/skills' />
           { visitedMenus? visitedMenus.map ( (menu, index) =>{
             return (
-              <Editor.HeaderTab title={menu} icon={<Icon name={menu} />} key={index} />
+              <Editor.HeaderTab title={menu} icon={<Icon name={menu} />} key={index} link={`/skills/${transformToLink(menu)}`} removeVisitedMenu={removeVisitedMenu}/>
             )
           }) : null
           }

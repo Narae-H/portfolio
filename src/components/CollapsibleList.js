@@ -1,14 +1,11 @@
 import './../styles/CollapsibleList.css';
 
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { VscChevronDown, VscChevronRight } from 'react-icons/vsc';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { useLocalStorage } from '../hooks/useLocalStorage';
-
 const CollapsibleListContext = createContext();
-const SKILLS_KEY = 'visited-skills';
 
 export const CollapsibleList = ({ children, defaultOpenLevels = 1 }) => {
   return (

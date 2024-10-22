@@ -7,9 +7,8 @@ export const KEY_VISITED_EXPS   = 'visited_exps';
 export function useVisitedMenus(localStorageKey) {
   // 1. Get store
   const {store, setStorage, removeStorage} = useLocalStorage(localStorageKey);
-  console.log( `store => ${store}`);
 
-  // 2. Set theme
+  // 2. Add a visited menu
   const setVisitedMenu = (newMenu) => {
     const menuArr = store? [...store] : [];
     let updatedVisitedMenus = menuArr;
@@ -24,5 +23,20 @@ export function useVisitedMenus(localStorageKey) {
     setStorage(updatedVisitedMenus);
   };
 
-  return [store, setVisitedMenu];
+  // 3. Remove a visited menu from local storage
+  const removeVisitedMenu = (menu) => {
+    // 3-1) Remove a menu from the current local storage
+    const menuArr = store? [...store] : [];
+    let updatedVisitedMenus = menuArr.filter(item => item !== menu);
+
+    console.log( updatedVisitedMenus );
+
+    // 3-2) Delete the current local storage 
+    removeStorage();
+
+    // 3-3) Set the updated local storage
+    setStorage(updatedVisitedMenus);
+  };
+
+  return [store, setVisitedMenu, removeVisitedMenu];
 }

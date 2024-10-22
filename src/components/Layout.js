@@ -20,7 +20,7 @@ function Layout() {
   // 1. Menus
   const { data: menus, isSuccess } = useQuery(
                                       'menuMain',
-                                      () => axios.get('/data/menu/menuMain.json'),
+                                      () => axios.get('data/menu/menuMain.json'),
                                       {refetchOnWindowFocus: false,
                                       staleTime: Infinity}
                                     );
