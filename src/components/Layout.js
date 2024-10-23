@@ -8,33 +8,82 @@ import ActivityBar from './ActivityBar';
 import StatusBar from './StatusBar';
 import Home from './pages/Home';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { transformToLink } from '../utils/common';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 import { PageComponent } from './PageComponent';
 
+// Props
 export const LayoutContext = React.createContext();
+
+// Memoize child components
+const MemoizedTopMenuBar  = React.memo(TopMenuBar);
+const MemoizedActivityBar = React.memo(ActivityBar);
+const MemoizedStatusBar   = React.memo(StatusBar);
+
+// Otimize the Route rendering
+const GenerateRoutes = React.memo(({ menus, transformToLink }) => {
+  return menus.map((item) => (
+    <Route
+      key={item.name}
+      path={`/${transformToLink(item.name)}`}
+      element={<PageComponent name={item.name} />}
+    />
+  ));
+});
 
 function Layout() {
   // 1. Menus
   const { data: menus, isSuccess } = useQuery(
                                       'menuMain',
-                                      () => axios.get('data/menu/menuMain.json'),
+                                      () => axios.get(`${process.env.PUBLIC_URL}/data/menu/menuMain.json`),
                                       {refetchOnWindowFocus: false,
                                       staleTime: Infinity}
                                     );
+  
+  const memoizedTransformToLink = useMemo(() => transformToLink, []);
 
   return (
     <>
-      <div id='root-container'>
+      {/* <div id='root-container'>
         <div id='top-menu-bar'>
-          <TopMenuBar/>
+          <MemoizedTopMenuBar />
         </div>
 
         <div id='middle-content'>
           <div id='activity-bar'>
-            <ActivityBar/>
+            <MemoizedActivityBar />
+          </div>
+          <div id='editor-area'>
+            <Routes>
+              {isSuccess && (
+                <GenerateRoutes
+                  menus={menus.data.menus}
+                  transformToLink={memoizedTransformToLink}
+                />
+              )}
+              <Route
+                path='skills/:id'
+                element={<PageComponent name='skills' />}
+              />
+              <Route path='*' element={<Home />} />
+            </Routes>
+          </div>
+        </div>
+        
+        <div id='bottom-status-bar'>
+          <MemoizedStatusBar />
+        </div>
+      </div> */}
+      <div id='root-container'>
+        <div id='top-menu-bar'>
+          <MemoizedTopMenuBar/>
+        </div>
+
+        <div id='middle-content'>
+          <div id='activity-bar'>
+            <MemoizedActivityBar/>
           </div>
           <div id='editor-area'>
             <Routes>
@@ -53,9 +102,9 @@ function Layout() {
               }
 
               <Route path='skills/:id' element={
-                <LayoutContext.Provider value='java'>
+                // <LayoutContext.Provider value='java'>
                   <PageComponent name='skills' />
-                </LayoutContext.Provider>
+                // </LayoutContext.Provider>
               } />
 
               <Route path='*' element={<Home />} />
@@ -64,11 +113,11 @@ function Layout() {
         </div>
         
         <div id='bottom-status-bar'>
-          <StatusBar/>
+          <MemoizedStatusBar/>
         </div>
       </div>
     </>
   )
 }
 
-export default Layout;
+export default React.memo(Layout);

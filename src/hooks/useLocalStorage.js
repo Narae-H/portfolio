@@ -21,10 +21,6 @@ export function useLocalStorage (key) {
     const localStorageVal = localStorage.getItem(key)? JSON.parse(localStorage.getItem(key)) : "";
     const refVal          = valueRef.current? valueRef.current : ""; 
     
-    // console.log(`localStorageVal => ${localStorageVal}`);
-    // console.log(`refVal => ${refVal}`); 
-    // console.log(`Compare values! => ${Object.entries(localStorageVal).toString() === Object.entries(refVal).toString()}`);
-      
     // 2. Compare the actual values and update valueRef.current only when the values are different to prevent unnecessary re-rendering.
     if( Object.entries(localStorageVal).toString() !== Object.entries(refVal).toString() ) {
       valueRef.current = localStorageVal;

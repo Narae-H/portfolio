@@ -1,9 +1,10 @@
 import './../styles/StatusBar.css';
 
+import React from 'react';
 import { ModeButton } from './ModeButton';
 import { Icon } from '../assets/customIcon/Icon';
 
-function StatusBar(){
+const StatusBar = React.memo(() => {
   return(
     <>
       <div id='status-wrapper'>
@@ -29,6 +30,6 @@ function StatusBar(){
       </div>
     </>
   )
-}
+});
 
 export default StatusBar;
