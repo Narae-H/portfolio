@@ -1,19 +1,27 @@
 import './../styles/TopMenuBar.css';
 
-import { VscChromeClose, VscChromeMinimize, VscChromeRestore, VscMail } from "react-icons/vsc";
-import { Dropdown } from './Dropdown';
+import React, { useMemo } from 'react';
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import useWindowSize from '../hooks/useWindowSize';
-import { Icon } from '../assets/customIcon/Icon';
 import { Link } from 'react-router-dom';
+
+import { VscChromeClose, VscChromeMinimize, VscChromeRestore, VscMail } from "react-icons/vsc";
+import { Icon } from '../assets/customIcon/Icon';
+import { Dropdown } from './Dropdown';
+import useWindowSize from '../hooks/useWindowSize';
 import { transformToLink } from '../utils/common';
 
-function TopMenuBar(){
+const TopMenuBar = React.memo(() => {
   // 1. Get menus depending on window size
   const { isMobile } = useWindowSize();
-  const url = isMobile? 'data/menu/menuMain.json' : 'data/menu/menuTop.json';
-  const queryKey = isMobile? 'menuMain': 'menuTop';
+
+  const { url, queryKey } = useMemo(() => {
+    const url = isMobile 
+      ? `${process.env.PUBLIC_URL}/data/menu/menuMain.json` 
+      : `${process.env.PUBLIC_URL}/data/menu/menuTop.json`;
+    const queryKey = isMobile ? 'menuMain' : 'menuTop';
+    return { url, queryKey };
+  }, [isMobile]);
 
   const { data: menus, isSuccess } = useQuery({
                                                 queryKey,
@@ -65,6 +73,8 @@ function TopMenuBar(){
       </div>
     </>
   )
-}
+}, (prevProps, nextProps) => {
+  return true; // Return true to prevent re-render
+});
 
 export default TopMenuBar;

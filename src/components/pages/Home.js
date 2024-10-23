@@ -14,7 +14,7 @@ function Home() {
   // 1. Get menus
   const { data: menus, isSuccess } = useQuery(
                                       ['menuMain'],
-                                      () => axios.get('data/menu/menuMain.json'),
+                                      () => axios.get(`${process.env.PUBLIC_URL}/data/menu/menuMain.json`),
                                       {refetchOnWindowFocus: false,
                                       staleTime: Infinity}
                                     );

@@ -1,7 +1,7 @@
 import './../../styles/pages/Skills.css'
 
 import { useQuery } from 'react-query';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import { ListGroup } from 'react-bootstrap';
@@ -16,10 +16,14 @@ import { Icon } from '../../assets/customIcon/Icon';
 import { KEY_VISITED_SKILLS, useVisitedMenus } from '../../hooks/useVisitedMenus';
 
 function Skills ( props ) {
+  const location = useLocation();
+  console.log( location );
+  console.log( `location=> + ${process.env.PUBLIC_URL}` );
+  
   // 1. Get sidebar menu
   const { data: skills, isSuccess: isSuccessSkillMenu } = useQuery(
                                           'menuMain',
-                                          () => axios.get('/data/menu/menuMain.json'),
+                                          () => axios.get(`${process.env.PUBLIC_URL}/data/menu/menuMain.json`),
                                           {refetchOnWindowFocus: false,
                                           staleTime: Infinity}
   );
@@ -28,7 +32,7 @@ function Skills ( props ) {
   let {id} = useParams();
   const { data: skillObj, isSuccess: isSuccessSkillObj } = useQuery(
                                           ['Skills', id],
-                                          () => axios.get(`/data/skills/${id}.json`),
+                                          () => axios.get(`${process.env.PUBLIC_URL}/data/skills/${id}.json`),
                                           {refetchOnWindowFocus: false,
                                             staleTime: Infinity,
                                             enabled: !!id}
