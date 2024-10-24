@@ -1,0 +1,29 @@
+{
+  "title" : "Finance Overview Dashboard",
+  "titleIconName": "report",
+  "subTitle": "This is a subtitle",
+  "description": "Developed a finance overview dashboard",
+  "details": [
+    {
+      "position": "Full Stack Developer",
+      "period": "4 months (Mar 2021 – Jun 2021)",
+      "skills": [
+        "OS: Windows"
+        , "SaaS: Microsoft Power BI"
+        , "Programming: DAX"
+        , "Database: Maria DB, Azure SQL Database"
+      ],
+      "jd": [
+        "Analysed user requirements."
+        , "Planned and managed the project."
+        , "Set up the development/production environment."
+        , "Evaluated UI/UX design by working closely with a designer."
+        , "Modified the firm’s database."
+        , "Developed a Power BI report to track cash received, debt, and WIP."
+        , "Conducted unit testing and integration testing."
+        , "Wrote technical documentation and end-user manuals."
+      ]
+    }
+  ],
+  "img": ""
+}

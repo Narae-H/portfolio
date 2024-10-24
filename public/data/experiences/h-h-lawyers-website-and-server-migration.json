@@ -1,0 +1,37 @@
+{
+  "title" : "H & H Lawyers Website and Server Migration",
+  "titleIconName": "hnh",
+  "subTitle": "This is a subtitle",
+  "description": "Developed a new H & H Lawyers website and migrated servers from on-premise to Microsoft Exchange and AWS.",
+  "details": [
+    {
+      "position": "Full Stack Java Developer",
+      "period": "12 months (Oct 2019 – Sep 2020)",
+      "skills": [
+        "OS: Windows"
+        , "Tool: Eclipse (Development), DBeaver (RDB)"
+        , "Programming: Java, Thymeleaf, HTML, CSS, JavaScript, jQuery, Bootstrap, MySQL"
+        , "Framework: Spring Boot"
+        , "Database: Maria DB"
+        , "Version Control: SVN"
+        , "Cloud Services: AWS Elastic Beanstalk, AWS Load Balancer, Route 53, Azure Database, Azure Entra ID"
+        , "Other: Agile Methodology, SOLID principles, MVC pattern."
+      ],
+      "jd": [
+        "Analysed user requirements."
+        , "Planned and managed the project."
+        , "Set up the development/production environment."
+        , "Designed and created the database."
+        , "Developed the website and deployed it to AWS."
+        , "Designed and created the database in AWS RDS."
+        , "Checked web standard validation in alignment with W3C web standards."
+        , "Conducted unit testing and integration testing."
+        , "Wrote technical documentation and end-user manuals."
+        , "Migrated the email server from on-premise to Microsoft Exchange."
+        , "Set up security policies in Office 365"
+      ]
+    }
+  ],
+  "img": "",
+  "link": "https://hhlaw.com.au"
+}
