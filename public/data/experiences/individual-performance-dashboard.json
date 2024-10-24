@@ -1,0 +1,32 @@
+{
+  "title" : "Individual Performance Dashboard",
+  "titleIconName": "dashboard",
+  "subTitle": "This is a subtitle",
+  "description": "Developed an individual performance dashboard",
+  "details": [
+    {
+      "position": "Full Stack Developer",
+      "period": "4 months (Oct 2020 – Jan 2021)",
+      "skills": [
+        "OS: Windows"
+        , "SaaS: Microsoft Power BI"
+        , "Programming: DAX"
+        , "Database: Maria DB, Azure SQL Database"
+      ],
+      "jd": [
+        "Analysed user requirements."
+        , "Planned and managed the project."
+        , "Set up the development/production environment."
+        , "Evaluated UI/UX design by working closely with a designer."
+        , "Analysed the database from Actionstep (legal software platform) to import data."
+        , "Modified the firm’s database."
+        , "Developed a Power BI report to view an overview and details of timekeeper performance, matter type, work efficiency, skill efficiency, average hours by month, WIP by month, and related matters."
+        , "Conducted unit testing and integration testing."
+        , "Wrote technical documentation and end-user manuals."
+      ]
+    }
+  ],
+  "img": ""
+}
+
+

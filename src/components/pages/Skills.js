@@ -1,7 +1,7 @@
 import './../../styles/pages/Skills.css'
 
 import { useQuery } from 'react-query';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import { ListGroup } from 'react-bootstrap';
@@ -16,10 +16,6 @@ import { Icon } from '../../assets/customIcon/Icon';
 import { KEY_VISITED_SKILLS, useVisitedMenus } from '../../hooks/useVisitedMenus';
 
 function Skills ( props ) {
-  const location = useLocation();
-  console.log( location );
-  console.log( `location=> + ${process.env.PUBLIC_URL}` );
-  
   // 1. Get sidebar menu
   const { data: skills, isSuccess: isSuccessSkillMenu } = useQuery(
                                           'menuMain',
@@ -42,9 +38,6 @@ function Skills ( props ) {
   // 3-1) Save the visited menu info in the local storage
   const [visitedMenus, setVisitedMenu, removeVisitedMenu] = useVisitedMenus(KEY_VISITED_SKILLS);
   const handleLocalStorage = (name) => {
-    // Check if the click is directly on the Skills component, not on a child
-    console.log(`Selected menu => ${name}`);
-    console.log(`Skills component clicked => ${visitedMenus}`);
     setVisitedMenu(name);
   }
   
@@ -78,7 +71,7 @@ function Skills ( props ) {
       
       <Editor>
         <Editor.Header>
-          <Editor.HeaderTab title='Welcome' icon={<Icon name='skills' />} link='/skills' />
+          <Editor.HeaderTab title='Welcome' icon={<Icon name='skills' />} link={`/skills`} />
           { visitedMenus? visitedMenus.map ( (menu, index) =>{
             return (
               <Editor.HeaderTab title={menu} icon={<Icon name={menu} />} key={index} link={`/skills/${transformToLink(menu)}`} removeVisitedMenu={removeVisitedMenu}/>
@@ -132,61 +125,6 @@ function Skills ( props ) {
           )
         } )}
         </Editor.Body>
-        
-
-        {/* <Editor.Body className='skills-editor-body'>
-          <EditorBlog>
-            <EditorBlog.Overview>
-              <EditorBlog.OverviewTitle title='Java' icon={<Icon name='javalogo' className='skills-icon' />} />
-              <EditorBlog.OverviewContent>
-                <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere (WORA), meaning that compiled Java code can run on any Java-enabled device. Java was developed by Sun Microsystems (now Oracle Corporation).</p>
-              </EditorBlog.OverviewContent>  
-            </EditorBlog.Overview>
-            <EditorBlog.Details>
-              <EditorBlog.DetailsNav activeKey='java'>
-                <EditorBlog.DetailsNavItem title='Java' eventKey='java' >
-                  <EditorBlog.DetailsBodyHeader title='Body Header'/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                  Body Text<br/>
-                </EditorBlog.DetailsNavItem>
-                <EditorBlog.DetailsNavItem title='Test2' eventKey="test2"/>
-              </EditorBlog.DetailsNav>
-
-            </EditorBlog.Details>
-          </EditorBlog>
-        </Editor.Body> */}
       </Editor>
     </>
   )

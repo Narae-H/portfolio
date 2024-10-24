@@ -1,0 +1,17 @@
+{
+  "title" : "Employee Capacity Report",
+  "titleIconName": "report",
+  "subTitle": "This is a subtitle",
+  "description": "",
+  "details": [
+    {
+      "position": "",
+      "period": "Dec 2023 - Apr 2024",
+      "skills": [
+      ],
+      "jd": [
+      ]
+    }
+  ],
+  "img": ""
+}
