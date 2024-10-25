@@ -1,0 +1,34 @@
+{
+  "title" : "H & H Lawyers Intranet",
+  "titleIconName": "hnh",
+  "subTitle": "This is a subtitle",
+  "description": "Developed an intranet for H & H Lawyers",
+  "details": [
+    {
+      "position": "Full Stack Java Developer",
+      "period": "2 months (Feb 2023 – Mar 2023)",
+      "skills": [
+        "OS: Windows"
+        , "Tool: Eclipse (Development), DBeaver (RDB)"
+        , "Programming: Java, Thymeleaf, HTML, CSS, JavaScript, jQuery, Bootstrap, MySQL"
+        , "Framework: Spring Boot"
+        , "Database: Maria DB"
+        , "Version Control: SVN"
+        , "Cloud Services: AWS Elastic Beanstalk, AWS Load Balancer, Route 53, Azure Entra ID"
+        , "Other: Agile Methodology, SOLID principles, MVC pattern"
+      ],
+      "jd": [
+        "Analysed user requirements."
+        , "Planned and managed the project."
+        , "Set up the development/production environment."
+        , "Verified third-party APIs, including MS Exchange API, to get authorisation by OAuth 2.0."
+        , "Developed the intranet and deployed it to AWS."
+        , "Designed and created the database."
+        , "Ensured Web Standard Validation in alignment with W3C Web Standards."
+        , "Conducted unit testing and integration testing."
+        , "Wrote technical documentation and end-user manuals."
+      ]
+    }
+  ],
+  "img": ""
+}

@@ -115,9 +115,11 @@ function Layout() {
               }
 
               <Route path='skills/:id' element={
-                // <LayoutContext.Provider value='java'>
                   <PageComponent name='skills' />
-                // </LayoutContext.Provider>
+              } />
+
+              <Route path='experiences/:id' element={
+                  <PageComponent name='experiences' />
               } />
 
               <Route path='*' element={<Home />} />
