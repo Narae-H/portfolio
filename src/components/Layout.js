@@ -80,6 +80,11 @@ function Layout() {
                 path='skills/:id'
                 element={<PageComponent name='skills' />}
               />
+              <Route
+                path='experiences/:id'
+                element={<PageComponent name='experiences' />}
+              />
+              
               <Route path='*' element={<Home />} />
             </Routes>
           </div>

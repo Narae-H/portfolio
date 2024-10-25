@@ -1,6 +1,6 @@
 {
   "title" : "Manual Product Information System in Hyundai Mobis",
-  "titleIconName": "",
+  "titleIconName": "manualproductinformation",
   "subTitle": "This is a subtitle",
   "description": "Updated the system to add a new function called ‘Modified Request’.",
   "details": [

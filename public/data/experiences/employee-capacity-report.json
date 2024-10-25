@@ -1,6 +1,6 @@
 {
   "title" : "Employee Capacity Report",
-  "titleIconName": "report",
+  "titleIconName": "employeecapacityreport",
   "subTitle": "This is a subtitle",
   "description": "Developed an employee capacity report scheduler to automatically send reports to supervisors every Monday",
   "details": [
