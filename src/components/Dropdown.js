@@ -3,8 +3,9 @@ import './../styles/Dropdown.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { VscChevronRight } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
+
+import { VscChevronRight } from 'react-icons/vsc';
 
 // Create a context for the dropdown
 const DropDownContext = createContext();
@@ -21,7 +22,7 @@ export function Dropdown ({ children, className = '', title='', link, ...props }
     if( children ) {
       e.preventDefault();
       setIsDropdownOpen(!isDropdownOpen);
-    } else {
+    } else if( link ) {
       navigate(link);
     }
   };

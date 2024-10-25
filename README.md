@@ -251,3 +251,6 @@ root.render(
 ```
 npm run deploy
 ```
+
+## Optimization
+### Memoization
