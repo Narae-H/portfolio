@@ -1,6 +1,6 @@
 import './../styles/TopMenuBar.css';
 
-import React, { useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
@@ -11,14 +11,15 @@ import { Dropdown } from './Dropdown';
 import useWindowSize from '../hooks/useWindowSize';
 import { transformToLink } from '../utils/common';
 
-const TopMenuBar = React.memo(() => {
+const TopMenuBar = memo(() => {
   // 1. Get menus depending on window size
   const { isMobile } = useWindowSize();
 
   const { url, queryKey } = useMemo(() => {
-    const url = isMobile 
-      ? `${process.env.PUBLIC_URL}/data/menu/menuMain.json` 
+    const url = isMobile? 
+      `${process.env.PUBLIC_URL}/data/menu/menuMain.json` 
       : `${process.env.PUBLIC_URL}/data/menu/menuTop.json`;
+
     const queryKey = isMobile ? 'menuMain' : 'menuTop';
     return { url, queryKey };
   }, [isMobile]);
@@ -52,7 +53,7 @@ const TopMenuBar = React.memo(() => {
           </div>
           { isSuccess && menus.data.menus.map((menu, index) => {
             return (
-              <Dropdown key={index} index={index} title={menu.name} className='menu-icon' link={transformToLink(menu.name)}>
+              <Dropdown key={index} index={index} title={menu.name} className='menu-icon' link={isMobile? transformToLink(menu.name): null}>
                 {  menu.items && menu.items.map((item, subIndex) => {
                   return (
                     renderMenuItem(menu.name, item, [index, subIndex])
@@ -73,8 +74,6 @@ const TopMenuBar = React.memo(() => {
       </div>
     </>
   )
-}, (prevProps, nextProps) => {
-  return true; // Return true to prevent re-render
 });
 
 export default TopMenuBar;
