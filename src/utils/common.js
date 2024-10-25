@@ -3,7 +3,7 @@ const capitalizeFirstLetter = (string) => {
 }
 
 const transformToLink = (string) => {
-  return string.toLowerCase().replace(/\s+/g, '-');
+  return string.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '-').toLowerCase();
 }
 
 

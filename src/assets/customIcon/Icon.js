@@ -2,12 +2,16 @@ import React from 'react';
 import { FaJ, FaJava, FaHashtag, FaReact, FaAws, FaMicrosoft, FaS, FaMaxcdn, FaHtml5, FaCss3Alt } from "react-icons/fa6";
 import { IoLogoJavascript, IoMdGitBranch } from 'react-icons/io';
 import { SiSpringboot, SiMariadb, SiThymeleaf } from "react-icons/si";
-import { MdCode, MdDarkMode, MdLightMode } from "react-icons/md";
-import { BiLogoRedux, BiLeaf } from "react-icons/bi";
+import { MdAttachMoney, MdCode, MdDarkMode, MdEditDocument, MdLightMode, MdManageAccounts, MdWebAsset } from "react-icons/md";
+import { BiLogoRedux, BiLeaf, BiSolidWindowAlt } from "react-icons/bi";
 import { RiBootstrapLine } from "react-icons/ri";
 import { TbBrandMysql } from "react-icons/tb";
 import { VscAzure, VscFiles, VscCode, VscFolderLibrary, VscMail, VscSettingsGear, VscVscode, VscRemote } from "react-icons/vsc";
 import { ImGithub, ImLinkedin, ImOnedrive } from "react-icons/im";
+import { PiCertificateBold, PiCursorClickFill, PiFinnTheHumanFill, PiTrademarkRegisteredBold, PiTrafficSignalFill } from "react-icons/pi";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { IoPersonCircle, IoServer } from "react-icons/io5";
+import { GiCycle } from "react-icons/gi";
 
 const iconMap = {
   vscode : {
@@ -142,6 +146,66 @@ const iconMap = {
     component: ImLinkedin, 
     style: { color: '#cccccc', width: '13px', height: '13px' }
   },
+  humanresourcedatabase:{
+    component: PiFinnTheHumanFill, 
+    style: { color: '#5ed3f3', width: '13px', height: '13px' }
+  },
+  servermigration:{
+    component: IoServer, 
+    style: { color: '#69aef4', width: '13px', height: '13px' }
+  },
+  employeecapacityreport:{
+    component: BsFillPeopleFill, 
+    style: { color: '#f7c100', width: '13px', height: '13px' }
+  },
+  hhlawyersintranet:{
+    component: MdWebAsset, 
+    style: { color: '#115f42', width: '13px', height: '13px' }
+  },
+  oneclicktrademarkwebsite:{
+    component: PiCursorClickFill, 
+    style: { color: '#0056a3', width: '13px', height: '13px' }
+  },
+  financeoverviewdashboard:{
+    component: MdAttachMoney, 
+    style: { color: '#f7d74d', width: '13px', height: '13px' }
+  },
+  individualperformancedashboard:{
+    component: IoPersonCircle, 
+    style: { color: '#f76c0d', width: '13px', height: '13px' }
+  },
+  hhlawyerswebsiteandservermigration:{
+    component: BiSolidWindowAlt, 
+    style: { color: '#115f42', width: '13px', height: '13px' }
+  },
+  stmsmanagement:{
+    component: FaS, 
+    style: { color: '#008aff', width: '13px', height: '13px' }
+  },
+  projectlifecyclemanagement:{
+    component: GiCycle, 
+    style: { color: '#e61e4b', width: '13px', height: '13px' }
+  },
+  trafficinformationsystem:{
+    component: PiTrafficSignalFill, 
+    style: { color: '#61b60e', width: '13px', height: '13px' }
+  },
+  mpis:{
+    component: MdEditDocument, 
+    style: { color: '#f78b00', width: '13px', height: '13px' }
+  },
+  mpasis:{
+    component: PiTrademarkRegisteredBold, 
+    style: { color: '#f6c729', width: '13px', height: '13px' }
+  },
+  poc:{
+    component: PiCertificateBold, 
+    style: { color: '#83bc00', width: '13px', height: '13px' }
+  },
+  systemmanagement:{
+    component: MdManageAccounts, 
+    style: { color: '#f3593a', width: '13px', height: '13px' }
+  },
   mslogo: {
     component: () => {
       return (
@@ -180,7 +244,7 @@ const iconMap = {
 };
 
 export const Icon = ({ name, className = '',  ...props }) => {
-  const iconData = iconMap[name.toLowerCase().replace(/\s+/g, '')];
+  const iconData = iconMap[name.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '').replace(/\s+/g, '')];
 
   if (!iconData) {
     console.warn(`Icon not found: ${name}`);
