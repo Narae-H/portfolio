@@ -5,8 +5,28 @@
   "overviewContent": "In my work with MariaDB, I have set up and maintained databases to support web-based systems. I create basic SQL queries to facilitate the development of applications, ensuring they align with the Model-View-Controller (MVC) architecture. My role involves collaborating with development teams to design efficient database structures that integrate smoothly with back-end logic, supporting the overall system’s functionality.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "Employee Capacity Report",
+      "projectLink": "/experiences/employee-capacity-report"
+    },
+    {
+      "projectName": "H & H Lawyers Intranet",
+      "projectLink": "/experiences/h-h-lawyers-intranet"
+    },
+    {
+      "projectName": "One Click Trade Mark Website",
+      "projectLink": "/one-click-trade-mark-website"
+    },
+    {
+      "projectName": "Finance Overview Dashboard",
+      "projectLink": "/experiences/finance-overview-dashboard"
+    },
+    {
+      "projectName": "Individual Performance Dashboard",
+      "projectLink": "/experiences/individual-performance-dashboard"
+    },
+    {
+      "projectName": "H & H Lawyers Website and Server Migration",
+      "projectLink": "/experiences/h-h-lawyers-website-and-server-migration"
     }
   ]
 }

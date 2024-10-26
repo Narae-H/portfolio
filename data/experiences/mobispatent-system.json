@@ -1,0 +1,26 @@
+{
+  "title" : "MobisPatent System in Hyundai Mobis",
+  "titleIconName": "patent",
+  "subTitle": "This is a subtitle",
+  "description": "Updated the system to support multiple languages based on the user's location or preferences",
+  "details": [
+    {
+      "position": "Java Programmer",
+      "period": "1 month (Sep 2017)",
+      "skills": [
+        "OS: Windows"
+        , "Tool: Eclipse (Development), Toad (RDB), Matrix (ODB)"
+        , "Programming: Java, HTML, CSS, JavaScript, jQuery, JSP, JSTL, XML"
+        , "Database: Oracle DB, Matrix ODB"
+        , "Version Control: SVN."
+      ],
+      "jd": [
+        "Created and modified JSP, JSTL, and properties files to enable language preference selection within the system."
+        , "Changed data schemas and drew Entity-Relationship Diagrams (ERDs)."
+        , "Conducted unit testing and integration testing."
+        , "Prepared draft versions of technical documentation and end-user manuals."
+      ]
+    }
+  ],
+  "img": ""
+}

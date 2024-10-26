@@ -1,0 +1,29 @@
+{
+  "title" : "Manual Product Information System in Hyundai Mobis",
+  "titleIconName": "manualproductinformation",
+  "subTitle": "This is a subtitle",
+  "description": "Updated the system to add a new function called ‘Modified Request’.",
+  "details": [
+    {
+      "position": "Java Programmer",
+      "period": "2 months (Oct 2017 – Nov 2017)",
+      "skills": [
+        "OS: Windows"
+        , "Tool: Eclipse (Development), Toad (RDB), Matrix (ODB)"
+        , "Programming: Java, HTML, CSS, JavaScript, jQuery, JSP, XML"
+        , "Database: Oracle DB, Matrix ODB"
+        , "Version Control: SVN"
+      ],
+      "jd": [
+        "Developed a new function called 'Modified Request' in alignment with client requirements."
+        , "Designed and implemented databases."
+        , "Conducted unit testing and integration testing."
+        , "Prepared draft versions of technical documentation and end-user manuals."
+      ]
+    }
+  ],
+  "img": ""
+}
+
+
+

@@ -5,8 +5,8 @@
   "overviewContent": "I have experience in React for building responsive single-page applications (SPAs) with seamless user experiences. I manage state using hooks and have integrated Redux Toolkit for efficient, predictable state management in complex applications. My work includes performance optimisation using lazy loading and code splitting, ensuring scalable and maintainable applications. By focusing on reusable components and best practices, I ensure code quality, making development smoother in both Agile and collaborative environments.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "Portfolio",
+      "projectLink": "/experiences/portfolio"
     }
   ]
 }

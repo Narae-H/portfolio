@@ -5,8 +5,32 @@
   "overviewContent": "I have worked with Azure DB to manage cloud-based database solutions, focusing on scalability, security, and performance. My responsibilities include configuring Azure SQL  to handle different types of data storage needs, ensuring that databases are integrated smoothly with other Azure services. I monitor database performance and make adjustments as needed to optimise the system for distributed environments, ensuring the solution remains efficient as the system scales.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "Human Resource Database",
+      "projectLink": "/experiences/human-resource-database"
+    },
+    {
+      "projectName": "Employee Capacity Report",
+      "projectLink": "/experiences/employee-capacity-report"
+    },
+    {
+      "projectName": "H & H Lawyers Intranet",
+      "projectLink": "/experiences/h-h-lawyers-intranet"
+    },
+    {
+      "projectName": "One Click Trade Mark Website",
+      "projectLink": "/one-click-trade-mark-website"
+    },
+    {
+      "projectName": "Finance Overview Dashboard",
+      "projectLink": "/experiences/finance-overview-dashboard"
+    },
+    {
+      "projectName": "Individual Performance Dashboard",
+      "projectLink": "/experiences/individual-performance-dashboard"
+    },
+    {
+      "projectName": "H & H Lawyers Website and Server Migration",
+      "projectLink": "/experiences/h-h-lawyers-website-and-server-migration"
     }
   ]
 }

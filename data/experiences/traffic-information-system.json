@@ -1,0 +1,26 @@
+{
+  "title" : "Traffic Information System in Korea Expressway Corporation",
+  "titleIconName": "trafficinformationsystem",
+  "subTitle": "",
+  "description": "Developed a new traffic information system for the Pyeongchang 2018 Winter Olympics by referencing the existing traffic information system.",
+  "position": "Java Programmer",
+  "period": "2 months (Dec 2017 – Jan 2018)",
+  "details": {
+    "skills": [
+      "OS: Windows"
+      , "Tool: Eclipse (Development), Toad (RDB)"
+      , "Programming: Java, HTML, CSS, JavaScript, jQuery, jqChart"
+      , "Database: Oracle DB"
+      , "Version Control: SVN"
+    ],
+    "jd": [
+      "Analysed the current traffic information system."
+      , "Developed a new traffic information system for the Pyeongchang 2018 Winter Olympics, focusing on functions for comparison and analysis between estimated and actual travel times."
+      , "Supported the design and implementation of the traffic information database while working closely with database analysts (DBA)."
+      , "Conducted web standard validation checks."
+      , "Conducted unit testing and integration testing."
+      , "Wrote technical documentation and end-user manuals."
+
+    ]
+  }
+}

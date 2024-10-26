@@ -5,8 +5,8 @@
   "overviewContent": "I am skilled in designing, optimising, and managing relational databases using MySQL. My experience includes writing complex SQL queries, managing stored procedures, and ensuring that databases are optimised for performance and data integrity.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "Traffic Information System in Korea Expressway Corporation",
+      "projectLink": "/experiences/traffic-information-system"
     }
   ]
 }
