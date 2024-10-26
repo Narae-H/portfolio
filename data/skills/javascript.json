@@ -5,8 +5,44 @@
   "overviewContent": "With a strong command of JavaScript, I have built dynamic, interactive web applications that deliver engaging user experiences. I use both ES5 and modern JavaScript (ES6+) features to write efficient, maintainable code. I frequently integrate third-party libraries and frameworks such as React, Bootstrap, jQuery, Popper, and jqGrid to enable complex user interactions and functionality. My work also involves optimizing JavaScript performance to ensure smooth interactivity across web platforms.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "H & H Lawyers Intranet",
+      "projectLink": "/experiences/h-h-lawyers-intranet"
+    },
+    {
+      "projectName": "One Click Trade Mark Website",
+      "projectLink": "/one-click-trade-mark-website"
+    },
+    {
+      "projectName": "H & H Lawyers Website and Server Migration",
+      "projectLink": "/experiences/h-h-lawyers-website-and-server-migration"
+    },
+    {
+      "projectName": "STMS management",
+      "projectLink": "/experiences/stms-management"
+    },
+    {
+      "projectName": "Project Lifecycle Management in Hyundai Mobis",
+      "projectLink": "/experiences/project-lifecycle-management"
+    },
+    {
+      "projectName": "Traffic Information System in Korea Expressway Corporation",
+      "projectLink": "/experiences/traffic-information-system"
+    },
+    {
+      "projectName": "Manual Product Information System in Hyundai Mobis",
+      "projectLink": "/experiences/mpis"
+    },
+    {
+      "projectName": "MobisPatent System in Hyundai Mobis",
+      "projectLink": "/experiences/mpasis"
+    },
+    {
+      "projectName": "PoC –PLM in Dassault Systèmes",
+      "projectLink": "/experiences/poc"
+    },
+    {
+      "projectName": "System Management at Hyundai Mobis",
+      "projectLink": "/experiences/system-management"
     }
   ]
 }

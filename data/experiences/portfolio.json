@@ -1,0 +1,32 @@
+{
+  "title" : "Employee Capacity Report",
+  "titleIconName": "employeecapacityreport",
+  "subTitle": "This is a subtitle",
+  "description": "Developed an employee capacity report scheduler to automatically send reports to supervisors every Monday",
+  "details": [
+    {
+      "position": "Full Stack Java Developer",
+      "period": "2 months (May 2023 – Jul 2023)",
+      "skills": [
+        "OS: Windows"
+        , "Tool: Eclipse (Development) , DBeaver (RDB)"
+        , "Programming: Java, HTML, CSS, JavaScript, MySQL"
+        , "Framework: Spring Boot"
+        , "Database: Maria DB"
+        , "Version Control: SVN"
+        , "Cloud Services: AWS Elastic Beanstalk, Azure Entra ID"
+        , "Other: Agile Methodology, SOLID principles, MVC pattern"
+      ],
+      "jd": [
+        "Analysed user requirements."
+        , "Planned and managed the project."
+        , "Set up the development/production environment."
+        , "Designed and created the database."
+        , "Developed the solution to focus on employee capacity based on working days, excluding weekends, holidays, and day-offs, and deployed it to AWS."
+        , "Conducted unit testing and integration testing."
+        , "Wrote technical documentation."
+      ]
+    }
+  ],
+  "img": ""
+}

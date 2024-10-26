@@ -5,8 +5,12 @@
   "overviewContent": "I have worked extensively with Microsoft Power BI to create data-driven dashboards that provide valuable insights for business decision-making. My work includes integrating multiple data sources into Power BI, building real-time reports, and presenting key metrics in intuitive visual formats. In addition, I have used Power Automate to streamline workflows, automating repetitive tasks to increase efficiency and reduce manual workloads.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "Finance Overview Dashboard",
+      "projectLink": "/experiences/finance-overview-dashboard"
+    },
+    {
+      "projectName": "Individual Performance Dashboard",
+      "projectLink": "/experiences/individual-performance-dashboard"
     }
   ]
 }

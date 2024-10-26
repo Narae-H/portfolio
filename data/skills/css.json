@@ -5,8 +5,48 @@
   "overviewContent": "My proficiency in CSS enables me to design responsive, mobile-first websites with consistency across devices and platforms. I have successfully implemented front-end designs that are user-friendly and optimised for performance. By working with frameworks such as Bootstrap and applying advanced CSS techniques like flexbox and grid, I ensure that user interfaces are both functional and visually consistent. This work often involves close collaboration with designers and front-end developers to maintain the highest standards of user experience.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "Employee Capacity Report",
+      "projectLink": "/experiences/employee-capacity-report"
+    },
+    {
+      "projectName": "H & H Lawyers Intranet",
+      "projectLink": "/experiences/h-h-lawyers-intranet"
+    },
+    {
+      "projectName": "One Click Trade Mark Website",
+      "projectLink": "/one-click-trade-mark-website"
+    },
+    {
+      "projectName": "H & H Lawyers Website and Server Migration",
+      "projectLink": "/experiences/h-h-lawyers-website-and-server-migration"
+    },
+    {
+      "projectName": "STMS management",
+      "projectLink": "/experiences/stms-management"
+    },
+    {
+      "projectName": "Project Lifecycle Management in Hyundai Mobis",
+      "projectLink": "/experiences/project-lifecycle-management"
+    },
+    {
+      "projectName": "Traffic Information System in Korea Expressway Corporation",
+      "projectLink": "/experiences/traffic-information-system"
+    },
+    {
+      "projectName": "Manual Product Information System in Hyundai Mobis",
+      "projectLink": "/experiences/mpis"
+    },
+    {
+      "projectName": "MobisPatent System in Hyundai Mobis",
+      "projectLink": "/experiences/mpasis"
+    },
+    {
+      "projectName": "PoC –PLM in Dassault Systèmes",
+      "projectLink": "/experiences/poc"
+    },
+    {
+      "projectName": "System Management at Hyundai Mobis",
+      "projectLink": "/experiences/system-management"
     }
   ]
 }

@@ -5,8 +5,20 @@
   "overviewContent": "I regularly use Bootstrap to develop responsive, mobile-friendly web applications, enabling rapid front-end development while maintaining design consistency. With its pre-built components and flexible grid system, I can create sleek, user-friendly interfaces efficiently. I often customize Bootstrap themes to align with project requirements, ensuring that the user interface reflects the website’s identity while also providing an excellent user experience.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "H & H Lawyers Intranet",
+      "projectLink": "/experiences/h-h-lawyers-intranet"
+    },
+    {
+      "projectName": "One Click Trade Mark Website",
+      "projectLink": "/one-click-trade-mark-website"
+    },
+    {
+      "projectName": "H & H Lawyers Website and Server Migration",
+      "projectLink": "/experiences/h-h-lawyers-website-and-server-migration"
+    },
+    {
+      "projectName": "System Management at Hyundai Mobis",
+      "projectLink": "/experiences/system-management"
     }
   ]
 }

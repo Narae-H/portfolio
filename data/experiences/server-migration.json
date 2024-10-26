@@ -1,0 +1,27 @@
+{
+  "title" : "Server Migration - External Project",
+  "titleIconName": "servermigration",
+  "subTitle": "This is a subtitle",
+  "description": "Migrated email server and cloud storage from Google Email/NAS to Microsoft for Calibre Business Advisory",
+  "position": "Full Stack Developer",
+  "period": "3 months (Sep 2023 – Nov 2023)",
+  "details": {
+    "skills": [
+      "OS: Windows"
+      , "Programming: PowerShell Script"
+      , "SaaS: Migrate Tool from Microsoft 365"
+    ],
+    "jd": [
+      "Analysed user requirements."
+      , "Planned and managed the project."
+      , "Migrated email server from Google to Microsoft Exchange."
+      , "Set up security policies in Office 365."
+      , "Migrated storage server from NAS to Microsoft OneDrive and SharePoint."
+      , "Conducted unit testing and integration testing."
+      , "Wrote test and migration scenarios."
+      , "Wrote technical documentation and end-user manuals."
+    ]
+  }
+}
+
+
