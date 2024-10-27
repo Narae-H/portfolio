@@ -77,6 +77,10 @@ function Layout() {
                 })
               }
               <Route
+                path='contactme'
+                element={<PageComponent name='contactme' />}
+              />
+              <Route
                 path='skills/:id'
                 element={<PageComponent name='skills' />}
               />

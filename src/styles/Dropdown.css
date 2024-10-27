@@ -36,7 +36,9 @@
   display: flex;
   flex-direction: column;
   height: fit-content;
-  min-width: 15em;
+  /* min-width: 15em; */
+  min-width: 25vw;
+  max-width: 30vw;
   background-color: var(--dropdown-background);
   font-size: inherit;
   border: var(--border-width) solid var(--border-color);
@@ -47,11 +49,22 @@
 .na-dropdown-sub-menu {
   display: flex;
   flex-direction: row;
+  min-width: 25vw;
+  max-width: 30vw;
   line-height: var(--dropdown-item-line-height);
   justify-content: space-between;
   padding-left: var(--dropdown-item-menu-padding);
   padding-right: var(--dropdown-item-menu-padding);
 }
+
+.na-dropdown-sub-menu > * {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  line-height: var(--dropdown-item-line-height);
+}
+
 .na-dropdown-sub-menu a {
   color: inherit;
 }

@@ -1,5 +1,6 @@
 import './../../styles/pages/Experiences.css';
 
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useQuery } from 'react-query';
@@ -84,16 +85,58 @@ function Experiences () {
             <Editor.Body className='exps-editor-body'>
               <EditorBlog>
                 <EditorBlog.Overview>
-                  <EditorBlog.OverviewTitle title={expObj.data.title} icon={<Icon name={expObj.data.titleIconName} className='exps-icon' />} />
+                  <EditorBlog.OverviewTitle title={expObj.data.title} icon={<Icon name={expObj.data.titleIconName} className='exps-icon' style={{'width': '35px', 'height': '35px'}}/>} />
                   <EditorBlog.OverviewContent>
-                    <p>{expObj.data.overviewContent}</p>
+                    <p>{expObj.data.description}</p>
                   </EditorBlog.OverviewContent>  
                 </EditorBlog.Overview>
                 <EditorBlog.Details>
                   <EditorBlog.DetailsNav activeKey='details'>
                     <EditorBlog.DetailsNavItem title='DETAILS' eventKey='details' >
-                      <EditorBlog.DetailsBodyHeader title='Related Project'/>
+                      <EditorBlog.DetailsBodyHeader title='Overview'/>
+                      <ul>
+                        <li>Position: {expObj.data.position}</li>
+                        <li>Period: {expObj.data.period}</li>
+                        { expObj.data.link && ( 
+                          <li><Link to={expObj.data.link} target="_blank" rel="noopener noreferrer">Website</Link></li> 
+                        )}
+                      </ul>
+                      <br />
+                      <EditorBlog.DetailsBodyHeader title='Technical Stack'/>
+                      <ul>
+                        { expObj.data.details?.skills.map ( (item, index) => {
+                          return (
+                            <li key={index}>{item}</li>
+                          ) 
+                        }) }
+                      </ul>
+                      <br />
+                      <EditorBlog.DetailsBodyHeader title='Responsibilities'/>
+                      <ul>
+                        { expObj.data.details?.jd.map ( (jobDesc, index) => {
+                          return (
+                            <li key={index}>{jobDesc}</li>
+                          ) 
+                        }) }
+                      </ul>
+                    </EditorBlog.DetailsNavItem>
+
+                    {expObj.data.imgs && expObj.data.imgs.length > 0 && (
+                      <EditorBlog.DetailsNavItem title='IMAGES' eventKey='images'>
+                        {expObj.data.imgs.map((img, index) => (
+                          <React.Fragment key={index}>
+                            <li>{img.desc}</li>
+                            <img 
+                              src={`${process.env.PUBLIC_URL}/${img.url}`} 
+                              className='exp-editor-img' 
+                              alt={img.desc}
+                            />
+                            <br />
+                          </React.Fragment>
+                        ))}
                       </EditorBlog.DetailsNavItem>
+                    )}
+                    
                   </EditorBlog.DetailsNav>
                 </EditorBlog.Details>
               </EditorBlog>
@@ -111,7 +154,7 @@ function Experiences () {
                   { menu.items && menu.items.map((item, subIndex) => {
                     return (
                       <ListGroup.Item className='na-list-group-item' key={`${index}_${subIndex}`}>
-                        <Link to={transformToLink(`/experiences/${item.name}`)}>
+                        <Link to={transformToLink(`/experiences/${item.name}`)} onClick={() => {handleLocalStorage(item.name)}}>
                           <Icon name={item.name}/> <span>{item.name}</span>
                         </Link>
                       </ListGroup.Item>

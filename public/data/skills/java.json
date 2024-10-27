@@ -5,8 +5,44 @@
   "overviewContent": "I have extensive experience with Java, enabling me to build robust, scalable, and efficient back-end systems. I apply object-oriented programming principles in multi-tiered architectures and integrating complex third-party APIs. Whether working on full-stack development projects or Product Lifecycle Management (PLM) systems, I have ensured high performance, troubleshooting issues and optimising codebases for long-term maintainability in enterprise-level applications.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "Employee Capacity Report",
+      "projectLink": "/experiences/employee-capacity-report"
+    },
+    {
+      "projectName": "H & H Lawyers Intranet",
+      "projectLink": "/experiences/h-h-lawyers-intranet"
+    },
+    {
+      "projectName": "One Click Trade Mark Website",
+      "projectLink": "/one-click-trade-mark-website"
+    },
+    {
+      "projectName": "H & H Lawyers Website and Server Migration",
+      "projectLink": "/experiences/h-h-lawyers-website-and-server-migration"
+    },
+    {
+      "projectName": "Project Lifecycle Management in Hyundai Mobis",
+      "projectLink": "/experiences/project-lifecycle-management"
+    },
+    {
+      "projectName": "Traffic Information System in Korea Expressway Corporation",
+      "projectLink": "/experiences/traffic-information-system"
+    },
+    {
+      "projectName": "Manual Product Information System in Hyundai Mobis",
+      "projectLink": "/experiences/mpis"
+    },
+    {
+      "projectName": "MobisPatent System in Hyundai Mobis",
+      "projectLink": "/experiences/mpasis"
+    },
+    {
+      "projectName": "PoC –PLM in Dassault Systèmes",
+      "projectLink": "/experiences/poc"
+    },
+    {
+      "projectName": "System Management at Hyundai Mobis",
+      "projectLink": "/experiences/system-management"
     }
   ]
 }

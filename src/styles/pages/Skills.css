@@ -3,6 +3,7 @@
   width: 100%;
   height: 100%;
   padding: 2.8em 6em;
+  overflow-y: scroll;
 }
 .skills-editor-body.welcome { 
   display: none;
@@ -14,10 +15,17 @@
   display: flex;
 }
 
-
 .skills-icon {
   width: 2.5em;
   height: 2.5em;
+}
+
+.na-rel-project-link {
+  color: inherit;
+  text-decoration: none;
+}
+.na-rel-project-link:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width : 768px) { 

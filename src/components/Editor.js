@@ -27,9 +27,11 @@ Editor.prototype = {
 function Header ({ children, id = '', className = '' , ...props }) {
   return(
     <>
-      <div id={id} className={`na-editor-header ${className}`.trim()} >
-        <div className='na-editor-tabs'>
-          { children }
+      <div className="na-editor-header-wrapper">
+        <div id={id} className={`na-editor-header ${className}`.trim()} >
+          <div className='na-editor-tabs'>
+            { children }
+          </div>
         </div>
       </div>
     </>
@@ -52,11 +54,11 @@ function HeaderTab ({ children, id = '', className = '', title = '', link = '', 
   useEffect(() => {
     const getCurrentTab = () => {
       const pathSegments = location.pathname.split('/');
-      return pathSegments[pathSegments.length - 1];
+      return ( pathSegments.length > 2)? pathSegments[pathSegments.length - 1] : 'welcome';
     };
   
     const updateActiveTab = (tab) => {
-      if (tab && tab !== '' && tab !== 'skills') {
+      if (tab && tab !== '' && tab !== 'skills' && tab !== 'experiences') {
         setActiveTab(tab);
       }
     };
@@ -92,7 +94,7 @@ function HeaderTab ({ children, id = '', className = '', title = '', link = '', 
         <span className='na-editor-tab-icon'>
           {icon && ( React.isValidElement(icon)? icon : <span className='title-icon'/>)}
         </span>
-        <span className='na-editor-tab-link'>
+        <span className='na-editor-tab-link' title={title}>
           { title || children }
         </span>
         <span className="na-editor-tab-close" onClick={handleClose}><IoIosClose /></span>

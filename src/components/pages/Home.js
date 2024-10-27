@@ -54,15 +54,15 @@ function Home() {
                 <Editor.SubSubTitle>Experiences</Editor.SubSubTitle>
                 <ListGroup>
                   <ListGroup.Item className='na-list-group-item' >
-                    <a href='/experiences/hhlawyers-website' className='na-list-group-item-header'> H &amp; H Lawyers Website </a>
+                    <Link to={`/experiences/h-h-lawyers-website-and-server-migration`} className='na-list-group-item-header'> H &amp; H Lawyers Website </Link>
                     <p className='list-group-des'> Developed a new H &amp; H Lawyers website and migrated servers from on-premise to Microsoft Exchange and AWS </p>
                   </ListGroup.Item>
                   <ListGroup.Item className='na-list-group-item' >
-                    <a href='/experiences/octm-website' className='na-list-group-item-header'> OCTM Website </a>
+                    <Link to={`/experiences/one-click-trade-mark-website`} className='na-list-group-item-header'> OCTM Website </Link>
                     <p className='list-group-des'> Developed the One Click Trade Mark website to enable clients to easily register their trade marks online </p>
                   </ListGroup.Item>
                   <ListGroup.Item className='na-list-group-item'>
-                    <Link to='/experiences'>More...</Link>
+                    <Link to={`/experiences`}>More...</Link>
                   </ListGroup.Item>
                 </ListGroup>
               </div>  
@@ -70,33 +70,39 @@ function Home() {
             <div className='col-lg-6 col-md-12'>
               <div className='mt-2 mb-4'>
                 <Editor.SubSubTitle>Skills</Editor.SubSubTitle>
+                  <Link to='/skills/java'>
+                    <Card className='important'>
+                      <Card.Img>
+                        <Icon name='java' className='icon-lg'/>
+                      </Card.Img>
+                      <Card.Body>
+                        <Card.Title>Java</Card.Title>
+                        <Card.Description>I have extensive experience with Java, enabling me to build robust, scalable, and efficient back-end systems. I apply object-oriented programming principles in multi-tiered architectures and integrating complex third-party APIs. Whether working on full-stack development projects or Product Lifecycle Management (PLM) systems, I have ensured high performance, troubleshooting issues and optimising codebases for long-term maintainability in enterprise-level applications.</Card.Description>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                  <Link to='/skills/react'>
                   <Card className='important'>
-                    <Card.Img>
-                      <Icon name='java' className='icon-lg'/>
-                    </Card.Img>
-                    <Card.Body>
-                      <Card.Title>Java</Card.Title>
-                      <Card.Description>I have extensive experience with Java, enabling me to build robust, scalable, and efficient back-end systems. I apply object-oriented programming principles in multi-tiered architectures and integrating complex third-party APIs. Whether working on full-stack development projects or Product Lifecycle Management (PLM) systems, I have ensured high performance, troubleshooting issues and optimising codebases for long-term maintainability in enterprise-level applications.</Card.Description>
-                    </Card.Body>
-                  </Card>
-                  <Card className='important'>
-                    <Card.Img>
-                      <Icon name='react' className='icon-lg'/>
-                    </Card.Img>
-                    <Card.Body>
-                      <Card.Title>React</Card.Title>
-                      <Card.Description>React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.</Card.Description>
-                    </Card.Body>
-                  </Card>
-                  <Card className='important'>
-                    <Card.Img>
-                      <Icon name='aws' className='icon-lg'/>
-                    </Card.Img>
-                    <Card.Body>
-                      <Card.Title>AWS</Card.Title>
-                      <Card.Description>8+ years Java development and familiar with Java platforms such as Spring Framework</Card.Description>
-                    </Card.Body>
-                  </Card>
+                      <Card.Img>
+                        <Icon name='react' className='icon-lg'/>
+                      </Card.Img>
+                      <Card.Body>
+                        <Card.Title>React</Card.Title>
+                        <Card.Description>I have experience in React for building responsive single-page applications (SPAs) with seamless user experiences.</Card.Description>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                  <Link to='/skills/aws'>
+                    <Card className='important'>
+                      <Card.Img>
+                        <Icon name='aws' className='icon-lg'/>
+                      </Card.Img>
+                      <Card.Body>
+                        <Card.Title>AWS</Card.Title>
+                        <Card.Description>I have an understanding of AWS services, including EC2, S3, RDS, and Elastic Beanstalk, which I use to manage, deploy, and scale applications.</Card.Description>
+                      </Card.Body>
+                    </Card>
+                  </Link>
                 <ListGroup>
                   <ListGroup.Item className='na-list-group-item'>
                     <Link to='/skills'>More...</Link>

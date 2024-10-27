@@ -86,11 +86,12 @@ Dropdown.propTypes = {
   link: PropTypes.string
 };
 
-function Item ({ children, className = '', title='', link, eventKey, index, ...props }) {
+function Item ({ children, className = '', title='', link, eventKey, index, onClick, ...props }) {
   // 1. Initialize variables
   const navigate = useNavigate();
   const { activeKey, setActiveKey, setIsDropdownOpen } = useContext(DropDownContext);
   const isActive = (eventKey === activeKey);
+
   // 2. Check if this item has children (for nested items)
   let hasChildren = React.Children.toArray(children).some((child) => {
     return child.type === Item;
@@ -110,13 +111,16 @@ function Item ({ children, className = '', title='', link, eventKey, index, ...p
   
   return (
     <div 
-      onClick={ handleItemClick } 
+      onClick={ (e)=> {
+        if (onClick && !hasChildren ) onClick(e);
+        handleItemClick(e); 
+      }} 
       className={`na-dropdown-sub-menu ${className} ${isActive ? 'active' : ''}`.trim()}
       style={{ '--nth': index }} 
       {...props}
     >
       <>
-        <span className='na-dropdown-sub-menu-plain'> {title} </span>
+        <span className='na-dropdown-sub-menu-plain' title={title}> {title} </span>
           { hasChildren?
             (
               <>
@@ -138,6 +142,7 @@ Item.propTypes = {
   title: PropTypes.string,
   link: PropTypes.string,
   eventKey: PropTypes.string,
+  onClick: PropTypes.func,
   index: PropTypes.number
 };
 

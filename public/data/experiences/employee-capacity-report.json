@@ -2,31 +2,34 @@
   "title" : "Employee Capacity Report",
   "titleIconName": "employeecapacityreport",
   "subTitle": "This is a subtitle",
-  "description": "Developed an employee capacity report scheduler to automatically send reports to supervisors every Monday",
-  "details": [
+  "description": "I developed an automated scheduler for generating employee capacity reports, which streamlines the process of tracking and managing employee time records. This system automatically emails all employees who log their hours, ensuring they receive timely reminders and updates regarding their capacity and workload. By implementing this solution, I enhanced communication within the organisation and improved the accuracy of capacity tracking, enabling better resource allocation and workload management.",
+  "position": "Full Stack Java Developer",
+  "period": "2 months (May 2023 – Jul 2023)",
+  "details": {
+    "skills": [
+      "OS: Windows"
+      , "Tool: Eclipse (Development) , DBeaver (RDB)"
+      , "Programming: Java, HTML, CSS, JavaScript, MySQL"
+      , "Framework: Spring Boot"
+      , "Database: Maria DB"
+      , "Version Control: SVN"
+      , "Cloud Services: AWS Elastic Beanstalk, Azure Entra ID"
+      , "Other: Agile Methodology, SOLID principles, MVC pattern"
+    ],
+    "jd": [
+      "Analysed user requirements."
+      , "Planned and managed the project."
+      , "Set up the development/production environment."
+      , "Designed and created the database."
+      , "Developed the solution to focus on employee capacity based on working days, excluding weekends, holidays, and day-offs, and deployed it to AWS."
+      , "Conducted unit testing and integration testing."
+      , "Wrote technical documentation."
+    ]
+  },
+  "imgs": [
     {
-      "position": "Full Stack Java Developer",
-      "period": "2 months (May 2023 – Jul 2023)",
-      "skills": [
-        "OS: Windows"
-        , "Tool: Eclipse (Development) , DBeaver (RDB)"
-        , "Programming: Java, HTML, CSS, JavaScript, MySQL"
-        , "Framework: Spring Boot"
-        , "Database: Maria DB"
-        , "Version Control: SVN"
-        , "Cloud Services: AWS Elastic Beanstalk, Azure Entra ID"
-        , "Other: Agile Methodology, SOLID principles, MVC pattern"
-      ],
-      "jd": [
-        "Analysed user requirements."
-        , "Planned and managed the project."
-        , "Set up the development/production environment."
-        , "Designed and created the database."
-        , "Developed the solution to focus on employee capacity based on working days, excluding weekends, holidays, and day-offs, and deployed it to AWS."
-        , "Conducted unit testing and integration testing."
-        , "Wrote technical documentation."
-      ]
+      "desc" : "Email Template"
+      , "url" : "/images/experiences/employee-capacity-report.png" 
     }
-  ],
-  "img": ""
+  ]
 }
