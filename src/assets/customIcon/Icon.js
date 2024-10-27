@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaJ, FaJava, FaHashtag, FaReact, FaAws, FaMicrosoft, FaS, FaMaxcdn, FaHtml5, FaCss3Alt } from "react-icons/fa6";
+import { FaJ, FaJava, FaHashtag, FaReact, FaAws, FaMicrosoft, FaS, FaMaxcdn, FaHtml5, FaCss3Alt, FaN } from "react-icons/fa6";
 import { IoLogoJavascript, IoMdGitBranch } from 'react-icons/io';
 import { SiSpringboot, SiMariadb, SiThymeleaf } from "react-icons/si";
 import { MdAttachMoney, MdCode, MdDarkMode, MdEditDocument, MdLightMode, MdManageAccounts, MdWebAsset } from "react-icons/md";
@@ -12,6 +12,7 @@ import { PiCertificateBold, PiCursorClickFill, PiFinnTheHumanFill, PiTrademarkRe
 import { BsFillPeopleFill } from "react-icons/bs";
 import { IoPersonCircle, IoServer } from "react-icons/io5";
 import { GiCycle } from "react-icons/gi";
+import { PropTypes } from 'prop-types';
 
 const iconMap = {
   vscode : {
@@ -40,7 +41,7 @@ const iconMap = {
   },
   java: {
     component: FaJ,
-    style: { color: '#cc3e44', size: '24px' }
+    style: { color: '#cc3e44', width: '13px', height: '13px' }
   },
   javalogo: {
     component: FaJava,
@@ -48,7 +49,7 @@ const iconMap = {
   },
   springboot: {
     component: SiSpringboot,
-    style: { color: '#6ca84e', size: '24px' }
+    style: { color: '#6ca84e', width: '13px', height: '13px' }
   },
   html: {
     component: MdCode,
@@ -145,6 +146,10 @@ const iconMap = {
   imlinkedin:{
     component: ImLinkedin, 
     style: { color: '#cccccc', width: '13px', height: '13px' }
+  },
+  portfolio:{
+    component: FaN, 
+    style: { color: '#0078d4', width: '13px', height: '13px' }
   },
   humanresourcedatabase:{
     component: PiFinnTheHumanFill, 
@@ -243,7 +248,7 @@ const iconMap = {
   }
 };
 
-export const Icon = ({ name, className = '',  ...props }) => {
+export const Icon = ({ name, className = '', style: eleStyle, ...props }) => {
   const iconData = iconMap[name.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '').replace(/\s+/g, '')];
 
   if (!iconData) {
@@ -255,9 +260,15 @@ export const Icon = ({ name, className = '',  ...props }) => {
 
   const combinedStyle = {
     ...style,
-    ...props.style,
+    ...eleStyle
   };
 
   return <IconComponent style={combinedStyle} {...props} className={`${className}`.trim()} />;
 };
+
+Icon.prototype ={
+  name: PropTypes.string.isRequired,
+  className: PropTypes.string
+}
+
 

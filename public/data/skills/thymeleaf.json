@@ -5,8 +5,16 @@
   "overviewContent": "I possess a background in Thymeleaf as a template engine in Spring-based applications. I use it to create dynamic, server-side rendered web pages that integrate seamlessly with back-end logic. My work includes implementing forms, handling conditional content, and managing error messages within Thymeleaf templates, ensuring efficient and maintainable code. This experience has been particularly valuable in server-side rendering projects, where improving SEO (Search Engine Optimisation), achieving faster loading times, and enhancing security are essential.",
   "relatedProject": [
     {
-      "projectName": "",
-      "projectLink": ""
+      "projectName": "Employee Capacity Report",
+      "projectLink": "/experiences/employee-capacity-report"
+    },
+    {
+      "projectName": "One Click Trade Mark Website",
+      "projectLink": "/one-click-trade-mark-website"
+    },
+    {
+      "projectName": "H & H Lawyers Website and Server Migration",
+      "projectLink": "/experiences/h-h-lawyers-website-and-server-migration"
     }
   ]
 }

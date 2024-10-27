@@ -1,30 +1,25 @@
 {
-  "title" : "Server Migration - External Project",
-  "titleIconName": "servermigration",
-  "subTitle": "This is a subtitle",
-  "description": "Migrated email server and cloud storage from Google Email/NAS to Microsoft for Calibre Business Advisory",
-  "details": [
-    {
-      "position": "Full Stack Developer",
-      "period": "3 months (Sep 2023 – Nov 2023)",
-      "skills": [
-        "OS: Windows"
-        , "Programming: PowerShell Script"
-        , "SaaS: Migrate Tool from Microsoft 365"
-      ],
-      "jd": [
-        "Analysed user requirements."
-        , "Planned and managed the project."
-        , "Migrated email server from Google to Microsoft Exchange."
-        , "Set up security policies in Office 365."
-        , "Migrated storage server from NAS to Microsoft OneDrive and SharePoint."
-        , "Conducted unit testing and integration testing."
-        , "Wrote test and migration scenarios."
-        , "Wrote technical documentation and end-user manuals."
-      ]
-    }
-  ],
-  "img": ""
+  "title" : "Manual Product Information System in Hyundai Mobis",
+  "titleIconName": "mpis",
+  "subTitle": "",
+  "description": "I updated the Manual Product Information System at Hyundai Mobis by introducing the 'Modified Request' function. This enhancement allows users to create modification requests for released manuals, thereby improving user efficiency. By streamlining the submission process, I ensured that users can easily update manual information, leading to increased accuracy in manual management.",
+  "position": "Java Programmer",
+  "period": "2 months (Oct 2017 – Nov 2017)",
+  "details": {
+    "skills": [
+      "OS: Windows"
+      , "Tool: Eclipse (Development), Toad (RDB), Matrix (ODB)"
+      , "Programming: Java, HTML, CSS, JavaScript, jQuery, JSP, XML" 
+      , "Database: Oracle DB, Matrix ODB" 
+      , "Version Control: SVN"
+    ],
+    "jd": [
+      "Developed a new function called 'Modified Request' in alignment with client requirements."
+      , "Designed and implemented databases."
+      , "Conducted unit testing and integration testing."
+      , "Prepared draft versions of technical documentation and end-user manuals."
+    ]
+  }
 }
 
 

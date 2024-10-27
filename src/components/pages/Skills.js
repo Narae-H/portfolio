@@ -74,7 +74,7 @@ function Skills ( props ) {
           <Editor.HeaderTab title='Welcome' icon={<Icon name='skills' />} link={`/skills`} />
           { visitedMenus? visitedMenus.map ( (menu, index) =>{
             return (
-              <Editor.HeaderTab title={menu} icon={<Icon name={menu} />} key={index} link={`/skills/${transformToLink(menu)}`} removeVisitedMenu={removeVisitedMenu}/>
+              <Editor.HeaderTab title={menu} icon={<Icon name={menu} />} key={`header_tab_${index}`} link={`/skills/${transformToLink(menu)}`} removeVisitedMenu={removeVisitedMenu}/>
             )
           }) : null
           }
@@ -86,7 +86,7 @@ function Skills ( props ) {
             <Editor.Body className='skills-editor-body'>
               <EditorBlog>
                 <EditorBlog.Overview>
-                  <EditorBlog.OverviewTitle title={skillObj.data.title} icon={<Icon name={skillObj.data.titleIconName} className='skills-icon' />} />
+                  <EditorBlog.OverviewTitle title={skillObj.data.title} icon={<Icon name={skillObj.data.titleIconName} className='skills-icon' style={{'width': '35px', 'height': '35px'}}/>} />
                   <EditorBlog.OverviewContent>
                     <p>{skillObj.data.overviewContent}</p>
                   </EditorBlog.OverviewContent>  
@@ -95,7 +95,19 @@ function Skills ( props ) {
                   <EditorBlog.DetailsNav activeKey='details'>
                     <EditorBlog.DetailsNavItem title='DETAILS' eventKey='details' >
                       <EditorBlog.DetailsBodyHeader title='Related Project'/>
-                        {/* {skillObj.data.relatedProject} */}
+                        <ul>
+                        {
+                          skillObj.data.relatedProject.map( (item, index) => {
+                            return(
+                              <>
+                                  <li key={index}>
+                                    <Link to={item.projectLink} className='na-rel-project-link'>{item.projectName}</Link>
+                                  </li>
+                              </>
+                            )
+                          })
+                        }
+                        </ul>
                       </EditorBlog.DetailsNavItem>
                   </EditorBlog.DetailsNav>
                 </EditorBlog.Details>
@@ -114,7 +126,7 @@ function Skills ( props ) {
                 { menu.items && menu.items.map((item, subIndex) => {
                   return (
                     <ListGroup.Item className='na-list-group-item' key={`${index}_${subIndex}`}>
-                      <Link to={transformToLink(`/skills/${item.name}`)}>
+                      <Link to={transformToLink(`/skills/${item.name}`)} onClick={() => {handleLocalStorage(item.name)}}>
                         <Icon name={item.name}/> <span>{item.name}</span>
                       </Link>
                     </ListGroup.Item>

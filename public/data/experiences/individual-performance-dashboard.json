@@ -1,32 +1,39 @@
 {
   "title" : "Individual Performance Dashboard",
   "titleIconName": "individualperformancedashboard",
-  "subTitle": "This is a subtitle",
-  "description": "Developed an individual performance dashboard",
-  "details": [
+  "subTitle": "",
+  "description": "I developed an individual performance dashboard to provide employees with a clear overview of their performance metrics and goals. This dashboard aggregates key performance indicators (KPIs) in an easy-to-read format, allowing users to track their progress and identify areas for improvement.",
+  "position": "Full Stack Developer",
+  "period": "4 months (Oct 2020 – Jan 2021)",
+  "details": {
+    "skills": [
+      "OS: Windows"
+      , "SaaS: Microsoft Power BI"
+      , "Programming: DAX"
+      , "Database: Maria DB, Azure SQL Database"
+    ],
+    "jd": [
+      "Analysed user requirements."
+      , "Planned and managed the project."
+      , "Set up the development/production environment."
+      , "Evaluated UI/UX design by working closely with a designer."
+      , "Analysed the database from Actionstep (legal software platform) to import data."
+      , "Modified the firm’s database."
+      , "Developed a Power BI report to view an overview and details of timekeeper performance, matter type, work efficiency, skill efficiency, average hours by month, WIP by month, and related matters."
+      , "Conducted unit testing and integration testing."
+      , "Wrote technical documentation and end-user manuals."
+    ]
+  },
+  "imgs": [
     {
-      "position": "Full Stack Developer",
-      "period": "4 months (Oct 2020 – Jan 2021)",
-      "skills": [
-        "OS: Windows"
-        , "SaaS: Microsoft Power BI"
-        , "Programming: DAX"
-        , "Database: Maria DB, Azure SQL Database"
-      ],
-      "jd": [
-        "Analysed user requirements."
-        , "Planned and managed the project."
-        , "Set up the development/production environment."
-        , "Evaluated UI/UX design by working closely with a designer."
-        , "Analysed the database from Actionstep (legal software platform) to import data."
-        , "Modified the firm’s database."
-        , "Developed a Power BI report to view an overview and details of timekeeper performance, matter type, work efficiency, skill efficiency, average hours by month, WIP by month, and related matters."
-        , "Conducted unit testing and integration testing."
-        , "Wrote technical documentation and end-user manuals."
-      ]
+      "desc" : "Main page"
+      , "url" : "/images/experiences/individual-performance-dashboard1.png" 
+    },
+    {
+      "desc" : "Average hours"
+      , "url" : "/images/experiences/individual-performance-dashboard2.png" 
     }
-  ],
-  "img": ""
+  ]
 }
 
 

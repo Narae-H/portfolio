@@ -10,6 +10,7 @@ import { Icon } from '../assets/customIcon/Icon';
 import { Dropdown } from './Dropdown';
 import useWindowSize from '../hooks/useWindowSize';
 import { transformToLink } from '../utils/common';
+import { KEY_VISITED_EXPS, KEY_VISITED_SKILLS, useVisitedMenus } from '../hooks/useVisitedMenus';
 
 const TopMenuBar = memo(() => {
   // 1. Get menus depending on window size
@@ -36,12 +37,33 @@ const TopMenuBar = memo(() => {
     const key = indices.join('_');
 
     return (
-      <Dropdown.Item key={`key_${key}`} index={indices[indices.length - 1]} title={item.name} eventKey={item.name} link={transformToLink(`${parentName}/${item.name}`)}>
+      <Dropdown.Item 
+        key={`key_${key}`} 
+        index={indices[indices.length - 1]} 
+        title={item.name} 
+        eventKey={item.name} 
+        link={transformToLink(`${parentName}/${item.name}`)} 
+        onClick={(e) => {
+          handleLocalStorage(parentName, item.name)
+        }}
+      >
         {item.items && item.items.map((subItem, index) => 
           renderMenuItem(parentName, subItem, [...indices, index])
         )}
       </Dropdown.Item>
     )
+  }
+
+  // 3. Event handlers 
+  // 3-1) Save the visited menu info in the local storage
+  const [, setVisitedSkillMenu ] = useVisitedMenus(KEY_VISITED_SKILLS);
+  const [, setVisitedExpMenu ] = useVisitedMenus(KEY_VISITED_EXPS);
+  const handleLocalStorage = (mainManu, name) => {
+    if( mainManu === 'Skills') {
+      setVisitedSkillMenu(name);
+    } else if ( mainManu === 'Experiences'){
+      setVisitedExpMenu(name);
+    }
   }
   
   return(
@@ -69,7 +91,7 @@ const TopMenuBar = memo(() => {
           <div className='menu-img bp-lg'> <VscChromeMinimize /> </div>
           <div className='menu-img bp-lg'> <VscChromeRestore /> </div>
           <div className='menu-img bp-lg close'> <VscChromeClose /> </div>
-          <a href='#contactme' className='menu-img bp-md'><VscMail /></a>
+          <Link to='/contactme' className='menu-img bp-md'><VscMail /></Link>
         </div>
       </div>
     </>

@@ -33,6 +33,12 @@
   flex-wrap: wrap;
   align-content: center;
 }
+#top-menu-wrapper .bp-lg {
+  display: flex;
+}
+#top-menu-wrapper .bp-md {
+  display: none;
+}
 .menu-img {
   display: flex;
   padding: 12px;
@@ -50,7 +56,10 @@
 }
 
 @media screen and (max-width : 768px) { 
-  #top-menu-wrapper .right-menu {
+  #top-menu-wrapper .bp-lg {
     display: none;
+  }
+  #top-menu-wrapper .bp-md {
+    display: flex;
   }
  }

@@ -1,0 +1,25 @@
+{
+  "title" : "Narae's Portfolio",
+  "titleIconName": "portfolio",
+  "subTitle": "",
+  "description": "The portfolio project was designed as a comprehensive personal profile, serving both as a showcase of my skills and a learning tool for honing React expertise. A primary focus was on creating custom components, enabling me to build a personal component library instead of relying on pre-existing ones. This approach provided valuable hands-on experience and reinforced my React skills. Additionally, I incorporated new dependencies to broaden my technical exposure and applied responsive design principles to ensure optimal viewing across all devices. The project combines functional design with a strong emphasis on continuous skill development in full stack development.",
+  "position": "Full Stack Java Developer",
+  "period": "2 months (Sep 2024 – Oct 2024)",
+  "link": "https://github.com/Narae-H/portfolio", 
+  "details": {
+    "skills": [
+      "OS: Windows"
+      , "Tool: VS code (Development)"
+      , "Programming: React, Redux, HTML, CSS, JavaScript"
+      , "Libraries/Plugins: Axios, React-query, Bootstrap, styled-component, React-router"
+      , "Version Control: GitHub"
+    ],
+    "jd": [
+      "Designed and developed a comprehensive portfolio page showcasing project experience, technical skills, and professional achievements, providing a structured and user-friendly experience."
+      , "Utilised React, Redux, HTML, CSS, and JavaScript to build a dynamic and interactive interface. Integrated components and styling libraries, including Bootstrap and styled-components, for responsive and customisable design elements."
+      , "Implemented Axios and React-query for public data, enabling efficient data retrieval and management within the application."
+      , "Configured React-router for a smooth navigation experience, enabling multi-page views and organised structure within the portfolio."
+      , "Used GitHub for version control and collaboration, ensuring robust code management and deployment of updates."
+    ]
+  }
+}

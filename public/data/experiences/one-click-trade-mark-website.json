@@ -2,36 +2,39 @@
   "title" : "One Click Trade Mark Website",
   "titleIconName": "oneclicktrademarkwebsite",
   "subTitle": "This is a subtitle",
-  "description": "Developed the One Click Trade Mark website to enable clients to easily register their trade marks online",
-  "details": [
+  "description": "I developed the One Click Trade Mark website to provide clients with an easy-to-use platform for registering their trademarks online. This solution streamlines the registration process, allowing users to navigate steps with minimal effort. The site includes secure payment options and real-time status updates, enhancing client satisfaction and promoting efficient trademark management.",
+  "position": "Full Stack Java Developer",
+  "period": "12 months (Oct 2021 – Sep 2022)",
+  "link": "https://oneclicktrademark.com.au/",
+  "details": {
+    "skills": [
+      "OS: Windows"
+      , "Tool: Eclipse (Development), DBeaver (RDB)"
+      , "Programming: Java, Thymeleaf, HTML, CSS, JavaScript, jQuery, Bootstrap, MySQL"
+      , "Framework: Spring Boot"
+      , "Database: Maria DB"
+      , "Version Control: SVN"
+      , "Cloud Services: AWS Elastic Beanstalk, AWS Load Balancer, Route 53"
+      , "Other: Agile Methodology, SOLID principles, MVC pattern"
+    ],
+    "jd": [
+      "Analysed user requirements."
+      , "Planned and managed the project."
+      , "Drew diagrams, and a sitemap."
+      , "Set up the development/production environment."
+      , "Verified third-party APIs including IP Australia API, PayPal API, and Google Location Autocomplete API, and integrated them into the website."
+      , "Designed and created the database in AWS RDS."
+      , "Deployed the website to AWS."
+      , "Checked web standard validation in alignment with W3C web standards."
+      , "Conducted unit testing and integration testing."
+      , "Wrote technical documentation and end-user manuals."
+    ]
+  }, 
+  "imgs": [
     {
-      "position": "Full Stack Java Developer",
-      "period": "12 months (Oct 2021 – Sep 2022)",
-      "skills": [
-        "OS: Windows"
-        , "Tool: Eclipse (Development), DBeaver (RDB)"
-        , "Programming: Java, Thymeleaf, HTML, CSS, JavaScript, jQuery, Bootstrap, MySQL"
-        , "Framework: Spring Boot"
-        , "Database: Maria DB"
-        , "Version Control: SVN"
-        , "Cloud Services: AWS Elastic Beanstalk, AWS Load Balancer, Route 53"
-        , "Other: Agile Methodology, SOLID principles, MVC pattern"
-      ],
-      "jd": [
-        "Analysed user requirements."
-        , "Planned and managed the project."
-        , "Drew diagrams, and a sitemap."
-        , "Set up the development/production environment."
-        , "Verified third-party APIs including IP Australia API, PayPal API, and Google Location Autocomplete API, and integrated them into the website."
-        , "Designed and created the database in AWS RDS."
-        , "Deployed the website to AWS."
-        , "Checked web standard validation in alignment with W3C web standards."
-        , "Conducted unit testing and integration testing."
-        , "Wrote technical documentation and end-user manuals."
-      ]
+      "desc" : "Website main page"
+      , "url" : "/images/experiences/one-click-trade-mark-website.png" 
     }
-  ],
-  "img": "",
-  "link": "https://oneclicktrademark.com.au/"
+  ]
 }
 

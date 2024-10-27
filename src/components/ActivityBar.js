@@ -48,9 +48,9 @@ const ActivityBar = React.memo( ()=>{
 
         <div className='bottom-menu'>
           <Tooltip content='Contact Me' position="right" hasArrow={true}>
-            <a href='/contactme' className={`na-nav-link ${isActive('contactme') ? 'active' : ''}`}>
+            <Link to='/contactme' className={`na-nav-link ${isActive('contactme') ? 'active' : ''}`}>
               <Icon name='contactme' className='activity-icon'/>
-            </a>
+            </Link>
           </Tooltip>
 
         </div>

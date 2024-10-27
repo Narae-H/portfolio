@@ -77,6 +77,9 @@
   overflow-y: scroll;
   padding: 20px 10px
 }
+.na-editor-blog-details-nav-body li {
+  line-height: 2em;
+}
 
 .na-editor-blog-details-nav-item {
   display: flex;

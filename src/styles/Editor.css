@@ -10,10 +10,40 @@
   word-wrap: break-word;
   color: var(--editor-text-color);
   border: none;  
+
+}
+
+.na-editor-header-wrapper {
+  --scroll-height: 7px;
+
+  min-height: calc(var(--header-height) + var(--scroll-height) - var(--border-width));
+  box-sizing: border-box;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    height: var(--scroll-height);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--editor-background);
+    border-radius: 3px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color);
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 .na-editor-header {
-  max-height: var(--header-height);
+  height: var(--header-height);
+  /* width: fit-content; */
+  min-width: fit-content;
+  max-width: 100%;
   padding: 0;
   margin: 0;
   border: var(--border-color) var(--border-width) solid;
@@ -22,6 +52,7 @@
   background-color: var(--editor-background);
   word-wrap: break-word;
 }
+
 .na-editor-header:first-child {
   border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
 }
@@ -29,8 +60,10 @@
 .na-editor-tabs {
   display: flex;
   flex-wrap: wrap;
+  width: max-content;
+  height: var(--header-height);
   margin-left: calc(-1 * var(--border-width));
-  margin-top: calc(-1 * var(--border-width));
+  margin-top: calc(-1 * 2 * var(--border-width));
   margin-bottom: 0;
   padding-left: 0;
   background-color: var(--editor-tab-background);
@@ -54,15 +87,17 @@
 }
 
 .na-editor-tab-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   background-color: transparent;
   padding: 5px;
   gap: 12px;
   color: var(--editor-text-color);
   border-radius: 0;
- cursor: pointer; 
+  cursor: pointer; 
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .na-editor-tab-link.active {
   border-top: var(--activitybar-active-border) var(--border-width) solid;
@@ -85,15 +120,6 @@
   color: var(--active-text-color);
   background: rgba(255, 255, 255, 0.4);
 }
-/* .na-editor-tab-link::after {
-  content: '\00d7';
-  color: var(--inactive-text-color);
-  font-size: 16px;
-  font-weight: lighter;
-} */
-/* .na-editor-tab-link:hover::after {
-  color: var(--active-text-color);
-} */
 
 .na-editor-tab-icon {
   font-size: 1.5em;
