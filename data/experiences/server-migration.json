@@ -2,7 +2,7 @@
   "title" : "Server Migration - External Project",
   "titleIconName": "servermigration",
   "subTitle": "This is a subtitle",
-  "description": "Migrated email server and cloud storage from Google Email/NAS to Microsoft for Calibre Business Advisory",
+  "description": "I successfully managed the migration of the email server and cloud storage systems from Google Email and Network Attached Storage (NAS) to Microsoft solutions for Calibre Business Advisory. This project involved meticulous planning and coordination to ensure a smooth transition, minimising downtime and disruption to the organisation's operations. Throughout the migration process, I implemented best practices to safeguard data integrity and security while providing training and support to staff to help them adapt to the new Microsoft environment effectively.",
   "position": "Full Stack Developer",
   "period": "3 months (Sep 2023 – Nov 2023)",
   "details": {
@@ -23,5 +23,6 @@
     ]
   }
 }
+
 
 

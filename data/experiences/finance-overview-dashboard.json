@@ -1,8 +1,8 @@
 {
   "title" : "Finance Overview Dashboard",
   "titleIconName": "financeoverviewdashboard",
-  "subTitle": "This is a subtitle",
-  "description": "Developed a finance overview dashboard",
+  "subTitle": "",
+  "description": "I developed a finance overview dashboard designed to provide a comprehensive snapshot of the organisation's financial health. This dashboard consolidates key financial metrics and visualisations, enabling stakeholders to quickly assess performance and make informed decisions. By incorporating interactive elements and user-friendly navigation, I ensured that users can easily access vital financial information, improving overall visibility and facilitating strategic planning.",
   "position": "Full Stack Developer",
   "period": "4 months (Mar 2021 – Jun 2021)",
   "details": {
@@ -25,8 +25,12 @@
   },
   "imgs": [
     {
-      "desc" : "Email Template"
-      , "url" : "/images/experiences/employee-capacity-report.png" 
+      "desc" : "Main page"
+      , "url" : "/images/experiences/finance-overview-dashboard1.png" 
+    },
+    {
+      "desc" : "Revenue page"
+      , "url" : "/images/experiences/finance-overview-dashboard2.png" 
     }
   ]
 }

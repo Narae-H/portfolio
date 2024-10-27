@@ -2,15 +2,23 @@
   "title" : "System Management at Hyundai Mobis",
   "titleIconName": "systemmanagement",
   "subTitle": "",
-  "description": "",
+  "description": "I contributed to system management at Hyundai Mobis, focusing on optimising the performance and reliability of various internal systems. My role involved monitoring system operations, troubleshooting issues, and implementing updates to ensure seamless functionality. By collaborating with cross-functional teams, I aimed to enhance system efficiency and support organisational objectives, ensuring that all systems align with business needs and operational standards. This proactive approach not only improved system performance but also contributed to a more streamlined workflow across departments.",
   "position": "PLM Programmer",
   "period": "23 months ( Mar 2015 - Jun 2017 )",
   "details": {
     "skills": [
+      "OS: Windows"
+      , "Tool: Eclipse (Development), Toad (RDB), Matrix (ODB)"
+      , "Programming: Java, HTML, CSS, JavaScript, jQuery, JSP, XML" 
+      , "Database: Oracle DB, Matrix ODB" 
+      , "Version Control: SVN"
     ],
     "jd": [
+      "Configured, diagnosed, upgraded, and troubleshot in-house systems to ensure optimal functionality and performance."
+      , "Controlled and monitored systems proactively, implementing necessary adjustments to maintain peak performance levels."
+      , "Performed regular maintenance on in-house systems, ensuring continuous system availability to support IT operations and infrastructure."
+      , "Provided timely and effective support to end-users for system inquiries, resolving issues and enhancing user experience."
+      , "Assessed current IT requirements and collaborated with stakeholders to deliver solutions that aligned with both current and future business objectives, ensuring strategic alignment across the organisation."
     ]
   }
 }
-
-
