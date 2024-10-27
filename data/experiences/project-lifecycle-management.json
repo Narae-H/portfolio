@@ -2,14 +2,14 @@
   "title" : "Project Lifecycle Management in Hyundai Mobis",
   "titleIconName": "projectlifecyclemanagement",
   "subTitle": "",
-  "description": "Developed components of the Project Lifecycle Management system by customising the Enovia solution",
+  "description": "I developed key components of the Project Lifecycle Management system by customising the Enovia solution for Hyundai Mobis. This involved tailoring the software to meet the specific needs of the organisation, ensuring that it effectively supports project planning, execution, and monitoring.",
   "position": "PLM Programmer",
   "period": "4 months (Feb 2018 – May 2018)",
   "details": {
     "skills": [
       "OS: Windows"
       , "Tool: Eclipse (Development), Toad (RDB), Matrix (ODB)"
-      , "Programming: Java, HTML, CSS, JavaScript, jQuery, jqGrid"
+      , "Programming: Java, HTML, CSS, JavaScript, jQuery"
       , "Framework: Enovia"
       , "Database: Oracle DB, Matrix ODB"
       , "Version Control: SVN"

@@ -1,8 +1,8 @@
 {
   "title" : "Individual Performance Dashboard",
   "titleIconName": "individualperformancedashboard",
-  "subTitle": "This is a subtitle",
-  "description": "Developed an individual performance dashboard",
+  "subTitle": "",
+  "description": "I developed an individual performance dashboard to provide employees with a clear overview of their performance metrics and goals. This dashboard aggregates key performance indicators (KPIs) in an easy-to-read format, allowing users to track their progress and identify areas for improvement.",
   "position": "Full Stack Developer",
   "period": "4 months (Oct 2020 – Jan 2021)",
   "details": {
@@ -26,8 +26,12 @@
   },
   "imgs": [
     {
-      "desc" : "Email Template"
-      , "url" : "/images/experiences/employee-capacity-report.png" 
+      "desc" : "Main page"
+      , "url" : "/images/experiences/individual-performance-dashboard1.png" 
+    },
+    {
+      "desc" : "Average hours"
+      , "url" : "/images/experiences/individual-performance-dashboard2.png" 
     }
   ]
 }

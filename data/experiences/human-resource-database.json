@@ -2,16 +2,19 @@
   "title" : "Human Resource Database",
   "titleIconName": "humanresourcedatabase",
   "subTitle": "This is a subtitle",
-  "description": "",
-  "details": [
-    {
-      "position": "",
-      "period": "5 months (Dec 2023 - Apr 2024)",
-      "skills": [
-      ],
-      "jd": [
-      ]
-    }
-  ],
-  "img": ""
+  "description": "I designed and implemented a comprehensive database to streamline the management of employee information, and performance evaluations. By analysing the HR department's specific needs, I structured the database for efficient data retrieval and reporting, enabling informed decision-making.",
+  "position": "Full Stack Developer",
+  "period": "5 months (Dec 2023 - Apr 2024)",
+  "details": {
+    "skills": [
+      "Database: Azure DB"
+    ],
+    "jd": [
+      "Collaborating with HR personnel to gather requirements and understand their specific data management needs."
+      , "Designing the database structure to efficiently store and manage employee information, and performance metrics."
+      , "Implementing data migration strategies to import existing HR data into the new system."
+    ]
+  }
 }
+
+

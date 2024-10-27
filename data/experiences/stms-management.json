@@ -2,13 +2,22 @@
   "title" : "STMS Management at Samsung",
   "titleIconName": "stmsmanagement",
   "subTitle": "",
-  "description": "",
+  "description": "Management of the STMS (Samsung Tooling Management System) at Samsung, located in South Korea, involves overseeing and coordinating the various tooling processes and systems to ensure efficiency and productivity across operations.",
   "position": "Full Stack Developer",
   "period": "12 months (Jun 2018 - Dec 2018)",
   "details": {
     "skills": [
+      "OS: Windows"
+      , "Tool: Eclipse (Development), Toad (RDB)"
+      , "Programming: Java, HTML, CSS, JavaScript"
+      , "Database: Oracle DB"
+      , "Version Control: GitHub"
     ],
     "jd": [
+      "Installing, configuring, diagnosing, upgrading, and troubleshooting in-house systems by controlling and monitoring them"
+      ,"Performing maintenance on the in-house systems to ensure the availability of the IT operations infrastructure"
+      ,"Assisting with system enquiries from end-users"
+      ,"Performing code refactoring"
     ]
   }
 }

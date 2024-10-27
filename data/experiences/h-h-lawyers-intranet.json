@@ -2,7 +2,7 @@
   "title" : "H & H Lawyers Intranet",
   "titleIconName": "hhlawyersintranet",
   "subTitle": "This is a subtitle",
-  "description": "Developed an intranet for H & H Lawyers",
+  "description": "I developed a comprehensive intranet for H & H Lawyers, designed to enhance internal communication and collaboration among team members. This platform serves as a central hub for accessing essential resources, including company policies, forms, and training materials. By implementing user-friendly features and intuitive navigation, I ensured that employees can easily find the information they need to perform their jobs efficiently. Additionally, the intranet facilitates real-time updates and announcements, fostering a more connected and informed workplace culture within the firm.",
   "position": "Full Stack Java Developer",
   "period": "2 months (Feb 2023 – Mar 2023)",
   "details": {
@@ -30,8 +30,8 @@
   },
   "imgs": [
     {
-      "desc" : "Email Template"
-      , "url" : "/images/experiences/employee-capacity-report.png" 
+      "desc" : "Intranet"
+      , "url" : "/images/experiences/h-h-lawyers-intranet.png" 
     }
   ]
 }

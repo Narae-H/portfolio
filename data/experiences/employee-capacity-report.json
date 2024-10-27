@@ -2,7 +2,7 @@
   "title" : "Employee Capacity Report",
   "titleIconName": "employeecapacityreport",
   "subTitle": "This is a subtitle",
-  "description": "Developed a scheduler for employee capacity reports to automatically email all employees who record their time.",
+  "description": "I developed an automated scheduler for generating employee capacity reports, which streamlines the process of tracking and managing employee time records. This system automatically emails all employees who log their hours, ensuring they receive timely reminders and updates regarding their capacity and workload. By implementing this solution, I enhanced communication within the organisation and improved the accuracy of capacity tracking, enabling better resource allocation and workload management.",
   "position": "Full Stack Java Developer",
   "period": "2 months (May 2023 – Jul 2023)",
   "details": {
