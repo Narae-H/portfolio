@@ -9,25 +9,27 @@
   "details": {
     "skills": [
       "OS: Windows"
-      , "Tool: Eclipse (Development), DBeaver (RDB)"
+      , "Tool: Eclipse, Visual Studio Code (Development), DBeaver (RDB)"
       , "Programming: Java, Thymeleaf, HTML, CSS, JavaScript, jQuery, Bootstrap, MySQL"
       , "Framework: Spring Boot"
       , "Database: Maria DB"
-      , "Version Control: SVN"
+      , "Version Control: GitHub"
       , "Cloud Services: AWS Elastic Beanstalk, AWS Load Balancer, Route 53"
-      , "Other: Agile Methodology, SOLID principles, MVC pattern"
+      , "Other: RESTful API, Agile Methodology, MVC pattern"
     ],
     "jd": [
-      "Analysed user requirements."
-      , "Planned and managed the project."
-      , "Drew diagrams, and a sitemap."
-      , "Set up the development/production environment."
-      , "Verified third-party APIs including IP Australia API, PayPal API, and Google Location Autocomplete API, and integrated them into the website."
-      , "Designed and created the database in AWS RDS."
-      , "Deployed the website to AWS."
-      , "Checked web standard validation in alignment with W3C web standards."
-      , "Conducted unit testing and integration testing."
-      , "Wrote technical documentation and end-user manuals."
+      "Gathered and analysed user requirements."
+      , "Organised and oversaw project planning and execution."
+      , "Designed the architecture and created a detailed sitemap to support project structure."
+      , "Configured and optimised the development and production environments."
+      , "Evaluated and integrated third-party APIs, including IP Australia API, PayPal API, and Google Location Autocomplete API, to enhance website functionality."
+      , "Designed and implemented the database in AWS RDS."
+      , "Developed the website using a RESTful API and successfully deployed it to AWS."
+      , "Ensured compliance with W3C web standards for validation and accessibility."
+      , "Performed rigorous unit testing and integration testing to maintain quality."
+      , "Authored comprehensive technical documentation and user guides."
+      , "Contributed to all stages of the Software Development Life Cycle (SDLC) with active collaboration across teams and stakeholders."
+      , "Implemented SEO strategies, including optimised meta tags, sitemap generation, and keyword optimisation."
     ]
   }, 
   "imgs": [
