@@ -15,20 +15,22 @@
       , "Database: Maria DB"
       , "Version Control: SVN"
       , "Cloud Services: AWS Elastic Beanstalk, AWS Load Balancer, Route 53, Azure Database, Azure Entra ID"
-      , "Other: Agile Methodology, SOLID principles, MVC pattern."
+      , "Other: Agile Methodology, SOLID principles, MVC pattern, RESTful API"
     ],
     "jd": [
       "Analysed user requirements."
       , "Planned and managed the project."
       , "Set up the development/production environment."
       , "Designed and created the database."
-      , "Developed the website and deployed it to AWS."
+      , "Designed and developed the website with a RESTful API using Spring Boot and deployed it to AWS."
       , "Designed and created the database in AWS RDS."
+      , "Implemented comprehensive SEO strategies, including writing meta tags, generating a sitemap, optimising keywords, and effectively using HTML tags. Supported multilingual SEO for English, Korean, and Japanese."
       , "Checked web standard validation in alignment with W3C web standards."
       , "Conducted unit testing and integration testing."
       , "Wrote technical documentation and end-user manuals."
       , "Migrated the email server from on-premise to Microsoft Exchange."
       , "Set up security policies in Office 365"
+      , "Contributed to all phases of the Software Development Life Cycle (SDLC), collaborating closely with designers, developers, and cross-functional teams to ensure successful project delivery."
     ]
   },
   "imgs": [
