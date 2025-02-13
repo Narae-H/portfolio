@@ -2,7 +2,7 @@
   "title" : "Build CI/CD Pipeline",
   "titleIconName": "buildcicdpipeline",
   "subTitle": "",
-  "description": "",
+  "description": "Implemented a CI/CD pipeline to containerize a Spring Boot application using Docker, automate builds with GitHub Actions, and deploy seamlessly to AWS Elastic Beanstalk. Configured AWS IAM for secure integration between GitHub Actions and AWS services, ensuring efficient deployment and scalability.",
   "position": "Full Stack Developer",
   "period": "Jan 2025 – current",
   "details": {
@@ -14,7 +14,10 @@
       , "GitHub Actions: Automated CI/CD workflows integrated with GitHub."
     ],
     "jd": [
-      ""
+      "Packaged a Spring Boot project (built with Maven) into a Docker container.",
+      "Built a Docker image and pushed it to AWS ECR using GitHub Actions.",
+      "Created an AWS IAM user and granted the necessary permissions for GitHub Actions to connect with AWS services.",
+      "Deployed the Docker image to AWS Elastic Beanstalk (EB)."
     ]
   }
 }
