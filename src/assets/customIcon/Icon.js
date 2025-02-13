@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaJ, FaJava, FaHashtag, FaReact, FaAws, FaMicrosoft, FaS, FaMaxcdn, FaHtml5, FaCss3Alt, FaN } from "react-icons/fa6";
+import { FaJ, FaJava, FaHashtag, FaReact, FaAws, FaMicrosoft, FaS, FaMaxcdn, FaHtml5, FaCss3Alt, FaN, FaDocker } from "react-icons/fa6";
 import { IoLogoJavascript, IoMdGitBranch } from 'react-icons/io';
 import { SiSpringboot, SiMariadb, SiThymeleaf } from "react-icons/si";
 import { MdAttachMoney, MdCode, MdDarkMode, MdEditDocument, MdLightMode, MdManageAccounts, MdWebAsset } from "react-icons/md";
@@ -147,9 +147,13 @@ const iconMap = {
     component: ImLinkedin, 
     style: { color: '#cccccc', width: '13px', height: '13px' }
   },
+  buildcicdpipeline:{
+    component: FaDocker, 
+    style: { color: '#2392e6', width: '13px', height: '13px' }
+  },
   portfolio:{
     component: FaN, 
-    style: { color: '#0078d4', width: '13px', height: '13px' }
+    style: { color: '#ffff00', width: '13px', height: '13px' }
   },
   humanresourcedatabase:{
     component: PiFinnTheHumanFill, 
