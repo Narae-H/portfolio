@@ -62,6 +62,7 @@
           {
             "name": "Australia",
             "items": [
+              { "name": "Build CI/CD Pipeline" },
               { "name": "Portfolio" },
               { "name": "Human Resource Database" },
               { "name": "Server Migration" },

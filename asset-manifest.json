@@ -1,19 +1,31 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3eb6e05a.css",
-    "main.js": "/portfolio/static/js/main.f3b638a1.js",
-    "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
+    "main.css": "/portfolio/static/css/main.f854e336.css",
+    "main.js": "/portfolio/static/js/main.9d02f352.js",
+    "skills.css": "/portfolio/static/css/skills.505dcbf1.chunk.css",
+    "skills.js": "/portfolio/static/js/skills.29b2c3ff.chunk.js",
+    "experiences.css": "/portfolio/static/css/experiences.42f6eb2c.chunk.css",
+    "experiences.js": "/portfolio/static/js/experiences.afc39acb.chunk.js",
+    "contactme.css": "/portfolio/static/css/contactme.5a52abc6.chunk.css",
+    "contactme.js": "/portfolio/static/js/contactme.21c94006.chunk.js",
+    "static/js/453.ace21015.chunk.js": "/portfolio/static/js/453.ace21015.chunk.js",
     "static/media/MonaspaceNeon-Regular.woff": "/portfolio/static/media/MonaspaceNeon-Regular.2d34291b0f45daa945e2.woff",
     "static/media/MonaspaceNeon-SemiBold.woff": "/portfolio/static/media/MonaspaceNeon-SemiBold.7d2ee71e850ba0810c73.woff",
     "static/media/MonaspaceNeon-Light.woff": "/portfolio/static/media/MonaspaceNeon-Light.2e32b026b37ab8c8fb09.woff",
     "static/media/MonaspaceNeon-ExtraLight.woff": "/portfolio/static/media/MonaspaceNeon-ExtraLight.51b5ee109d35cf0c8ebd.woff",
     "index.html": "/portfolio/index.html",
-    "main.3eb6e05a.css.map": "/portfolio/static/css/main.3eb6e05a.css.map",
-    "main.f3b638a1.js.map": "/portfolio/static/js/main.f3b638a1.js.map",
-    "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
+    "main.f854e336.css.map": "/portfolio/static/css/main.f854e336.css.map",
+    "main.9d02f352.js.map": "/portfolio/static/js/main.9d02f352.js.map",
+    "skills.505dcbf1.chunk.css.map": "/portfolio/static/css/skills.505dcbf1.chunk.css.map",
+    "skills.29b2c3ff.chunk.js.map": "/portfolio/static/js/skills.29b2c3ff.chunk.js.map",
+    "experiences.42f6eb2c.chunk.css.map": "/portfolio/static/css/experiences.42f6eb2c.chunk.css.map",
+    "experiences.afc39acb.chunk.js.map": "/portfolio/static/js/experiences.afc39acb.chunk.js.map",
+    "contactme.5a52abc6.chunk.css.map": "/portfolio/static/css/contactme.5a52abc6.chunk.css.map",
+    "contactme.21c94006.chunk.js.map": "/portfolio/static/js/contactme.21c94006.chunk.js.map",
+    "453.ace21015.chunk.js.map": "/portfolio/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3eb6e05a.css",
-    "static/js/main.f3b638a1.js"
+    "static/css/main.f854e336.css",
+    "static/js/main.9d02f352.js"
   ]
 }
