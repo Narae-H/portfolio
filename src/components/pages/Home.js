@@ -54,8 +54,8 @@ function Home() {
                 <Editor.SubSubTitle>Experiences</Editor.SubSubTitle>
                 <ListGroup>
                   <ListGroup.Item className='na-list-group-item' >
-                    <Link to={`/experiences/h-h-lawyers-website-and-server-migration`} className='na-list-group-item-header'> H &amp; H Lawyers Website </Link>
-                    <p className='list-group-des'> Developed a new H &amp; H Lawyers website and migrated servers from on-premise to Microsoft Exchange and AWS </p>
+                    <Link to={`/experiences/build-ci-cd-pipeline`} className='na-list-group-item-header'> Build CI/CD Pipeline </Link>
+                    <p className='list-group-des'> Built a pipeline for Continuous Integration (CI) and Development (CD) </p>
                   </ListGroup.Item>
                   <ListGroup.Item className='na-list-group-item' >
                     <Link to={`/experiences/one-click-trade-mark-website`} className='na-list-group-item-header'> OCTM Website </Link>
