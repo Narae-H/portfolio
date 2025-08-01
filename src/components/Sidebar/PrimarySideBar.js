@@ -1,5 +1,5 @@
 import { VscClearAll } from 'react-icons/vsc'
-import './../styles/PrimarySideBar.css'
+import '../../styles/PrimarySideBar.css'
 
 export const PrimarySideBar = ({ children,  id = '', className = '' }) => {
   return (

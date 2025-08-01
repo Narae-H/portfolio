@@ -8,7 +8,7 @@ import { ListGroup } from 'react-bootstrap';
 
 import { transformToLink } from '../../utils/common';
 
-import { PrimarySideBar } from '../PrimarySideBar';
+import { PrimarySideBar } from '../Sidebar/PrimarySideBar';
 import { CollapsibleList } from '../CollapsibleList';
 import { Editor } from '../Editor';
 import { EditorBlog } from '../EditorBlog';

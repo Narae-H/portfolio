@@ -1,16 +1,16 @@
-import './../styles/TopMenuBar.css';
+import './../../styles/TopMenuBar.css';
 
-import React, { memo, useMemo } from 'react';
 import axios from 'axios';
+import { memo, useMemo } from 'react';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 
 import { VscChromeClose, VscChromeMinimize, VscChromeRestore, VscMail } from "react-icons/vsc";
-import { Icon } from '../assets/customIcon/Icon';
-import { Dropdown } from './Dropdown';
-import useWindowSize from '../hooks/useWindowSize';
-import { transformToLink } from '../utils/common';
-import { KEY_VISITED_EXPS, KEY_VISITED_SKILLS, useVisitedMenus } from '../hooks/useVisitedMenus';
+import { Icon } from '../../assets/customIcon/Icon';
+import { KEY_VISITED_EXPS, KEY_VISITED_SKILLS, useVisitedMenus } from '../../hooks/useVisitedMenus';
+import useWindowSize from '../../hooks/useWindowSize';
+import { transformToLink } from '../../utils/common';
+import { Dropdown } from '../Dropdown';
 
 const TopMenuBar = memo(() => {
   // 1. Get menus depending on window size

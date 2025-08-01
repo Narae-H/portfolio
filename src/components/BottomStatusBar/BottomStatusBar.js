@@ -1,10 +1,10 @@
-import './../styles/StatusBar.css';
+import './../../styles/StatusBar.css';
 
 import React from 'react';
-import { ModeButton } from './ModeButton';
-import { Icon } from '../assets/customIcon/Icon';
+import { ModeButton } from '../ModeButton';
+import { Icon } from '../../assets/customIcon/Icon';
 
-const StatusBar = React.memo(() => {
+const BottomStatusBar = React.memo(() => {
   return(
     <>
       <div id='status-wrapper'>
@@ -32,4 +32,4 @@ const StatusBar = React.memo(() => {
   )
 });
 
-export default StatusBar;
+export default BottomStatusBar;

@@ -1,9 +1,9 @@
-import './../styles/ActivityBar.css';
+import './../../styles/ActivityBar.css';
 
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-import { Tooltip } from './Tooltip';
-import { Icon } from '../assets/customIcon/Icon';
+import { Tooltip } from '../Tooltip';
+import { Icon } from '../../assets/customIcon/Icon';
 import React, { useMemo } from 'react';
 
 const ActivityBar = React.memo( ()=>{

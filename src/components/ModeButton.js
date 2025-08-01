@@ -2,11 +2,12 @@ import './../styles/ModeButton.css';
 
 import PropTypes from 'prop-types';
 import { Icon } from '../assets/customIcon/Icon';
-import { useTheme, DARK_THEME, LIGHT_THEME } from '../hooks/useTheme';
+import { useTheme } from '../hooks/useTheme';
+import { DARK_THEME, LIGHT_THEME } from '../types/theme';
 
 export function ModeButton({children, id='', className='', ...props}) {
   // 1. Get the currne theme
-  const [ currentThemeName, , setTheme, removeTheme ] = useTheme();
+  const { currentThemeName, setTheme, removeTheme } = useTheme();
 
   // 2. Toggle mode
   const handleModeToggle = (e) => {

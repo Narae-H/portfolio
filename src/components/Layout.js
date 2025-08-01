@@ -6,9 +6,9 @@ import React, { Suspense } from 'react';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
-import TopMenuBar from './TopMenuBar';
-import ActivityBar from './ActivityBar';
-import StatusBar from './StatusBar';
+import TopMenuBar from './TopMenuBar/TopMenuBar';
+import ActivityBar from './Sidebar/ActivityBar';
+import BottomStatusBar from './BottomStatusBar/BottomStatusBar';
 import Home from './pages/Home';
 import { transformToLink } from '../utils/common';
 import { PageComponent } from './PageComponent';
@@ -28,7 +28,7 @@ function Layout() {
     // Memoize child components
     const MemoizedTopMenuBar  = React.memo(TopMenuBar);
     const MemoizedActivityBar = React.memo(ActivityBar);
-    const MemoizedStatusBar   = React.memo(StatusBar);
+    const MemoizedBottomStatusBar   = React.memo(BottomStatusBar);
     
     return (
     <>
@@ -77,7 +77,7 @@ function Layout() {
         </div>
         
         <div id='bottom-status-bar'>
-          <MemoizedStatusBar />
+          <MemoizedBottomStatusBar />
         </div>
       </div>
     </>

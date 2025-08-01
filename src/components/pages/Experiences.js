@@ -8,7 +8,7 @@ import { useQuery } from 'react-query';
 import { ListGroup } from 'react-bootstrap';
 import { CollapsibleList } from "../CollapsibleList";
 import { Editor } from "../Editor";
-import { PrimarySideBar } from "../PrimarySideBar";
+import { PrimarySideBar } from "../Sidebar/PrimarySideBar";
 import { Icon } from '../../assets/customIcon/Icon';
 import { transformToLink } from '../../utils/common';
 import { KEY_VISITED_EXPS, useVisitedMenus } from '../../hooks/useVisitedMenus';
